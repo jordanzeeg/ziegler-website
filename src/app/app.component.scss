@@ -1,0 +1,9 @@
+.backgroundphoto{
+	background: url('./images/backgroundphoto.jpg');
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+  /* Set rules to fill background */
+  min-height: 100vh;
+  min-width: 100vw;
+}
