@@ -14,6 +14,7 @@ import { RsnComponent } from './rsn/rsn.component';
 import { SnakeGameComponent } from './snake-game/snake-game.component';
 import { TsmComponent } from './tsm/tsm.component';
 import { ZweiteComponent } from './zweite/zweite.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { ZweiteComponent } from './zweite/zweite.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]
