@@ -1,0 +1,19 @@
+#canvas1 {
+	position: relative;
+	width: 100%;
+	background-color: grey;
+	max-height: 50vh;
+}
+#canvas1:focus {
+	outline: none;
+
+}
+h2 {
+	color: green;
+	text-align: center;
+}
+.surround {
+	max-height: 70vh;
+	max-width: 100vw;
+
+}
