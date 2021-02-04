@@ -15,6 +15,7 @@ import { SnakeGameComponent } from './snake-game/snake-game.component';
 import { TsmComponent } from './tsm/tsm.component';
 import { ZweiteComponent } from './zweite/zweite.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { ContentsTableComponent } from './contents-table/contents-table.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     RsnComponent,
     SnakeGameComponent,
     TsmComponent,
-    ZweiteComponent
+    ZweiteComponent,
+    ContentsTableComponent
   ],
   imports: [
     BrowserModule,

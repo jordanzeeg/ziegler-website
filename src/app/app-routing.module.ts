@@ -8,6 +8,7 @@ import { TsmComponent } from './tsm/tsm.component';
 import { RsnComponent } from './rsn/rsn.component';
 import { MspsComponent } from './msps/msps.component';
 import { CdpComponent } from './cdp/cdp.component';
+import { ContentsTableComponent } from './contents-table/contents-table.component';
 import { ExpenseReimbursementSystemComponent } from './expense-reimbursement-system/expense-reimbursement-system.component';
 
 const routes: Routes = [
@@ -39,11 +40,17 @@ const routes: Routes = [
 			},
 			{
 				path: 'ers', component: ExpenseReimbursementSystemComponent
+			},
+			{
+				path: '**', redirectTo: 'tsm', pathMatch:'full'
 			}
 		]
 	},
 	{
-		path: '**', redirectTo: 'zweite'
+		path: 'info', component: ContentsTableComponent
+	},
+	{
+		path: '**', redirectTo: 'info'
 	}
 ];
 
