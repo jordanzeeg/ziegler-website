@@ -39,30 +39,62 @@ a:visited {
 	position: relative;
 	top: 1vh;
 	left:2vw;
+	animation: ersteKey 4s infinite;
+	animation-direction: alternate;
 }
 
 #zweiteCard {
 	position: relative;
 	top: 5vh;
 	left: 25vw;
+	animation: zweiteKey 1.5s infinite;
+	animation-direction: alternate-reverse;
 }
 
 #dritteCard {
 	position: relative;
-	top: 10vh;
+	top: -25vh;
 	left:40vw;
+	animation: zweiteKey 3s infinite;
+	animation-direction: alternate-reverse;
 }
 
 #vierteCard {
 	position: relative;
-	top:-10vh;
-	left:15vw;
+	top:-50vh;
+	left:35vw;
+	animation: vierteKey 4s infinite;
+	animation-direction: alternate-reverse;
 }
 
 #funfteCard {
 	position: relative;
 	top:-80vh;
-	left:45vw;
+	left:0vw;
+	animation: zweiteKey 4s infinite;
+	animation-direction: alternate-reverse;
 }
 
+/* has it move in a square counter clockwise below initial position*/
+@keyframes ersteKey {  
+	0% {transform: translate(0vw,0vh);}
+	25% { transform: translate(0,20vh); }
+	50% { transform: translate(20vw,20vh); }
+	75% { transform: translate(20vw,0vh); }
+	100% {transform: translate(0vw,0vh);}
+}
+
+/* has it move in a a line above initial position */
+@keyframes zweiteKey {
+	0% {transform: translate(0vw,0vh);}
+	50% { transform: translate(0,-30vh); }
+	100% {transform: translate(0vw,0vh);}
+}
+
+/* has it move in a line to the right of initial position */
+@keyframes vierteKey {
+	0% {transform: translate(0vw,0vh);}
+	50% { transform: translate(-30vw,0vh); }
+	100% {transform: translate(0vw,0vh);}
+}
 
