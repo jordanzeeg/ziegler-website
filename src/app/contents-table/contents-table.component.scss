@@ -11,12 +11,15 @@
 .jcard {
 	
 	width: 20vw;
-	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-	background-color: rgb(0,130,0,.5);
+	box-shadow:  8px 8px 15px 7px rgba(0, 0, 0, 0.61), 0 6px 20px 0 rgba(0, 0, 0, 0.61);
+	background-color: rgb(0,130,0,.8);
 	color: white;
 	border-radius: 30px;
+	font-size: 1vw;
 }
-
+h5 {
+	font-size: 2vw;
+}
 .topdiv {
 	height: 55px;
 }
@@ -54,7 +57,7 @@ a:visited {
 #dritteCard {
 	position: relative;
 	top: -25vh;
-	left:40vw;
+	left: 47vw;
 	animation: zweiteKey 3s infinite;
 	animation-direction: alternate-reverse;
 }
