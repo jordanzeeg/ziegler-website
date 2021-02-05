@@ -16,6 +16,9 @@ import { TsmComponent } from './tsm/tsm.component';
 import { ZweiteComponent } from './zweite/zweite.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ContentsTableComponent } from './contents-table/contents-table.component';
+import { ZweiteTableComponent } from './zweite-table/zweite-table.component';
+import { CpTableComponent } from './cp-table/cp-table.component';
+import { HobbiesTableComponent } from './hobbies-table/hobbies-table.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +34,10 @@ import { ContentsTableComponent } from './contents-table/contents-table.componen
     SnakeGameComponent,
     TsmComponent,
     ZweiteComponent,
-    ContentsTableComponent
+    ContentsTableComponent,
+    ZweiteTableComponent,
+    CpTableComponent,
+    HobbiesTableComponent
   ],
   imports: [
     BrowserModule,
