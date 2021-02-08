@@ -10,14 +10,22 @@ import { MspsComponent } from './msps/msps.component';
 import { CdpComponent } from './cdp/cdp.component';
 import { ContentsTableComponent } from './contents-table/contents-table.component';
 import { ExpenseReimbursementSystemComponent } from './expense-reimbursement-system/expense-reimbursement-system.component';
+import { ZweiteTableComponent } from './zweite-table/zweite-table.component';
+import { HobbyTableComponent } from './hobby-table/hobby-table.component';
+import { LibraryTableComponent } from './library-table/library-table.component';
 
 const routes: Routes = [
 	{
 		path: 'about', component: AboutPageComponent
-		
 	},
 	{
-		path: 'hobbies', component: HobbiesPageComponent
+		path: 'hobbies', component: HobbiesPageComponent,
+		children: 
+		[
+			{
+				path: 'table', component: HobbyTableComponent
+			}
+		]
 	},
 	{
 		path: 'projects', component: ProjectsPageComponent
@@ -42,7 +50,10 @@ const routes: Routes = [
 				path: 'ers', component: ExpenseReimbursementSystemComponent
 			},
 			{
-				path: '**', redirectTo: 'tsm', pathMatch:'full'
+				path: 'table', component: ZweiteTableComponent
+			},
+			{
+				path: '**', redirectTo: 'table', pathMatch:'full'
 			}
 		]
 	},

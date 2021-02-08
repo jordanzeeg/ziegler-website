@@ -19,6 +19,8 @@ import { ContentsTableComponent } from './contents-table/contents-table.componen
 import { ZweiteTableComponent } from './zweite-table/zweite-table.component';
 import { CpTableComponent } from './cp-table/cp-table.component';
 import { HobbiesTableComponent } from './hobbies-table/hobbies-table.component';
+import { LibraryTableComponent } from './library-table/library-table.component';
+import { HobbyTableComponent } from './hobby-table/hobby-table.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +39,9 @@ import { HobbiesTableComponent } from './hobbies-table/hobbies-table.component';
     ContentsTableComponent,
     ZweiteTableComponent,
     CpTableComponent,
-    HobbiesTableComponent
+    HobbiesTableComponent,
+    LibraryTableComponent,
+    HobbyTableComponent
   ],
   imports: [
     BrowserModule,
