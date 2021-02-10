@@ -15,7 +15,7 @@ export class ErsteComponent implements OnInit {
 		id:2,
 		name: 'About Jordan'
 	};
-	project = {
+	zweite = {
 		id:3,
 		name: 'Projects'
 	};
@@ -23,6 +23,14 @@ export class ErsteComponent implements OnInit {
 		id:4,
 		name: 'Hobbies'
 	};
+	library = {
+		id: 5,
+		name: 'Library'
+	}
+	soapbox = {
+		id:5,
+		name: 'SoapBox'
+	}
   constructor() { }
 
   ngOnInit(): void {

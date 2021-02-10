@@ -21,6 +21,7 @@ import { CpTableComponent } from './cp-table/cp-table.component';
 import { HobbiesTableComponent } from './hobbies-table/hobbies-table.component';
 import { LibraryTableComponent } from './library-table/library-table.component';
 import { HobbyTableComponent } from './hobby-table/hobby-table.component';
+import { SoapboxComponent } from './soapbox/soapbox.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,8 @@ import { HobbyTableComponent } from './hobby-table/hobby-table.component';
     CpTableComponent,
     HobbiesTableComponent,
     LibraryTableComponent,
-    HobbyTableComponent
+    HobbyTableComponent,
+    SoapboxComponent
   ],
   imports: [
     BrowserModule,
