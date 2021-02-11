@@ -3,7 +3,7 @@
 }
 
 .topdiv {
-	padding-top: 70px;
+	height: 50px;
 }
 .divone {
 	background-color: rgb(1,98,204);
@@ -11,4 +11,9 @@
 	margin-left: 5vw;
 	padding-right: 5vw;
 	padding-left: 5vw;
+}
+
+.navbar-fixed {
+	position: fixed;
+	width: 100vw;
 }
