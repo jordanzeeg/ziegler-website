@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="css/bootstrap.css">
+<link rel="stylesheet" href="css/bootstrap-reboot.css">
+<link rel="stylesheet" href="css/bootstrap-grid.css">
+<link rel="stylesheet" href="css/styles.css">
+<meta charset="UTF-8">
+
+<title>Manager Home</title>
+</head>
+<body class = 'backgroundImage2'>
+	<form action = "reimbAdjustment" method = "post">
+		<div class="form-group center container">
+		<div class = 'card'>
+		<h2 class = "text-center"> Reimbursement</h2>
+		
+			<div id="placeForReimbursements" class="container">
+				
+				<h4 >Reimbursement ID</h4>
+				<p id = 'reimbtest'></p>
+				<input class = "form-control " type = "text" id="placeForId" name = "reimbursement_id" readonly>
+				<input type = "hidden" id = "thisonetoo" name = "reimbid" value = "0"/>
+				<h4 >Author's ID</h4>
+				<input class = "form-control " type = "text" id="placeForAuthor" readonly>
+				<h4 >Amount Requested</h4>
+				<input class = "form-control " type = "text" id="placeForAmount" readonly>
+				<h4 >Description</h4>
+				<input class = "form-control " type = "text" id="placeForDescription" readonly>
+				<h4 >Status</h4>
+				<div id="placeForStatus">status</div>
+				<input type = "submit" class = "btn btn-primary" value = "Submit">
+			</div>
+			</div>
+		</div>
+	</form>
+
+
+
+	<form action='logout' method='get'>
+		<input type='submit' class='btn btn-primary' value='logout'>
+	</form>
+
+
+	<!-- read data from xml document into table to display all pending accounts -->
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/managerjs.js"></script>
+	<script type="text/javascript" src="js/bootstrap.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	welcome. please log in<br/>
+	<input type="checkbox" id="createlogin" onclick = "hide()"> Create Account<br>
+	<form id = "login" action = "login">
+	Username: <input type = "text" name = "username"/><br/>
+	Password: <input type = "password" name = "password"/><br/>
+	<button type = "submit"> Submit</button>
+	</form>
+	<br/>
+	<form id = "createAccount" action = "user" method = "post">
+	Username <input type = "text" name = "username"/><br/>
+	Password: <input type = "password" name = "password"/><br/>
+	Confirm Password: <input type = "password" name = "confirmPassword"/><br/>
+	<button type = "submit"> Submit</button>
+	</form>
+	<script>
+	function hide(){
+		checkbox = document.getElementById("createlogin");
+		form1 = document.getElementById("login");
+		form2 = document.getElementById("createAccount");
+		if(checkbox.checked == true){
+			form1.style.display = "none";
+			form2.style.display = "block";
+		}
+		else if (checkbox.checked == false){
+			form2.style.display = "none";
+			form1.style.display = "block";
+		}
+	}
+	
+	</script>
+</body>
+</html>

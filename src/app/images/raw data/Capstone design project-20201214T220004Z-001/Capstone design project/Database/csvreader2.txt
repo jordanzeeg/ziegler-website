@@ -1,0 +1,55 @@
+*****notes
+-put the csv file in the Assests folder
+-make sure to include the OpenCSV library
+
+
+
+public final List<String[]> readCsv(Context context) {
+  List<String[]> questionList = new ArrayList<String[]>();
+  AssetManager assetManager = context.getAssets();
+
+  try {
+    InputStream csvStream = assetManager.open(CSV_PATH); // insert path where it says "CSV_PATH"
+    InputStreamReader csvStreamReader = new InputStreamReader(csvStream);
+    CSVReader csvReader = new CSVReader(csvStreamReader);
+    String[] line;
+
+    // throw away the header
+    csvReader.readNext();
+	
+	String Split = ',';
+		
+    while ((line = csvReader.readNext()) != null) {
+		//destination 100K
+		String []b = line.split(splitBy);
+		if(b[1] = "100K" && b[2] = "100B"){
+			questionList.add(line);
+			//these lines contains directions from current room read from camera
+		}
+		
+		//copy above code example for all cases
+		//destination 100B
+		if else (line == "100B"){
+			questionList.add(line);
+			//these lines contains directions from current room read from camera
+		}
+		
+		//destination 100M
+		if else (line == "100M"){
+			questionList.add(line);
+			//these lines contains directions from current room read from camera
+		}
+		
+		//destination 130H
+		if else (line == "130H"){
+			questionList.add(line);
+			//these lines contains directions from current room read from camera
+		}
+		  
+    }
+	
+  } catch (IOException e) {
+    e.printStackTrace();
+  }
+  return questionList;
+}
