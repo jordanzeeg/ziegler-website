@@ -12,7 +12,8 @@ import { ContentsTableComponent } from './contents-table/contents-table.componen
 import { ExpenseReimbursementSystemComponent } from './expense-reimbursement-system/expense-reimbursement-system.component';
 import { ZweiteTableComponent } from './zweite-table/zweite-table.component';
 import { HobbyTableComponent } from './hobby-table/hobby-table.component';
-import { LibraryTableComponent } from './library-table/library-table.component';
+import { LibraryTableComponent } from './library/library-table/library-table.component';
+import { LibraryHomeComponent } from './library/library-home/library-home.component';
 
 const routes: Routes = [
 	{
@@ -54,6 +55,15 @@ const routes: Routes = [
 			},
 			{
 				path: '**', redirectTo: 'table', pathMatch:'full'
+			}
+		]
+	},
+	{
+		path: 'library', component: LibraryHomeComponent,
+		children:
+		[
+			{
+				path: 'table', component: LibraryTableComponent
 			}
 		]
 	},

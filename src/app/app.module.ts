@@ -19,9 +19,11 @@ import { ContentsTableComponent } from './contents-table/contents-table.componen
 import { ZweiteTableComponent } from './zweite-table/zweite-table.component';
 import { CpTableComponent } from './cp-table/cp-table.component';
 import { HobbiesTableComponent } from './hobbies-table/hobbies-table.component';
-import { LibraryTableComponent } from './library-table/library-table.component';
 import { HobbyTableComponent } from './hobby-table/hobby-table.component';
 import { SoapboxComponent } from './soapbox/soapbox.component';
+import { LibraryHomeComponent } from './library/library-home/library-home.component';
+import { LibraryTableComponent } from './library/library-table/library-table.component';
+import { FutureProgramsComponent } from './library/future-programs/future-programs.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +45,9 @@ import { SoapboxComponent } from './soapbox/soapbox.component';
     HobbiesTableComponent,
     LibraryTableComponent,
     HobbyTableComponent,
-    SoapboxComponent
+    SoapboxComponent,
+    LibraryHomeComponent,
+    FutureProgramsComponent
   ],
   imports: [
     BrowserModule,
