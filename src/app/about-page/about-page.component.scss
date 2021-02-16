@@ -1,33 +1,41 @@
-div{
-	font-style: italic;
-	color:white;
+.top-div {
+	height: 50px;
 }
 
 .title-div {
-	background-color: rgb(220,53,69,.5);
-	margin-right: 5vw;
-	margin-left: 5vw;
+	width: 75vw;
 	padding-right: 5vw;
 	padding-left: 5vw;
+
+}
+.titlestyle {
+	
+	text-align: center;
 }
 .divone {
 	background-color: rgb(1,98,204,.5);
-	margin-right: 5vw;
-	margin-left: 5vw;
+	width: 75vw;
 	padding-right: 5vw;
 	padding-left: 5vw;
 }
 .divtwo {
 	background-color: rgb(220,53,69,.5);
-	margin-right: 5vw;
-	margin-left: 5vw;
+	width: 75vw;
 	padding-right: 5vw;
 	padding-left: 5vw;
 }
 .divthree {
 	background-color: rgb(1,98,204,.5);
-	margin-right: 5vw;
-	margin-left: 5vw;
+	width: 75vw;
 	padding-right: 5vw;
 	padding-left: 5vw;
+}
+
+.theme-style {
+	opacity: .8;
+	box-shadow:  8px 8px 15px 7px rgba(0, 0, 0, 0.61), 0 6px 20px 0 rgba(0, 0, 0, 0.61);
+	color: white;
+	background-color: darkslategrey;
+	margin: auto;
+	margin-bottom: 5vw;
 }
