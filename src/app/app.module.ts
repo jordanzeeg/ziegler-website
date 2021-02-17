@@ -24,6 +24,10 @@ import { SoapboxComponent } from './soapbox/soapbox.component';
 import { LibraryHomeComponent } from './library/library-home/library-home.component';
 import { LibraryTableComponent } from './library/library-table/library-table.component';
 import { FutureProgramsComponent } from './library/future-programs/future-programs.component';
+import { FooterComponent } from './footer/footer.component';
+import { LoginComponent } from './login/login.component';
+import { DashboardComponent } from './submissions/dashboard/dashboard.component';
+import { RegisterComponent } from './register/register.component';
 
 @NgModule({
   declarations: [
@@ -47,7 +51,11 @@ import { FutureProgramsComponent } from './library/future-programs/future-progra
     HobbyTableComponent,
     SoapboxComponent,
     LibraryHomeComponent,
-    FutureProgramsComponent
+    FutureProgramsComponent,
+    FooterComponent,
+    LoginComponent,
+    DashboardComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,

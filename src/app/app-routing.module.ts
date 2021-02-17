@@ -14,6 +14,9 @@ import { ZweiteTableComponent } from './zweite-table/zweite-table.component';
 import { HobbyTableComponent } from './hobby-table/hobby-table.component';
 import { LibraryTableComponent } from './library/library-table/library-table.component';
 import { LibraryHomeComponent } from './library/library-home/library-home.component';
+import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
+import { DashboardComponent } from './submissions/dashboard/dashboard.component';
 
 const routes: Routes = [
 	{
@@ -69,6 +72,15 @@ const routes: Routes = [
 	},
 	{
 		path: 'info', component: ContentsTableComponent
+	},
+	{
+		path: 'login', component: LoginComponent
+	},
+	{
+		path: 'register', component: RegisterComponent
+	},
+	{
+		path: 'dashboard', component: DashboardComponent
 	},
 	{
 		path: '**', redirectTo: 'info'

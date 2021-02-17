@@ -4,6 +4,7 @@
 .navbar-fixed {
 	position: fixed;
 	width: 100vw;
+	z-index: 100;
 }
 body {
 	padding-top: 70px;
