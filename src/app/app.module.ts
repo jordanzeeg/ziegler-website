@@ -25,9 +25,7 @@ import { LibraryHomeComponent } from './library/library-home/library-home.compon
 import { LibraryTableComponent } from './library/library-table/library-table.component';
 import { FutureProgramsComponent } from './library/future-programs/future-programs.component';
 import { FooterComponent } from './footer/footer.component';
-import { LoginComponent } from './login/login.component';
 import { DashboardComponent } from './submissions/dashboard/dashboard.component';
-import { RegisterComponent } from './register/register.component';
 
 @NgModule({
   declarations: [
@@ -53,9 +51,7 @@ import { RegisterComponent } from './register/register.component';
     LibraryHomeComponent,
     FutureProgramsComponent,
     FooterComponent,
-    LoginComponent,
-    DashboardComponent,
-    RegisterComponent
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
