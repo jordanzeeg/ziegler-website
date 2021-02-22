@@ -1,6 +1,5 @@
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AboutPageComponent } from './about-page/about-page.component';
@@ -54,9 +53,9 @@ import { DashboardComponent } from './submissions/dashboard/dashboard.component'
     DashboardComponent
   ],
   imports: [
-    BrowserModule,
     AppRoutingModule,
-    NgbModule
+    NgbModule,
+    BrowserModule
   ],
   providers: [],
   bootstrap: [AppComponent]
