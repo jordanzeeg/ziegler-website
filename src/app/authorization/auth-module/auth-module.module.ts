@@ -7,9 +7,17 @@ import { AngularFirestoreModule } from'@angular/fire/firestore';
 
 import { environment } from 'src/environments/environment';
 import { BrowserModule } from '@angular/platform-browser';
+import { RegisterComponent } from '../register/register.component';
+import { LoginComponent } from '../login/login.component';
+import { DashboardComponent } from 'src/app/submissions/dashboard/dashboard.component';
 
 @NgModule({
-  declarations: [],
+  declarations: [
+    RegisterComponent,
+    LoginComponent,
+    DashboardComponent
+
+  ],
   imports: [
     CommonModule,
     FormsModule,

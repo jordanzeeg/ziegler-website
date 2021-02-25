@@ -24,7 +24,9 @@ import { LibraryHomeComponent } from './library/library-home/library-home.compon
 import { LibraryTableComponent } from './library/library-table/library-table.component';
 import { FutureProgramsComponent } from './library/future-programs/future-programs.component';
 import { FooterComponent } from './footer/footer.component';
-import { DashboardComponent } from './submissions/dashboard/dashboard.component';
+import { AngularFireModule } from '@angular/fire';
+import { environment } from 'src/environments/environment';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -49,13 +51,14 @@ import { DashboardComponent } from './submissions/dashboard/dashboard.component'
     SoapboxComponent,
     LibraryHomeComponent,
     FutureProgramsComponent,
-    FooterComponent,
-    DashboardComponent
+    FooterComponent
   ],
   imports: [
     AppRoutingModule,
     NgbModule,
-    BrowserModule
+    BrowserModule,
+    FormsModule,
+    AngularFireModule.initializeApp(environment.firebase),
   ],
   providers: [],
   bootstrap: [AppComponent]

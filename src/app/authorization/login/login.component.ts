@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { AuthorizeService } from '../authorize.service';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -7,9 +7,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
 
-  constructor() { }
+  authError: any;
 
-  ngOnInit(): void {
+  constructor(private auth: AuthorizeService) { }
+
+  ngOnInit() {
+    this.auth.eventAuthError$.subscribe( data => {
+      this.authError = data;
+    });
+  }
+
+  login(frm) {
+    this.auth.login(frm.value.email, frm.value.password);
   }
 
 }
