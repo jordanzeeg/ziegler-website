@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthorizeService } from '../authorize.service';
+import { FormsModule } from '@angular/forms';
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
