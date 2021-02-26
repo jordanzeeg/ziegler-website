@@ -7,7 +7,10 @@ import { FormsModule } from '@angular/forms';
   styleUrls: ['./register.component.scss']
 })
 export class RegisterComponent implements OnInit {
-
+  
+  email="";
+  password="";
+  message = '';
   authError: any;
 
   constructor(public auth: AuthorizeService) { }
@@ -17,7 +20,7 @@ export class RegisterComponent implements OnInit {
       this.authError = data;
     })
   }
-  createUser(frm) {
-    this.auth.createUser(frm.value);
+  createUser(email: string, password:string) {
+    this.auth.createUser(email,password);
   }
 }

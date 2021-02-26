@@ -40,9 +40,9 @@ export class AuthorizeService {
       })
   }
 
-  createUser(user) {
-    console.log(user);
-    return this.afAuth.createUserWithEmailAndPassword( user.email, user.password)
+  createUser(email: string,password: string) {
+    console.log();
+    return this.afAuth.createUserWithEmailAndPassword( email,password)
       .then( user => {
         this.authState = user;
       })
