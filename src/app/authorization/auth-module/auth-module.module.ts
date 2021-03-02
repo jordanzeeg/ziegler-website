@@ -24,8 +24,7 @@ import { DashboardComponent } from 'src/app/submissions/dashboard/dashboard.comp
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule,
     AngularFirestoreModule,
-    BrowserModule,
-    NgModule
+    BrowserModule
   ]
 })
 export class AuthModuleModule { }

@@ -27,6 +27,7 @@ import { FooterComponent } from './footer/footer.component';
 import { AngularFireModule } from '@angular/fire';
 import { environment } from 'src/environments/environment';
 import { FormsModule } from '@angular/forms';
+import { AuthModuleModule } from './authorization/auth-module/auth-module.module';
 
 @NgModule({
   declarations: [
@@ -58,6 +59,7 @@ import { FormsModule } from '@angular/forms';
     NgbModule,
     BrowserModule,
     FormsModule,
+    AuthModuleModule,
     AngularFireModule.initializeApp(environment.firebase),
   ],
   providers: [],
