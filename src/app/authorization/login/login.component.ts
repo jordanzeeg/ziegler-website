@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { AuthorizeService } from '../authorize.service';
 @Component({
   selector: 'app-login',
@@ -7,18 +8,55 @@ import { AuthorizeService } from '../authorize.service';
 })
 export class LoginComponent implements OnInit {
 
-  authError: any;
+  email = "";
+  password = "";
+  errorMessage = ''; // validation error handle
+  error: { name: string, message: string } = { name: '', message: '' }; // for firbase error handle
 
-  constructor(private auth: AuthorizeService) { }
+  constructor(private authservice: AuthorizeService, private router: Router) { }
 
-  ngOnInit() {
-    this.auth.eventAuthError$.subscribe( data => {
-      this.authError = data;
-    });
+  ngOnInit(): void {
   }
 
-  login(frm) {
-    this.auth.login(frm.value.email, frm.value.password);
+  clearErrorMessage() {
+    this.errorMessage = '';
+    this.error = { name: '', message: '' };
   }
+
+  login()
+  {
+    this.clearErrorMessage();
+    if (this.validateForm(this.email, this.password)) {
+      this.authservice.login(this.email, this.password)
+        .then(() => {
+         this.router.navigate(['/dashboard'])
+        }).catch(_error => {
+          this.error = _error
+          this.router.navigate(['/login'])
+        })
+    }
+  }
+
+  validateForm(email:string, password:string) {
+    if (email.length === 0) {
+      this.errorMessage = "please enter email id";
+      return false;
+    }
+
+    if (password.length === 0) {
+      this.errorMessage = "please enter password";
+      return false;
+    }
+
+    if (password.length < 6) {
+      this.errorMessage = "password should be at least 6 char";
+      return false;
+    }
+
+    this.errorMessage = '';
+    return true;
+
+  }
+
 
 }

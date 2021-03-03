@@ -76,7 +76,7 @@ export class SnakeGameComponent implements OnInit {
 	  			ctx.fillRect(this.tail[i].x, this.tail[i].y,this.scale,this.scale);
 	  		}
 	  	}
-	  	eat(food) {
+	  	eat(food: Food) {
 	  		var xs = food.x - this.x;
 	  		var ys = food.y - this.y;
 	  		var total = xs * xs + ys * ys;
@@ -116,7 +116,7 @@ export class SnakeGameComponent implements OnInit {
 	  class Tail {
 	  	x:number;
 	  	y:number;
-	  	constructor(a,b){
+	  	constructor(a:number,b:number){
 	  		this.x = a;
 	  		this.y = b;
 	  	}
@@ -146,7 +146,7 @@ export class SnakeGameComponent implements OnInit {
 		  }
 	  },10);
 	  canvas.onkeydown = keyboardInput;
-	  function keyboardInput(e) {
+	  function keyboardInput(e:any) {
 	  	console.log(e.code); //verify key is recorded
 	  	if(e.code == 'KeyD'|| e.code == 'ArrowRight')
 	  	{

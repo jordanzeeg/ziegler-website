@@ -35,7 +35,7 @@ export class AuthorizeService {
       .then(user => {
         if(user) {
           this.authState = user
-          this.router.navigate(['/home']);
+          this.router.navigate(['/dashboard']);
         }
       })
   }
@@ -45,6 +45,7 @@ export class AuthorizeService {
     return this.afAuth.createUserWithEmailAndPassword( email,password)
       .then( user => {
         this.authState = user;
+        this.router.navigate(['\dashboard']);
       })
       .catch( error => {
         this.eventAuthError.next(error);
@@ -53,6 +54,8 @@ export class AuthorizeService {
 
   logout() {
     this.router.navigate(['/login']);
+    this.authState = null;
     return this.afAuth.signOut();
+    
   }
 }

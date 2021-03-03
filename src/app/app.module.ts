@@ -10,7 +10,7 @@ import { HobbiesPageComponent } from './hobbies-page/hobbies-page.component';
 import { MspsComponent } from './msps/msps.component';
 import { ProjectsPageComponent } from './projects-page/projects-page.component';
 import { RsnComponent } from './rsn/rsn.component';
-import { SnakeGameComponent } from './snake-game/snake-game.component';
+
 import { TsmComponent } from './tsm/tsm.component';
 import { ZweiteComponent } from './zweite/zweite.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
@@ -28,6 +28,9 @@ import { AngularFireModule } from '@angular/fire';
 import { environment } from 'src/environments/environment';
 import { FormsModule } from '@angular/forms';
 import { AuthModuleModule } from './authorization/auth-module/auth-module.module';
+import { TictactoeSquareComponent } from './games/tic-tac-toe/tictactoe-square/tictactoe-square.component';
+import { BoardComponent } from './games/tic-tac-toe/board/board.component';
+import { SnakeGameComponent } from './games/snake-game/snake-game.component';
 
 @NgModule({
   declarations: [
@@ -52,7 +55,9 @@ import { AuthModuleModule } from './authorization/auth-module/auth-module.module
     SoapboxComponent,
     LibraryHomeComponent,
     FutureProgramsComponent,
-    FooterComponent
+    FooterComponent,
+    TictactoeSquareComponent,
+    BoardComponent
   ],
   imports: [
     AppRoutingModule,
