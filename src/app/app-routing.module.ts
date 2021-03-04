@@ -4,19 +4,20 @@ import { AboutPageComponent } from './about-page/about-page.component';
 import { HobbiesPageComponent } from './hobbies-page/hobbies-page.component';
 import { ProjectsPageComponent } from './projects-page/projects-page.component';
 import { ZweiteComponent } from './zweite/zweite.component';
-import { TsmComponent } from './tsm/tsm.component';
-import { RsnComponent } from './rsn/rsn.component';
-import { MspsComponent } from './msps/msps.component';
-import { CdpComponent } from './cdp/cdp.component';
 import { ContentsTableComponent } from './contents-table/contents-table.component';
 import { ExpenseReimbursementSystemComponent } from './expense-reimbursement-system/expense-reimbursement-system.component';
-import { ZweiteTableComponent } from './zweite-table/zweite-table.component';
 import { HobbyTableComponent } from './hobby-table/hobby-table.component';
 import { LibraryTableComponent } from './library/library-table/library-table.component';
 import { LibraryHomeComponent } from './library/library-home/library-home.component';
 import { DashboardComponent } from './submissions/dashboard/dashboard.component';
 import { LoginComponent } from './authorization/login/login.component';
 import { RegisterComponent } from './authorization/register/register.component';
+import { BoardComponent } from './games/tic-tac-toe/board/board.component';
+import { CdpComponent } from './cdp/cdp.component';
+import { MspsComponent } from './msps/msps.component';
+import { RsnComponent } from './rsn/rsn.component';
+import { TsmComponent } from './tsm/tsm.component';
+import { ZweiteTableComponent } from './zweite-table/zweite-table.component';
 
 const routes: Routes = [
 	{
@@ -81,6 +82,9 @@ const routes: Routes = [
 	},
 	{
 		path: 'register', component: RegisterComponent
+	},
+	{
+		path: 'tic-tac-toe', component: BoardComponent
 	},
 	{
 		path: '**', redirectTo: 'info'
