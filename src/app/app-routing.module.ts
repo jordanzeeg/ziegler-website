@@ -18,6 +18,7 @@ import { MspsComponent } from './msps/msps.component';
 import { RsnComponent } from './rsn/rsn.component';
 import { TsmComponent } from './tsm/tsm.component';
 import { ZweiteTableComponent } from './zweite-table/zweite-table.component';
+import { WaechterinGuard } from './waechterin.guard';
 
 const routes: Routes = [
 	{
@@ -75,7 +76,7 @@ const routes: Routes = [
 		path: 'info', component: ContentsTableComponent
 	},
 	{
-		path: 'dashboard', component: DashboardComponent
+		path: 'dashboard', component: DashboardComponent, canActivate: [WaechterinGuard]
 	},
 	{
 		path: 'login', component: LoginComponent

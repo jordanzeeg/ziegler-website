@@ -30,8 +30,8 @@ export class LoginComponent implements OnInit {
       this.authservice.login(this.email, this.password)
         .then(() => {
          this.router.navigate(['/dashboard'])
-        }).catch(_error => {
-          this.error = _error
+        }).catch(error => {
+          this.error = error
           this.router.navigate(['/login'])
         })
     }

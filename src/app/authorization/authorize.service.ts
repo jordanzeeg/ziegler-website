@@ -24,7 +24,11 @@ export class AuthorizeService {
      }
 
   getUserState() {
-    return this.afAuth.authState;
+    if(this.afAuth.authState)
+    {
+      return this.afAuth.authState;
+    }
+    else return null;
   }
 
   login( email: string, password: string) {
