@@ -19,6 +19,7 @@ import { RsnComponent } from './rsn/rsn.component';
 import { TsmComponent } from './tsm/tsm.component';
 import { ZweiteTableComponent } from './zweite-table/zweite-table.component';
 import { WaechterinGuard } from './waechterin.guard';
+import { ProgramsComponent } from './programs/programs.component';
 
 const routes: Routes = [
 	{
@@ -86,6 +87,9 @@ const routes: Routes = [
 	},
 	{
 		path: 'tic-tac-toe', component: BoardComponent
+	},
+	{
+		path: 'programs', component: ProgramsComponent
 	},
 	{
 		path: '**', redirectTo: 'info'

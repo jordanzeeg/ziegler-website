@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Item } from '../models/item';
+import { FsItemService } from '../service/fs-item.service';
 
 @Component({
   selector: 'app-programs',
@@ -7,9 +9,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProgramsComponent implements OnInit {
 
-  constructor() { }
+  items:Item[];
+  constructor(public itemService: FsItemService) { }
 
   ngOnInit(): void {
+    //initializations and fetching things on load
+    this.itemService.getItems().subscribe(actionArray => {
+      
+      this.items = actionArray.map(item => {
+        return item as Item;
+      })
+    });
   }
 
 }

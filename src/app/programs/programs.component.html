@@ -8,8 +8,9 @@
             left side, put a table here. generated dynamically through databinding, includes a listing for each page of the program. 
         </div>
         <div class = "col">
-            right side, should be styled to actually take up most of the page. 
-            this side should have the actual pages of the program. each selection on the left side should "load" a new page.
+            <div *ngFor="let item of items">
+                <h3>{{item | json }} </h3>
+            </div>
         </div>
     </div>
 </div>

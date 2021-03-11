@@ -32,6 +32,9 @@ import { TsmComponent } from './tsm/tsm.component';
 import { ZweiteTableComponent } from './zweite-table/zweite-table.component';
 import { SnippetComponent } from './snippets/snippet/snippet.component';
 import { ChallengeComponent } from './challenges/challenge/challenge.component';
+import { AuthorizeService } from './authorization/authorize.service';
+import { FsItemService } from './service/fs-item.service';
+import { ProgramsComponent } from './programs/programs.component';
 
 
 @NgModule({
@@ -61,7 +64,8 @@ import { ChallengeComponent } from './challenges/challenge/challenge.component';
     TictactoeSquareComponent,
     BoardComponent,
     SnippetComponent,
-    ChallengeComponent
+    ChallengeComponent,
+    ProgramsComponent
   ],
   imports: [
     AppRoutingModule,
@@ -71,7 +75,7 @@ import { ChallengeComponent } from './challenges/challenge/challenge.component';
     AuthModuleModule,
     AngularFireModule.initializeApp(environment.firebase),
   ],
-  providers: [],
+  providers: [AuthorizeService, FsItemService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
