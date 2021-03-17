@@ -20,6 +20,7 @@ import { TsmComponent } from './tsm/tsm.component';
 import { ZweiteTableComponent } from './zweite-table/zweite-table.component';
 import { WaechterinGuard } from './waechterin.guard';
 import { ProgramsComponent } from './programs/programs.component';
+import { SoapboxFormComponent } from './submissions/soapbox-form/soapbox-form.component';
 
 const routes: Routes = [
 	{
@@ -78,6 +79,10 @@ const routes: Routes = [
 	},
 	{
 		path: 'dashboard', component: DashboardComponent, canActivate: [WaechterinGuard]
+		
+	},
+	{
+		path: 'dashboard/soapbox-form', component: SoapboxFormComponent, canActivate: [WaechterinGuard]
 	},
 	{
 		path: 'login', component: LoginComponent

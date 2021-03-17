@@ -35,6 +35,9 @@ import { ChallengeComponent } from './challenges/challenge/challenge.component';
 import { AuthorizeService } from './authorization/authorize.service';
 import { FsItemService } from './service/fs-item.service';
 import { ProgramsComponent } from './programs/programs.component';
+import { SoapboxFormComponent } from './submissions/soapbox-form/soapbox-form.component';
+import { ProgramFormComponent } from './submissions/program-form/program-form.component';
+import { ChallengeFormComponent } from './submissions/challenge-form/challenge-form.component';
 
 
 @NgModule({
@@ -65,7 +68,10 @@ import { ProgramsComponent } from './programs/programs.component';
     BoardComponent,
     SnippetComponent,
     ChallengeComponent,
-    ProgramsComponent
+    ProgramsComponent,
+    SoapboxFormComponent,
+    ProgramFormComponent,
+    ChallengeFormComponent
   ],
   imports: [
     AppRoutingModule,
