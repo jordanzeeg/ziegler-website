@@ -11,7 +11,7 @@ export class FsItemService {
   error:any;
   itemsCollection: AngularFirestoreCollection<Item> | undefined;
   items: Observable<Item[]>; //change to item[]
-
+  createdTime: Date = new Date();
   constructor(public afs: AngularFirestore) {
     this.items = this.afs.collection('items').valueChanges();
    }
@@ -32,10 +32,12 @@ export class FsItemService {
    deleteItems(Items: Item[]) {
      //TODO: implement this
    }
-   soapboxSubmit(title:string, description:string) {
+   soapboxSubmit(title:string, description:string, createdBy:string) {
     return this.afs.collection('soapboxes').add({
       Title: title,
-      Description: description
+      Description: description,
+      CreatedBy: createdBy,
+      CreatedTime: this.createdTime
     })
     .then((docRef) => {
       console.log("Document written with ID: ", docRef.id);
@@ -45,14 +47,14 @@ export class FsItemService {
       this.error = error;
     });
    }
-   challengeSubmit(title: string, question:string, code: string, programmingLanguage:string, createdBy:string, createdTime:Date){
+   challengeSubmit(title: string, question:string, code: string, programmingLanguage:string, createdBy:string){
     return this.afs.collection('challenges').add({
       Title: title,
       Question: question,
       Code: code,
       ProgrammingLanguage: programmingLanguage,
       CreatedBy: createdBy,
-      CreatedTime: createdTime
+      CreatedTime: this.createdTime
     })
     .then((docRef)=> {
       console.log("Document written ith ID: ", docRef.id);
