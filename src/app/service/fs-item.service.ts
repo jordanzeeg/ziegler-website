@@ -1,7 +1,9 @@
+import { stringify } from '@angular/compiler/src/util';
 import { Injectable } from '@angular/core';
 import { AngularFirestore, AngularFirestoreCollection, fromDocRef } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
 import { Item } from '../models/item';
+import { ApicallerService } from './apicaller.service';
 
 @Injectable({
   providedIn: 'root'
@@ -12,7 +14,7 @@ export class FsItemService {
   itemsCollection: AngularFirestoreCollection<Item> | undefined;
   items: Observable<Item[]>; //change to item[]
   createdTime: Date = new Date();
-  constructor(public afs: AngularFirestore) {
+  constructor(public afs: AngularFirestore, private apiserver: ApicallerService) {
     this.items = this.afs.collection('items').valueChanges();
    }
    getItems() {
@@ -48,10 +50,15 @@ export class FsItemService {
     });
    }
    challengeSubmit(title: string, question:string, code: string, programmingLanguage:string, createdBy:string){
+    
+    //TODO: api call for code beautifying
+    //GET or POST to http://hilite.me/api with these parameters:
+    let prettyCode = this.apiserver.getPrettyCode(code,programmingLanguage);
+    
     return this.afs.collection('challenges').add({
       Title: title,
       Question: question,
-      Code: code,
+      Code: prettyCode,
       ProgrammingLanguage: programmingLanguage,
       CreatedBy: createdBy,
       CreatedTime: this.createdTime
