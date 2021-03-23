@@ -26,7 +26,7 @@ export class SoapboxFormComponent implements OnInit {
   soapboxSubmit() {
     this.clearErrorMessage();
     if (this.validateForm(this.title, this.content)) {
-      this.itemservice.soapboxSubmit(this.title, this.content,this.createdBy,this.createdTime)
+      this.itemservice.soapboxSubmit(this.title, this.content,this.createdBy)
         .then(() => {
           this.message = "you have submitted your page to the soapbox"
           //this.router.navigate(['/userinfo'])
