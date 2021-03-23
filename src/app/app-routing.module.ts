@@ -21,6 +21,7 @@ import { ZweiteTableComponent } from './zweite-table/zweite-table.component';
 import { WaechterinGuard } from './waechterin.guard';
 import { ProgramsComponent } from './programs/programs.component';
 import { SoapboxFormComponent } from './submissions/soapbox-form/soapbox-form.component';
+import { SoapboxComponent } from './soapbox/soapbox.component';
 
 const routes: Routes = [
 	{
@@ -91,7 +92,10 @@ const routes: Routes = [
 		path: 'register', component: RegisterComponent
 	},
 	{
-		path: 'tic-tac-toe', component: BoardComponent
+		path: 'games/tic-tac-toe', component: BoardComponent
+	},
+	{
+		path: 'soapbox',component: SoapboxComponent
 	},
 	{
 		path: 'programs', component: ProgramsComponent

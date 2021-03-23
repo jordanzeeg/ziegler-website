@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { Soapbox } from '../models/soapbox';
+import { FsItemService } from '../service/fs-item.service';
 
 @Component({
   selector: 'app-soapbox',
@@ -7,9 +10,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SoapboxComponent implements OnInit {
 
-  constructor() { }
+  soapboxes:Soapbox[];
 
-  ngOnInit(): void {
+  constructor(public itemService:FsItemService) {
+    
+   }
+
+   ngOnInit(): void {
+    //initializations and fetching things on load
+    this.itemService.getSoapboxes().subscribe(actionArray => {
+      
+      this.soapboxes = actionArray.map(soapbox => {
+        return soapbox as Soapbox;
+      })
+    });
   }
 
 }

@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { AngularFirestore, AngularFirestoreCollection, fromDocRef } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
 import { Item } from '../models/item';
+import { Soapbox } from '../models/soapbox';
 import { ApicallerService } from './apicaller.service';
 
 @Injectable({
@@ -13,12 +14,16 @@ export class FsItemService {
   error:any;
   itemsCollection: AngularFirestoreCollection<Item> | undefined;
   items: Observable<Item[]>; //change to item[]
+
   createdTime: Date = new Date();
   constructor(public afs: AngularFirestore, private apiserver: ApicallerService) {
     this.items = this.afs.collection('items').valueChanges();
    }
    getItems() {
      return this.items;
+   }
+   getSoapboxes() {
+     return this.afs.collection('soapboxes').valueChanges();
    }
    addItems(Items: Item[]){ //written from firebase docs (although I'm adding array of items when they only add single item)
      this.afs.collection('items').add(Items).then((fromDocRef) => {

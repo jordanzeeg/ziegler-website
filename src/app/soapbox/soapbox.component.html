@@ -1,3 +1,15 @@
-<div class ="jumbotron">This is the Start of the Soapbox</div>
+<div class ="jumbotron">
+    <h1>This is the Start of the Soapbox</h1>
+</div>
 
-<div class = "jumbotron"> databinding goes here</div>
+<div class = "jumbotron"> 
+<div *ngFor="let soapbox of soapboxes">
+    <div>
+        <h2>{{soapbox.title}}</h2>
+    </div>
+    <div>
+        {{soapbox.description}}
+    </div>
+    <div class= "container">Created by: {{soapbox.createdBy}} On: {{soapbox.createdTime}}</div>
+    
+</div>
