@@ -2,7 +2,7 @@
     <div class="row justify-content-center p-4">
       
         
-        <div class="col-md-6">
+        <div class="">
             <form (ngSubmit)="soapboxSubmit()">
             <h3>Submit your soapbox writings</h3>
             <div class="form-group p-2">
@@ -12,7 +12,7 @@
                 <input type="text" name="createdBy" class="form-control" [(ngModel)]="createdBy" placeholder="Enter writer of submission" required>
             </div>
             <div class="form-group p-2">
-                <textarea name="content" class="form-control" rows= "1000" [(ngModel)]="content" placeholder="Enter text for submission"
+                <textarea name="content" class="form-control width-check" rows="15" [(ngModel)]="content" placeholder="Enter text for submission"
                     required></textarea>
             </div>
             <div class="form-group p-2">
