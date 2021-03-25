@@ -1,15 +1,19 @@
-<div class ="jumbotron">
+<div class ="global-card center-align">
+    <br>
     <h1>This is the Start of the Soapbox</h1>
+    <br>
 </div>
 
-<div class = "jumbotron"> 
+
 <div *ngFor="let soapbox of soapboxes">
-    <div>
-        <h2>{{soapbox.title}}</h2>
-    </div>
-    <div>
-        {{soapbox.description}}
-    </div>
-    <div class= "container">Created by: {{soapbox.createdBy}} On: {{soapbox.createdTime}}</div>
+    <div class = "container global-card"> 
+        <div class = "container">
+            <h2 class = "center-align">{{soapbox.title}}</h2>
+        </div>
+        <div class = "container center-align">
+            {{soapbox.description}}
+        </div>
+        <div class= "container" style="text-align: right;">Created by: {{soapbox.createdBy}}
+            <br> On: {{soapbox.createdTime}}</div>
     
 </div>

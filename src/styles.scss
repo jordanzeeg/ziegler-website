@@ -2,3 +2,97 @@
 
 /* Importing Bootstrap SCSS file. */
 @import '~bootstrap/scss/bootstrap';
+
+
+/* Adding global styles for cards */
+.backzone {
+	width: 70vw;
+	height: 100vh;
+	margin: auto;
+	opacity: .8;
+}
+
+.global-card {
+	border-radius: 1.5em;
+    width: 75%;
+    opacity: .8;
+	box-shadow:  8px 8px 15px 7px rgba(0, 0, 0, 0.61), 0 6px 20px 0 rgba(0, 0, 0, 0.61);
+	color: white;
+	background-color: darkslategrey;
+	margin: auto;
+	margin-top: 5vw;
+    padding: 1vh;
+}
+
+
+.content-table-card {
+    width: 20vw;
+	box-shadow:  8px 8px 15px 7px rgba(0, 0, 0, 0.61), 0 6px 20px 0 rgba(0, 0, 0, 0.61);
+	background-color: darkslategrey;
+	color: white;
+	border-radius: 1.5em;
+	font-size: 1vw;
+}
+
+.content-table-erste {
+    position: relative;
+	top: 1vh;
+	left:2vw;
+	animation: globalErsteKey 4s infinite;
+	animation-direction: alternate;
+}
+
+.content-table-zweite {
+    position: relative;
+	top: 5vh;
+	left: 25vw;
+	animation: globalZweiteKey 1.5s infinite;
+	animation-direction: alternate-reverse;
+}
+
+.content-table-dritte {
+    position: relative;
+	top: -25vh;
+	left: 47vw;
+	animation: globalZweiteKey 3s infinite;
+	animation-direction: alternate-reverse;
+}
+
+.content-table-vierte {
+    position: relative;
+	top:-50vh;
+	left:35vw;
+	animation: globalVierteKey 4s infinite;
+	animation-direction: alternate-reverse;
+}
+
+.content-table-funfte {
+    position: relative;
+	top:-80vh;
+	left:0vw;
+	animation: globalZweiteKey 4s infinite;
+	animation-direction: alternate-reverse;
+}
+
+/* has it move in a square counter clockwise below initial position*/
+@keyframes globalErsteKey {  
+	0% {transform: translate(0vw,0vh);}
+	25% { transform: translate(0,20vh); }
+	50% { transform: translate(20vw,20vh); }
+	75% { transform: translate(20vw,0vh); }
+	100% {transform: translate(0vw,0vh);}
+}
+
+/* has it move in a a line above initial position */
+@keyframes globalZweiteKey {
+	0% {transform: translate(0vw,0vh);}
+	50% { transform: translate(0,-30vh); }
+	100% {transform: translate(0vw,0vh);}
+}
+
+/* has it move in a line to the right of initial position */
+@keyframes globalVierteKey {
+	0% {transform: translate(0vw,0vh);}
+	50% { transform: translate(-30vw,0vh); }
+	100% {transform: translate(0vw,0vh);}
+}

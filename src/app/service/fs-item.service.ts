@@ -16,7 +16,7 @@ export class FsItemService {
   items: Observable<Item[]>; //change to item[]
 
   createdTime: Date = new Date();
-  constructor(public afs: AngularFirestore, private apiserver: ApicallerService) {
+  constructor(public afs: AngularFirestore, private apiservite: ApicallerService) {
     this.items = this.afs.collection('items').valueChanges();
    }
    getItems() {
@@ -41,10 +41,10 @@ export class FsItemService {
    }
    soapboxSubmit(title:string, description:string, createdBy:string) {
     return this.afs.collection('soapboxes').add({
-      Title: title,
-      Description: description,
-      CreatedBy: createdBy,
-      CreatedTime: this.createdTime
+      title: title,
+      tescription: description,
+      createdBy: createdBy,
+      createdTime: this.createdTime.toString()
     })
     .then((docRef) => {
       console.log("Document written with ID: ", docRef.id);
@@ -54,27 +54,32 @@ export class FsItemService {
       this.error = error;
     });
    }
-   challengeSubmit(title: string, question:string, code: string, programmingLanguage:string, createdBy:string){
+   challengeSubmit(title1: string, question1:string, code1: string, programmingLanguage1:string, createdBy1:string){
     
     //TODO: api call for code beautifying
     //GET or POST to http://hilite.me/api with these parameters:
-    let prettyCode = this.apiserver.getPrettyCode(code,programmingLanguage);
-    
-    return this.afs.collection('challenges').add({
-      Title: title,
-      Question: question,
-      Code: prettyCode,
-      ProgrammingLanguage: programmingLanguage,
-      CreatedBy: createdBy,
-      CreatedTime: this.createdTime
+    let prettyCode = this.apiservite.getPrettyCode(code1,programmingLanguage1); //CORS Error generated here, 
+                                                      //probably need to actually launch my own per github description if i want it
+    console.log(prettyCode);
+    return this.afs.collection('coding-challenges').add({
+      title: title1,
+      question: question1,
+      code: code1,
+      codingLanguage: programmingLanguage1.toString(),
+      createdBy: createdBy1,
+      createdTime: this.createdTime.toString()
     })
     .then((docRef)=> {
-      console.log("Document written ith ID: ", docRef.id);
+      console.log("Document written with ID: ", docRef.id);
     })
     .catch((error)=> {
       console.error("Error adding document: ", error);
       this.error = error;
     });
+   }
+
+   getChallenges(){
+     return this.afs.collection("coding-challenges").valueChanges();
    }
 }
 

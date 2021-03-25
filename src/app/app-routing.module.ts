@@ -22,6 +22,9 @@ import { WaechterinGuard } from './waechterin.guard';
 import { ProgramsComponent } from './programs/programs.component';
 import { SoapboxFormComponent } from './submissions/soapbox-form/soapbox-form.component';
 import { SoapboxComponent } from './soapbox/soapbox.component';
+import { ChallengeFormComponent } from './submissions/challenge-form/challenge-form.component';
+import { FormcontrolComponent } from './submissions/formcontrol/formcontrol.component';
+import { ChallengesComponent } from './challenges/challenges.component';
 
 const routes: Routes = [
 	{
@@ -72,18 +75,32 @@ const routes: Routes = [
 		[
 			{
 				path: 'table', component: LibraryTableComponent
-			}
+			},
+			{
+				path: 'challenges', component: ChallengesComponent
+			},
 		]
 	},
 	{
 		path: 'info', component: ContentsTableComponent
 	},
 	{
-		path: 'dashboard', component: DashboardComponent, canActivate: [WaechterinGuard]
-		
-	},
-	{
-		path: 'dashboard/soapbox-form', component: SoapboxFormComponent, canActivate: [WaechterinGuard]
+		path: 'formz', component: FormcontrolComponent, canActivate: [WaechterinGuard],
+		children: 
+		[
+			{
+				path: 'dashboard', component: DashboardComponent, canActivate: [WaechterinGuard]
+			},
+			{
+				path: 'soapbox-form', component: SoapboxFormComponent, canActivate: [WaechterinGuard]
+			},
+			{
+				path: 'challenge-form', component: ChallengeFormComponent, canActivate: [WaechterinGuard]
+			},
+			{
+				path: '**', redirectTo: 'dashboard'
+			}
+		]
 	},
 	{
 		path: 'login', component: LoginComponent

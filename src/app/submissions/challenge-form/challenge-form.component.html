@@ -1,1 +1,44 @@
-<p>challenge-form works!</p>
+<div class="container">
+    <div class="row justify-content-center p-4">
+      
+        
+        <div class="">
+            <form (ngSubmit)="challengeSubmit()">
+            <h3>Submit your challenge programs</h3>
+            <div class="form-group p-2">
+                <input type="text" name="title" class="form-control" [(ngModel)]="title" placeholder="Enter title for submission" required>
+            </div>
+            <div class = "form-group p-2">
+                <input type="text" name="question" class="form-control" [(ngModel)]="question" placeholder="what is the question being solved?" required>
+            </div>
+            <div class="form-group p-2">
+                <input type="text" name="createdBy" class="form-control" [(ngModel)]="createdBy" placeholder="Enter writer of submission" required>
+            </div>
+            <div class="form-group p-2"><div>choose the programming language you wrote it in</div>
+                <select class="form-control" name="programmingLanguage" [(ngModel)]="programmingLanguage" required>
+                    <option *ngFor="let language of programmingLanguages">{{language}}</option>
+                </select>
+            </div>
+            <div class="form-group p-2">
+                <textarea name="content" class="form-control width-check" rows="15" [(ngModel)]="content" placeholder="Enter code for submission"
+                    required></textarea>
+            </div>
+            <div class="form-group p-2">
+                <button type="submit" class="btn btn-primary">Submit</button>
+                <div class=""><a routerLink="/login">Back To Login</a></div>
+            </div>
+            </form>
+            <div class="form-group">
+                <p *ngIf="errorMessage.length > 0" class="text-danger">
+                    {{errorMessage}}</p>
+                
+                <p *ngIf="error.message.length > 0" class="text-danger">
+                    {{error.message}} </p>
+
+                    <p *ngIf="message.length > 0" class="text-info">
+                        {{message}} </p>
+            </div>
+        </div>
+
+    </div>
+</div>

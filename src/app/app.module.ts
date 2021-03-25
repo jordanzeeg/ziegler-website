@@ -39,6 +39,8 @@ import { SoapboxFormComponent } from './submissions/soapbox-form/soapbox-form.co
 import { ProgramFormComponent } from './submissions/program-form/program-form.component';
 import { ChallengeFormComponent } from './submissions/challenge-form/challenge-form.component';
 import { HttpClientModule } from '@angular/common/http';
+import { FormcontrolComponent } from './submissions/formcontrol/formcontrol.component';
+import { ChallengesComponent } from './challenges/challenges.component';
 
 
 @NgModule({
@@ -72,7 +74,9 @@ import { HttpClientModule } from '@angular/common/http';
     ProgramsComponent,
     SoapboxFormComponent,
     ProgramFormComponent,
-    ChallengeFormComponent
+    ChallengeFormComponent,
+    FormcontrolComponent,
+    ChallengesComponent
   ],
   imports: [
     AppRoutingModule,

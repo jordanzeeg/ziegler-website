@@ -1,3 +1,24 @@
-<div class= "jumbotron">
-    Use this component to dynamically generate the challenge components with databinding.
-</div>>
+<div class= "container"> 
+    <div class= jumbotron>Problem description databinding goes here</div>
+    
+    <div class = "global-card">
+        <div class = "row" *ngFor="let challenge of challenges">
+            <div class = "col">
+                <h4>{{challenge.title}}</h4>
+                <p>{{challenge.question}}</p>
+                <p>{{challenge.codingLanguage}}</p>
+            </div>
+            <div class = "col"> 
+               <!-- <div [innerHTML]="challenge.code">
+
+                </div> -->
+            </div>
+            <div class= "container" style="text-align: right;">Created by: {{challenge.createdBy}} 
+                <br>On: {{challenge.createdTime}}</div>
+        </div>
+    </div>
+</div>
+
+
+    
+
