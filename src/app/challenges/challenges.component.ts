@@ -19,6 +19,7 @@ export class ChallengesComponent implements OnInit {
    this.itemService.getChallenges().subscribe(actionArray => {
      
      this.challenges = actionArray.map(challenge => {
+       
        return challenge as Challenge;
      })
    });

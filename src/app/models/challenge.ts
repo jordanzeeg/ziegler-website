@@ -3,6 +3,6 @@ export interface Challenge {
     question?:string;
     createdBy?:string;
     codingLanguage?:string;
-    code?:string;
+    code?:any;
     createdTime?:string;
 }
