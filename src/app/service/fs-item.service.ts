@@ -13,7 +13,7 @@ export class FsItemService {
 
   error:any;
   itemsCollection: AngularFirestoreCollection<Item> | undefined;
-  items: Observable<Item[]>; //change to item[]
+  items = new Observable<Item[]>(); //change to item[]
 
   createdTime: Date = new Date();
   constructor(public afs: AngularFirestore, private apiservite: ApicallerService) {
