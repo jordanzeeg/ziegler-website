@@ -25,6 +25,7 @@ import { SoapboxComponent } from './soapbox/soapbox.component';
 import { ChallengeFormComponent } from './submissions/challenge-form/challenge-form.component';
 import { FormcontrolComponent } from './submissions/formcontrol/formcontrol.component';
 import { ChallengesComponent } from './challenges/challenges.component';
+import { ChallengeTableComponent } from './challenges/challenge-table/challenge-table.component';
 
 const routes: Routes = [
 	{
@@ -77,7 +78,12 @@ const routes: Routes = [
 				path: 'table', component: LibraryTableComponent
 			},
 			{
-				path: 'challenges', component: ChallengesComponent
+				path: 'challenges', component: ChallengesComponent,
+				children: [
+					{
+						path: '**', component: ChallengeTableComponent
+					}
+				]
 			},
 		]
 	},

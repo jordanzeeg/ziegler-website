@@ -41,6 +41,7 @@ import { ChallengeFormComponent } from './submissions/challenge-form/challenge-f
 import { HttpClientModule } from '@angular/common/http';
 import { FormcontrolComponent } from './submissions/formcontrol/formcontrol.component';
 import { ChallengesComponent } from './challenges/challenges.component';
+import { ChallengeTableComponent } from './challenges/challenge-table/challenge-table.component';
 
 
 @NgModule({
@@ -76,7 +77,8 @@ import { ChallengesComponent } from './challenges/challenges.component';
     ProgramFormComponent,
     ChallengeFormComponent,
     FormcontrolComponent,
-    ChallengesComponent
+    ChallengesComponent,
+    ChallengeTableComponent
   ],
   imports: [
     AppRoutingModule,
