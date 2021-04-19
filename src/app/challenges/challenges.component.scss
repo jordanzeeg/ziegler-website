@@ -1,21 +1,24 @@
 .sidebar {
     position: absolute;
-    width: auto;
+    width: 15vw;
    
 }
 .childWindow {
     position: relative;
-    left:20vw;
-    
-    width: 80vw;
+    left:15vw;
+    width: 83vw;
     background-color: darkslategray;
+    opacity: .9;
+    padding-top:2vh;
+    padding-bottom:2vh;
+    padding-left: 2vw;
+    padding-right: 2vw;
 }
 
 ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
-    width: 20vw;
     background-color: darkcyan;
 }
 

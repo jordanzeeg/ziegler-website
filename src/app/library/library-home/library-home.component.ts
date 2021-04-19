@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./library-home.component.scss']
 })
 export class LibraryHomeComponent implements OnInit {
-
+  isCollapsed=true;
   constructor() { }
 
   ngOnInit(): void {

@@ -17,13 +17,16 @@ export class FsItemService {
 
   createdTime: Date = new Date();
   constructor(public afs: AngularFirestore, private apiservite: ApicallerService) {
-    this.items = this.afs.collection('items').valueChanges();
+    
    }
    getItems() {
-     return this.items;
+     return this.afs.collection('items').valueChanges();;
    }
    getSoapboxes() {
      return this.afs.collection('soapboxes').valueChanges();
+   }
+   getChallenges(){
+    return this.afs.collection("coding-challenges").valueChanges();
    }
    addItems(Items: Item[]){ //written from firebase docs (although I'm adding array of items when they only add single item)
      this.afs.collection('items').add(Items).then((fromDocRef) => {
@@ -58,9 +61,8 @@ export class FsItemService {
     
     //TODO: api call for code beautifying
     //GET or POST to http://hilite.me/api with these parameters:
-    let prettyCode = this.apiservite.getPrettyCode(code1,programmingLanguage1); //CORS Error generated here, 
-                                                      //probably need to actually launch my own per github description if i want it
-    console.log(prettyCode);
+                                                         //probably need to actually launch my own per github description if i want it
+    
     return this.afs.collection('coding-challenges').add({
       title: title1,
       question: question1,
@@ -78,9 +80,7 @@ export class FsItemService {
     });
    }
 
-   getChallenges(){
-     return this.afs.collection("coding-challenges").valueChanges();
-   }
+
 }
 
 

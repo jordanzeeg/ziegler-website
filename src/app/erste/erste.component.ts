@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./erste.component.scss']
 })
 export class ErsteComponent implements OnInit {
-
+	isCollapsed = true;
 	data = {
 		id: 1,
 		name: 'Erste'

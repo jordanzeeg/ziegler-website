@@ -26,6 +26,7 @@ import { ChallengeFormComponent } from './submissions/challenge-form/challenge-f
 import { FormcontrolComponent } from './submissions/formcontrol/formcontrol.component';
 import { ChallengesComponent } from './challenges/challenges.component';
 import { ChallengeTableComponent } from './challenges/challenge-table/challenge-table.component';
+import { ErsteChallengeComponent } from './challenges/erste-challenge/erste-challenge.component';
 
 const routes: Routes = [
 	{
@@ -81,7 +82,13 @@ const routes: Routes = [
 				path: 'challenges', component: ChallengesComponent,
 				children: [
 					{
-						path: '**', component: ChallengeTableComponent
+						path: 'table', component: ChallengeTableComponent
+					},
+					{
+						path: 'erste', component: ErsteChallengeComponent
+					},
+					{
+						path: '**', redirectTo: 'table'
 					}
 				]
 			},

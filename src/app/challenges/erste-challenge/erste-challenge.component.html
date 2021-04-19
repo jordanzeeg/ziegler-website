@@ -1,0 +1,24 @@
+
+
+<div class = "white-text">
+    <div class = "row">
+        <h2 class = "title">{{data.title}}</h2>
+        <div class = "col">
+            
+            <h3> Question</h3>
+            <pre class = "check">{{data.question}}</pre>
+            <div class= "container" style="text-align: right;">
+                <p>Code Language: {{data.codeLanguage}}</p>
+                <p>Created by: {{data.createdBy}}</p>
+            </div>
+        </div>
+        <div class = "col"> 
+            <div [innerHTML]="data.code | safeHTML">
+    
+            </div> 
+            <div id="test"></div>
+            
+        </div>
+    </div>
+</div>
+

@@ -96,3 +96,5 @@
 	50% { transform: translate(-30vw,0vh); }
 	100% {transform: translate(0vw,0vh);}
 }
+/* Importing Bootstrap SCSS file. */
+@import '~bootstrap/scss/bootstrap';

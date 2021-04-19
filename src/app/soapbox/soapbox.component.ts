@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
 import { Soapbox } from '../models/soapbox';
 import { FsItemService } from '../service/fs-item.service';
 
@@ -10,7 +9,7 @@ import { FsItemService } from '../service/fs-item.service';
 })
 export class SoapboxComponent implements OnInit {
 
-  soapboxes:Soapbox[];
+  soapboxes:Soapbox[] = [];
 
   constructor(public itemService:FsItemService) {
     

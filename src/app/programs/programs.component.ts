@@ -9,7 +9,7 @@ import { FsItemService } from '../service/fs-item.service';
 })
 export class ProgramsComponent implements OnInit {
 
-  items:Item[];
+  items:Item[] =[];
   constructor(public itemService: FsItemService) { }
 
   ngOnInit(): void {

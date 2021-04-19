@@ -8,7 +8,7 @@ import { ExpenseReimbursementSystemComponent } from './expense-reimbursement-sys
 import { HobbiesPageComponent } from './hobbies-page/hobbies-page.component';
 import { ProjectsPageComponent } from './projects-page/projects-page.component';
 import { ZweiteComponent } from './zweite/zweite.component';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgbModule, NgbCollapseModule } from '@ng-bootstrap/ng-bootstrap';
 import { ContentsTableComponent } from './contents-table/contents-table.component';
 import { CpTableComponent } from './cp-table/cp-table.component';
 import { HobbiesTableComponent } from './hobbies-table/hobbies-table.component';
@@ -40,8 +40,10 @@ import { ProgramFormComponent } from './submissions/program-form/program-form.co
 import { ChallengeFormComponent } from './submissions/challenge-form/challenge-form.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormcontrolComponent } from './submissions/formcontrol/formcontrol.component';
-import { ChallengesComponent } from './challenges/challenges.component';
+import { ChallengesComponent, SafeHTMLPipe } from './challenges/challenges.component';
 import { ChallengeTableComponent } from './challenges/challenge-table/challenge-table.component';
+import { ErsteChallengeComponent } from './challenges/erste-challenge/erste-challenge.component';
+
 
 
 @NgModule({
@@ -78,16 +80,21 @@ import { ChallengeTableComponent } from './challenges/challenge-table/challenge-
     ChallengeFormComponent,
     FormcontrolComponent,
     ChallengesComponent,
-    ChallengeTableComponent
+    ChallengeTableComponent,
+    SafeHTMLPipe,
+    ErsteChallengeComponent
   ],
   imports: [
     AppRoutingModule,
     HttpClientModule,
     NgbModule,
+    NgbCollapseModule,
     BrowserModule,
     FormsModule,
     AuthModuleModule,
+    
     AngularFireModule.initializeApp(environment.firebase),
+    
   ],
   providers: [AuthorizeService, FsItemService],
   bootstrap: [AppComponent]
