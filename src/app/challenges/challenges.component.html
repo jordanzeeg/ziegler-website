@@ -3,14 +3,17 @@
         <h2>Challenges Title</h2>
     </div>
 </div>
-<div class = "sidebar">
-    <ul *ngFor= "let challenge of challengeList">
-        <li> <a routerLink="{{challenge.url}}">{{challenge.title}}</a></li>
-    </ul>
-</div>  
-    
-<div class = "childWindow">
-    <router-outlet></router-outlet>
+<div class = "flex">
+    <div class = " sidebar ">
+        <a >
+            <div class = "linkd" routerLink="{{challenge.url}}"(click)="updateErste(challenge.id)" *ngFor= "let challenge of challengeList" > <div class = "title">{{challenge.title}}</div></div>
+        </a>
+    </div>  
+        
+    <div class = " childWindow">
+        <router-outlet></router-outlet>
+        <app-erste-challenge [dId]="currentChallenge"></app-erste-challenge>
+    </div>
 </div>
 
     <!-- test content that ended up not being used. Delete after 12/31/21-->

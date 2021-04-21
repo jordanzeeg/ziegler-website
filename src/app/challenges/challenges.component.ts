@@ -2,6 +2,7 @@ import { Component, OnInit, Pipe, PipeTransform } from '@angular/core';
 import { Challenge } from '../models/challenge';
 import { FsItemService } from '../service/fs-item.service';
 import { DomSanitizer } from '@angular/platform-browser';
+import { Router } from '@angular/router';
 
 @Pipe({ name: 'safeHTML'})
 export class SafeHTMLPipe implements PipeTransform {
@@ -18,32 +19,140 @@ export class SafeHTMLPipe implements PipeTransform {
 })
 export class ChallengesComponent implements OnInit {
 
-  currentChallenge = 'contentTable';
+  currentChallenge = 0;
   challengeList = [
     {
       id: 0,
+      title: 'Table', 
+      url: "table", 
+      codeLanguage: ''
+    },
+    {
+      id: 1,
       title: 'FizzBuzz', 
-      url: "/erste", 
+      url: "erste", 
       codeLanguage: 'python'
     },
     {
-      id: 1, 
-      title: 'next challenge', 
-      url: "/zweite", 
-      codeLanguage: 'python'
+      id: 2, 
+      title: 'Detect Capital', 
+      url: "erste", 
+      codeLanguage: 'java'
     },
     {
-      id: 2, title: 'do i really add manually?', url: ""
-    }
+      id: 3, title: 'Kids With the Greatest # of Candies', url: "erste"
+    },
+    {
+      id: 4, 
+      title: 'Shuffle the Array', 
+      url: "erste", 
+      codeLanguage: 'java'
+    },
+    {
+      id: 5, 
+      title: 'Number of Good Pairs', 
+      url: "erste", 
+      codeLanguage: 'java'
+    },
+    {
+      id: 6, 
+      title: 'Running Sum of 1d Array', 
+      url: "erste", 
+      codeLanguage: 'java'
+    },
+    {
+      id: 7, 
+      title: 'Group Given Group Size They Belong To',  
+      url: "erste", 
+      codeLanguage: 'java'
+    },
+    {
+      id: 8, 
+      title: 'Find Numbers With Even Number of Digits', 
+      url: "erste", 
+      codeLanguage: 'java'
+    },
+    {
+      id: 9, 
+      title: 'Subtract Product and Sum of Integer', 
+      url: "erste", 
+      codeLanguage: 'java'
+    },
+    {
+      id: 10, 
+      title: '# of Numbers Smaller Than Current', 
+      url: "erste", 
+      codeLanguage: 'java'
+    },
+    {
+      id: 11, 
+      title: 'Jewels and Stones', 
+      url: "erste", 
+      codeLanguage: 'java'
+    },
+    {
+      id: 12, 
+      title: 'XOR Operation in Array', 
+      url: "erste", 
+      codeLanguage: 'java'
+    },
+    {
+      id: 13, 
+      title: 'Corresponding Node of Binary Tree in a Clone Tree', 
+      url: "erste", 
+      codeLanguage: 'java'
+    },
+    {
+      id: 14, 
+      title: 'Number of steps to get to zero', 
+      url: "erste", 
+      codeLanguage: 'java'
+    },
+    {
+      id: 15, 
+      title: 'TBD', 
+      url: "erste", 
+      codeLanguage: 'java'
+    },
+    {
+      id: 16, 
+      title: 'TBD', 
+      url: "erste", 
+      codeLanguage: 'java'
+    },
+    {
+      id: 17, 
+      title: 'TBD', 
+      url: "erste", 
+      codeLanguage: 'java'
+    },
+    {
+      id: 18, 
+      title: 'TBD', 
+      url: "erste", 
+      codeLanguage: 'java'
+    },
+    {
+      id: 19, 
+      title: 'TBD', 
+      url: "erste", 
+      codeLanguage: 'java'
+    },
+    {
+      id: 20, 
+      title: 'TBD', 
+      url: "erste", 
+      codeLanguage: 'java'
+    },
+
   ];
 
-  
-  //this commented code does not work. Included because you will eventually think to try this again
-  // sanitizer works perfectly, but hilite.me is too hardcoded to be super helpful
-  //testerbinding = '<span style="color: #008800; font-weight: bold">def</span> <span style="color: #0066BB; font-weight: bold">main</span>():	foo <span style="color: #333333">=</span> input_int(<span style="background-color: #fff0f0">&quot;please enter an integer &quot;</span>)bar <span style="color: #333333">=</span> quiz_function(foo)<span style="color: #008800; font-weight: bold">print</span>(<span style="background-color: #fff0f0">&quot;would you like the solution printed in console, or written to a file?&quot;</span>)test <span style="color: #333333">=</span> input_int(<span style="background-color: #fff0f0">&quot;Enter 1 to print in console </span><span style="color: #666666; font-weight: bold; background-color: #fff0f0">\n</span><span style="background-color: #fff0f0">Enter 2 to write to a file </span><span style="color: #666666; font-weight: bold; background-color: #fff0f0">\n</span><span style="background-color: #fff0f0">&quot;</span>)<span style="color: #008800; font-weight: bold">if</span> (test <span style="color: #333333">==</span> <span style="color: #0000DD; font-weight: bold">1</span>):<span style="color: #008800; font-weight: bold">print</span>(bar)<span style="color: #008800; font-weight: bold">elif</span> (test <span style="color: #333333">==</span> <span style="color: #0000DD; font-weight: bold">2</span>):<span style="color: #888888">#write it to a file </span><span style="color: #008800; font-weight: bold">with</span> <span style="color: #007020">open</span>(<span style="background-color: #fff0f0">&quot;solution.txt&quot;</span>, <span style="background-color: #fff0f0">&quot;w&quot;</span>) <span style="color: #008800; font-weight: bold">as</span> <span style="color: #007020">file</span>:<span style="color: #007020">file</span><span style="color: #333333">.</span>write(<span style="color: #007020">str</span>(bar))<span style="color: #008800; font-weight: bold">else</span>:<span style="color: #008800; font-weight: bold">print</span>(<span style="background-color: #fff0f0">&quot;fine don&#39;t listen, enjoy your punishment&quot;</span>)time<span style="color: #333333">.</span>sleep(<span style="color: #0000DD; font-weight: bold">3</span>)<span style="color: #008800; font-weight: bold">for</span> i <span style="color: #000000; font-weight: bold">in</span> <span style="color: #007020">range</span>(<span style="color: #0000DD; font-weight: bold">1000000000</span>):<span style="color: #008800; font-weight: bold">print</span>(bar)<span style="color: #008800; font-weight: bold">if</span> __name__ <span style="color: #333333">==</span> <span style="background-color: #fff0f0">&quot;__main__&quot;</span>:main()</pre></div>'
-//testbinding = this.sanitizer.bypassSecurityTrustHtml(this.testerbinding);
+  updateErste(num:number){
+    this.currentChallenge = num;
+    console.log("updateErste Called");
+  }
 
-  constructor(public itemService: FsItemService) {
+  constructor(public itemService: FsItemService, public router:Router) {
     
     }
 
