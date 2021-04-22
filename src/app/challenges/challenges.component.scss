@@ -14,7 +14,8 @@
 .childWindow {
     position: relative;
     // left:15vw;
-    flex:0 0 83vw;
+    flex:0 0 80vw;
+    max-width: 85vw;
     background-color: darkslategray;
     opacity: .9;
     padding-top:2vh;

@@ -1,19 +1,19 @@
 
 
 <div class = "white-text" *ngIf = "dId !=0">
-    <div class = "row">
+    <div >
         <h2 class = "title align-center">{{data[dId].title}}</h2>
         <div class = "col">
             
             <h3> Question</h3>
             <pre class = "check">{{data[dId].question}}</pre>
-            <div class= "container" style="text-align: right;">
+            <div class= "" style="text-align: right;">
                 <p>Code Language: {{data[dId].codeLanguage}}</p>
                 <p>Created by: {{data[dId].createdBy}}</p>
             </div>
         </div>
         <div class = "col"> 
-            <div [innerHTML]="data[dId].code | safeHTML">
+            <div class = "check" [innerHTML]="data[dId].code | safeHTML">
     
             </div> 
             <div id="test"></div>

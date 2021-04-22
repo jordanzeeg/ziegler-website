@@ -110,37 +110,37 @@ export class ChallengesComponent implements OnInit {
     },
     {
       id: 15, 
-      title: 'TBD', 
+      title: 'Count Items Matching a Rule', 
       url: "erste", 
       codeLanguage: 'java'
     },
     {
       id: 16, 
-      title: 'TBD', 
+      title: 'Design Parking System', 
       url: "erste", 
       codeLanguage: 'java'
     },
     {
       id: 17, 
-      title: 'TBD', 
+      title: 'Richest Customer Wealth', 
       url: "erste", 
       codeLanguage: 'java'
     },
     {
       id: 18, 
-      title: 'TBD', 
+      title: 'Three Consecutive Odds', 
       url: "erste", 
       codeLanguage: 'java'
     },
     {
       id: 19, 
-      title: 'TBD', 
+      title: 'Create Target Array In Order', 
       url: "erste", 
       codeLanguage: 'java'
     },
     {
       id: 20, 
-      title: 'TBD', 
+      title: 'Shuffle String', 
       url: "erste", 
       codeLanguage: 'java'
     },
