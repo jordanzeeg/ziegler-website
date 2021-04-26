@@ -92,6 +92,9 @@ const routes: Routes = [
 					}
 				]
 			},
+			{
+				path: '**', redirectTo: 'table'
+			}
 		]
 	},
 	{

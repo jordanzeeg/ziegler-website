@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./hobbies-page.component.scss']
 })
 export class HobbiesPageComponent implements OnInit {
-
+  isCollapsed=true;
   ngOnInit(): void {
 
     this.canvasDrawing();
