@@ -101,7 +101,7 @@ const routes: Routes = [
 	{
 		path: 'info', component: ContentsTableComponent
 	},
-	{
+/* 	{
 		path: 'formz', component: FormcontrolComponent, canActivate: [WaechterinGuard],
 		children: 
 		[
@@ -118,7 +118,7 @@ const routes: Routes = [
 				path: '**', component: RedirectPageComponent
 			}
 		]
-	},
+	}, */
 	{
 		path: 'login', component: LoginComponent
 	},
