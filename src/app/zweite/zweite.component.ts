@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./zweite.component.scss']
 })
 export class ZweiteComponent implements OnInit {
-
+  isCollapsed = true;
   constructor() { }
 
   ngOnInit(): void {

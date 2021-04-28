@@ -27,6 +27,7 @@ import { FormcontrolComponent } from './submissions/formcontrol/formcontrol.comp
 import { ChallengesComponent } from './challenges/challenges.component';
 import { ChallengeTableComponent } from './challenges/challenge-table/challenge-table.component';
 import { ErsteChallengeComponent } from './challenges/erste-challenge/erste-challenge.component';
+import { RedirectPageComponent } from './redirect-page/redirect-page.component';
 
 const routes: Routes = [
 	{
@@ -67,7 +68,7 @@ const routes: Routes = [
 				path: 'table', component: ZweiteTableComponent
 			},
 			{
-				path: '**', redirectTo: 'table', pathMatch:'full'
+				path: '**', component: RedirectPageComponent
 			}
 		]
 	},
@@ -88,12 +89,12 @@ const routes: Routes = [
 						path: 'erste', component: ErsteChallengeComponent
 					},
 					{
-						path: '**', redirectTo: 'table'
+						path: '**', component: RedirectPageComponent
 					}
 				]
 			},
 			{
-				path: '**', redirectTo: 'table'
+				path: '**', component: RedirectPageComponent
 			}
 		]
 	},
@@ -114,7 +115,7 @@ const routes: Routes = [
 				path: 'challenge-form', component: ChallengeFormComponent, canActivate: [WaechterinGuard]
 			},
 			{
-				path: '**', redirectTo: 'dashboard'
+				path: '**', component: RedirectPageComponent
 			}
 		]
 	},
@@ -134,7 +135,7 @@ const routes: Routes = [
 		path: 'programs', component: ProgramsComponent
 	},
 	{
-		path: '**', redirectTo: 'info'
+		path: '**', component: RedirectPageComponent
 	}
 ];
 

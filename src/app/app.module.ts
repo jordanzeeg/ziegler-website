@@ -43,6 +43,7 @@ import { FormcontrolComponent } from './submissions/formcontrol/formcontrol.comp
 import { ChallengesComponent, SafeHTMLPipe } from './challenges/challenges.component';
 import { ChallengeTableComponent } from './challenges/challenge-table/challenge-table.component';
 import { ErsteChallengeComponent } from './challenges/erste-challenge/erste-challenge.component';
+import { RedirectPageComponent } from './redirect-page/redirect-page.component';
 
 
 
@@ -82,7 +83,8 @@ import { ErsteChallengeComponent } from './challenges/erste-challenge/erste-chal
     ChallengesComponent,
     ChallengeTableComponent,
     SafeHTMLPipe,
-    ErsteChallengeComponent
+    ErsteChallengeComponent,
+    RedirectPageComponent
   ],
   imports: [
     AppRoutingModule,
