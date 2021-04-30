@@ -101,6 +101,7 @@ const routes: Routes = [
 	{
 		path: 'info', component: ContentsTableComponent
 	},
+	// WaechterinGuard currently does not work. fix it and then maybe revisit this. formz is not necessary for initial release
 /* 	{
 		path: 'formz', component: FormcontrolComponent, canActivate: [WaechterinGuard],
 		children: 
