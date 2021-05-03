@@ -39,6 +39,12 @@ const routes: Routes = [
 		[
 			{
 				path: 'table', component: HobbyTableComponent
+			},
+			{
+				path: '', redirectTo: 'table', pathMatch: 'full' 
+			},
+			{
+				path: '**', component: RedirectPageComponent
 			}
 		]
 	},
@@ -68,6 +74,9 @@ const routes: Routes = [
 				path: 'table', component: ZweiteTableComponent
 			},
 			{
+				path: '', redirectTo: 'table', pathMatch: 'full'
+			},
+			{
 				path: '**', component: RedirectPageComponent
 			}
 		]
@@ -92,6 +101,9 @@ const routes: Routes = [
 						path: '**', component: RedirectPageComponent
 					}
 				]
+			},
+			{
+				path: '', redirectTo: 'table', pathMatch: 'full'
 			},
 			{
 				path: '**', component: RedirectPageComponent
@@ -134,6 +146,9 @@ const routes: Routes = [
 	},
 	{
 		path: 'programs', component: ProgramsComponent
+	},
+	{
+		path: '', redirectTo: 'info', pathMatch: 'full'
 	},
 	{
 		path: '**', component: RedirectPageComponent
