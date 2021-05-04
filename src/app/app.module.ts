@@ -44,6 +44,7 @@ import { ChallengesComponent, SafeHTMLPipe } from './challenges/challenges.compo
 import { ChallengeTableComponent } from './challenges/challenge-table/challenge-table.component';
 import { ErsteChallengeComponent } from './challenges/erste-challenge/erste-challenge.component';
 import { RedirectPageComponent } from './redirect-page/redirect-page.component';
+import { PokemonComponent } from './hobbies-page/pokemon/pokemon.component';
 
 
 
@@ -55,6 +56,7 @@ import { RedirectPageComponent } from './redirect-page/redirect-page.component';
     ErsteComponent,
     ExpenseReimbursementSystemComponent,
     HobbiesPageComponent,
+    PokemonComponent,
     MspsComponent,
     ProjectsPageComponent,
     RsnComponent,

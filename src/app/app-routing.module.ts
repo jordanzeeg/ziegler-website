@@ -28,6 +28,8 @@ import { ChallengesComponent } from './challenges/challenges.component';
 import { ChallengeTableComponent } from './challenges/challenge-table/challenge-table.component';
 import { ErsteChallengeComponent } from './challenges/erste-challenge/erste-challenge.component';
 import { RedirectPageComponent } from './redirect-page/redirect-page.component';
+import { HobbiesTableComponent } from './hobbies-table/hobbies-table.component';
+import { PokemonComponent } from './hobbies-page/pokemon/pokemon.component';
 
 const routes: Routes = [
 	{
@@ -38,10 +40,13 @@ const routes: Routes = [
 		children: 
 		[
 			{
-				path: 'table', component: HobbyTableComponent
+				path: 'table', component: HobbiesTableComponent
 			},
 			{
 				path: '', redirectTo: 'table', pathMatch: 'full' 
+			},
+			{
+				path: 'pokemon', component: PokemonComponent	
 			},
 			{
 				path: '**', component: RedirectPageComponent

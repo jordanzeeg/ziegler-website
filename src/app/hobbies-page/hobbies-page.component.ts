@@ -9,7 +9,7 @@ export class HobbiesPageComponent implements OnInit {
   isCollapsed=true;
   ngOnInit(): void {
 
-    this.canvasDrawing();
+    //this.canvasDrawing();
     //this.moveDemoFunction();
   }
   
