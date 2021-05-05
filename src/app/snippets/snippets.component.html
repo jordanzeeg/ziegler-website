@@ -1,5 +1,20 @@
 
 
-<div class = "jumbotron">
-    <p>Use this to generate the snippets from firestore dynamically</p>
+<div class= "container"> 
+    <div class= "jumbotron">
+        <h2>Snippets Title</h2>
+    </div>
+</div>
+<div class = "flex">
+    <div class = " sidebar ">
+        <a >
+            <div class = "linkd" routerLink="{{snippet.url}}"(click)="updateErste(snippet.id)" *ngFor= "let snippet of snippetList" > 
+                <div class = "title">{{snippet.title}}</div></div>
+        </a>
+    </div>  
+        
+    <div class = " childWindow">
+        <router-outlet></router-outlet>
+        <app-erste-snippet [dId]="currentSnippet"></app-erste-snippet>
+    </div>
 </div>
