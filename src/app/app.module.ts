@@ -48,6 +48,7 @@ import { PokemonComponent } from './hobbies-page/pokemon/pokemon.component';
 
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
