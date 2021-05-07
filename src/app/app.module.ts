@@ -30,8 +30,8 @@ import { MspsComponent } from './msps/msps.component';
 import { RsnComponent } from './rsn/rsn.component';
 import { TsmComponent } from './tsm/tsm.component';
 import { ZweiteTableComponent } from './zweite-table/zweite-table.component';
-import { SnippetComponent } from './snippets/snippet/snippet.component';
-import { ChallengeComponent } from './challenges/challenge/challenge.component';
+import { SnippetComponent } from './library/snippets/snippet/snippet.component';
+import { ChallengeComponent } from './library/challenges/challenge/challenge.component';
 import { AuthorizeService } from './authorization/authorize.service';
 import { FsItemService } from './service/fs-item.service';
 import { ProgramsComponent } from './programs/programs.component';
@@ -40,9 +40,9 @@ import { ProgramFormComponent } from './submissions/program-form/program-form.co
 import { ChallengeFormComponent } from './submissions/challenge-form/challenge-form.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormcontrolComponent } from './submissions/formcontrol/formcontrol.component';
-import { ChallengesComponent, SafeHTMLPipe } from './challenges/challenges.component';
-import { ChallengeTableComponent } from './challenges/challenge-table/challenge-table.component';
-import { ErsteChallengeComponent } from './challenges/erste-challenge/erste-challenge.component';
+import { ChallengesComponent, SafeHTMLPipe } from './library/challenges/challenges.component';
+import { ChallengeTableComponent } from './library/challenges/challenge-table/challenge-table.component';
+import { ErsteChallengeComponent } from './library/challenges/erste-challenge/erste-challenge.component';
 import { RedirectPageComponent } from './redirect-page/redirect-page.component';
 import { PokemonComponent } from './hobbies-page/pokemon/pokemon.component';
 

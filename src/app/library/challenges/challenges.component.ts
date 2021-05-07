@@ -1,6 +1,6 @@
 import { Component, OnInit, Pipe, PipeTransform } from '@angular/core';
-import { Challenge } from '../models/challenge';
-import { FsItemService } from '../service/fs-item.service';
+import { Challenge } from '../../models/challenge';
+import { FsItemService } from '../../service/fs-item.service';
 import { DomSanitizer } from '@angular/platform-browser';
 import { Router } from '@angular/router';
 
