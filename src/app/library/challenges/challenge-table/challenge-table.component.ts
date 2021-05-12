@@ -34,16 +34,19 @@ export class ChallengeTableComponent implements OnInit {
       x: number;
       y: number;
       z: number;
+      text: string;
       radius: number;
       xProjected: number;
       yProjected: number;
       scaleProjected:number;
-      constructor(a: number, b: number, c: number) {
+      
+      constructor() {
+        console.log(canvas.width);
         this.x = (Math.random() - 0.5) * 2 * canvas.width; //currently gives random x position
         this.y = (Math.random() - 0.5) * 2 * canvas.height; //currently gives random y position
         this.z = (Math.random() - 0.5) * 2 * 10000; //gives random z, notable z is always positive and 
         this.radius = 250;
-
+        this.text = "New Text";
         this.xProjected = 0;
         this.yProjected = 0;
         this.scaleProjected = 0;
@@ -75,8 +78,8 @@ export class ChallengeTableComponent implements OnInit {
         //             this.radius *2 * this.scaleProjected,
         //             this.radius *2 * this.scaleProjected)
         
-        ctx.strokeText("testText", this.xProjected - this.radius, 
-                    this.yProjected - this.radius, 
+        ctx.strokeText(this.text, this.xProjected - this.radius/3, 
+                    this.yProjected - this.radius/2, 
                     this.radius *2 * this.scaleProjected)        
 
 
@@ -86,7 +89,7 @@ export class ChallengeTableComponent implements OnInit {
     const hobbylist:Hobby[] = [];
     for(var i = 0; i < 80; i++)
     {
-      hobbylist.push(new Hobby(1,1,10000)); 
+      hobbylist.push(new Hobby()); 
       
     };
     
@@ -99,14 +102,14 @@ export class ChallengeTableComponent implements OnInit {
           hobbylist[i].z = hobbylist[i].z - zspeed;
         }
         else {
-          hobbylist[i].z = 10000;
+          hobbylist[i].z = (Math.random() - 0.5) * 10000;
           hobbylist[i].x = (Math.random() - 0.5) * 2 * canvas.width;
           hobbylist[i].y = (Math.random() - 0.5) * 2 * canvas.height;
         }
         hobbylist[i].draw(); 
       }
       
-    },10);
+    },30);
   
   }
 
