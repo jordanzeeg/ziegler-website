@@ -28,6 +28,18 @@ export class SnippetsComponent implements OnInit {
       title: 'api.py',
       url: 'snippet',
       codeLanguage: ''
+    },
+    {
+      id: 2,
+      title: 'logging',
+      url: 'snippet',
+      codeLanguage:'python'
+    },
+    {
+      id: 3,
+      title: 'json translations',
+      url: 'snippet',
+      codeLanguage:'python',
     }
   ]
   ngOnInit(): void {
