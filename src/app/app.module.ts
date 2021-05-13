@@ -45,6 +45,8 @@ import { ChallengeTableComponent } from './library/challenges/challenge-table/ch
 import { ErsteChallengeComponent } from './library/challenges/erste-challenge/erste-challenge.component';
 import { RedirectPageComponent } from './redirect-page/redirect-page.component';
 import { PokemonComponent } from './hobbies-page/pokemon/pokemon.component';
+import { SnippetsComponent } from './library/snippets/snippets.component';
+
 
 
 
@@ -87,7 +89,8 @@ import { PokemonComponent } from './hobbies-page/pokemon/pokemon.component';
     ChallengeTableComponent,
     SafeHTMLPipe,
     ErsteChallengeComponent,
-    RedirectPageComponent
+    RedirectPageComponent,
+    SnippetsComponent
   ],
   imports: [
     AppRoutingModule,

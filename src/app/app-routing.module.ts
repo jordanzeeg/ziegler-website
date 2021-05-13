@@ -29,6 +29,8 @@ import { ErsteChallengeComponent } from './library/challenges/erste-challenge/er
 import { RedirectPageComponent } from './redirect-page/redirect-page.component';
 import { HobbiesTableComponent } from './hobbies-table/hobbies-table.component';
 import { PokemonComponent } from './hobbies-page/pokemon/pokemon.component';
+import { SnippetsComponent } from './library/snippets/snippets.component';
+import { SnippetComponent } from './library/snippets/snippet/snippet.component';
 
 const routes: Routes = [
 	{
@@ -100,6 +102,20 @@ const routes: Routes = [
 					},
 					{
 						path: 'erste', component: ErsteChallengeComponent
+					},
+					{
+						path: '**', component: RedirectPageComponent
+					}
+				]
+			},
+			{
+				path: 'snippets', component: SnippetsComponent,
+				children: [
+					{
+						path: 'snippet', component: SnippetComponent
+					},
+					{
+						path: '', component: SnippetComponent
 					},
 					{
 						path: '**', component: RedirectPageComponent
