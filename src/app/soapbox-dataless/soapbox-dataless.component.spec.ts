@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { HobbyTableComponent } from './hobby-table.component';
+import { SoapboxDatalessComponent } from './soapbox-dataless.component';
 
-describe('HobbyTableComponent', () => {
-  let component: HobbyTableComponent;
-  let fixture: ComponentFixture<HobbyTableComponent>;
+describe('SoapboxDatalessComponent', () => {
+  let component: SoapboxDatalessComponent;
+  let fixture: ComponentFixture<SoapboxDatalessComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ HobbyTableComponent ]
+      declarations: [ SoapboxDatalessComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(HobbyTableComponent);
+    fixture = TestBed.createComponent(SoapboxDatalessComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

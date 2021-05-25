@@ -31,6 +31,7 @@ import { HobbiesTableComponent } from './hobbies-table/hobbies-table.component';
 import { PokemonComponent } from './hobbies-page/pokemon/pokemon.component';
 import { SnippetsComponent } from './library/snippets/snippets.component';
 import { SnippetComponent } from './library/snippets/snippet/snippet.component';
+import { SnippetTableComponent } from './library/snippets/snippet-table/snippet-table.component';
 
 const routes: Routes = [
 	{
@@ -44,7 +45,7 @@ const routes: Routes = [
 				path: 'table', component: HobbiesTableComponent
 			},
 			{
-				path: '', redirectTo: 'table', pathMatch: 'full' 
+				path: '', component: HobbiesTableComponent
 			},
 			{
 				path: 'pokemon', component: PokemonComponent	
@@ -80,7 +81,7 @@ const routes: Routes = [
 				path: 'table', component: ZweiteTableComponent
 			},
 			{
-				path: '', redirectTo: 'table', pathMatch: 'full'
+				path: '', component: ZweiteTableComponent
 			},
 			{
 				path: '**', component: RedirectPageComponent
@@ -104,6 +105,9 @@ const routes: Routes = [
 						path: 'erste', component: ErsteChallengeComponent
 					},
 					{
+						path: '', component: ChallengeTableComponent
+					},
+					{
 						path: '**', component: RedirectPageComponent
 					}
 				]
@@ -115,7 +119,10 @@ const routes: Routes = [
 						path: 'snippet', component: SnippetComponent
 					},
 					{
-						path: '', component: SnippetComponent
+						path: 'table', component: SnippetTableComponent
+					},
+					{
+						path: '', component: SnippetTableComponent
 					},
 					{
 						path: '**', component: RedirectPageComponent
