@@ -168,8 +168,11 @@ const routes: Routes = [
 	{
 		path: 'games/tic-tac-toe', component: BoardComponent
 	},
+	// {
+	// 	path: 'soapbox',component: SoapboxComponent
+	// },
 	{
-		path: 'soapbox',component: SoapboxComponent
+		path: 'soapbox', redirectTo: '#', pathMatch: 'full'
 	},
 	{
 		path: 'programs', component: ProgramsComponent
