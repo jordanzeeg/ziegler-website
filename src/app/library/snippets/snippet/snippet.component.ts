@@ -13,7 +13,7 @@ export class SnippetComponent implements OnInit {
   }
   @Input() dId: number = 0;
 
-  //data stores all the challenges. 
+  //data stores all the snippets. 
   data = 
   [
     {

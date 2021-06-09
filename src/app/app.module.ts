@@ -45,6 +45,14 @@ import { PokemonComponent } from './hobbies-page/pokemon/pokemon.component';
 import { SnippetsComponent } from './library/snippets/snippets.component';
 import { SoapboxDatalessComponent } from './soapbox-dataless/soapbox-dataless.component';
 import { SnippetTableComponent } from './library/snippets/snippet-table/snippet-table.component';
+import { CompleteProgramsComponent } from './library/complete-programs/complete-programs.component';
+import { AutomationsComponent } from './library/automations/automations.component';
+import { CompletionsComponent } from './library/completions/completions.component';
+import { CompletionsTableComponent } from './library/completions/completions-table/completions-table.component';
+import { CompletionComponent } from './library/completions/completion/completion.component';
+import { AutomationTableComponent } from './library/automations/automation-table/automation-table.component';
+import { CompletionTableComponent } from './library/completions/completion-table/completion-table.component';
+import { AutomationComponent } from './library/automations/automation/automation.component';
 
 
 
@@ -90,7 +98,15 @@ import { SnippetTableComponent } from './library/snippets/snippet-table/snippet-
     RedirectPageComponent,
     SnippetsComponent,
     SoapboxDatalessComponent,
-    SnippetTableComponent
+    SnippetTableComponent,
+    CompleteProgramsComponent,
+    AutomationsComponent,
+    CompletionsComponent,
+    CompletionsTableComponent,
+    CompletionComponent,
+    AutomationTableComponent,
+    CompletionTableComponent,
+    AutomationComponent
   ],
   imports: [
     AppRoutingModule,

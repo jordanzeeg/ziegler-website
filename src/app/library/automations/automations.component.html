@@ -1,0 +1,21 @@
+<p>automations works!</p>
+
+
+<div class= "container"> 
+    <div class= "jumbotron">
+        <h2>Automations</h2>
+    </div>
+</div>
+<div class = "flex">
+    <div class = " sidebar ">
+        <a >
+            <div class = "linkd" routerLink="{{automation.url}}"(click)="updateErste(automation.id)" *ngFor= "let automation of automationList" > 
+                <div class = "title">{{automation.title}}</div></div>
+        </a>
+    </div>  
+        
+    <div class = " childWindow">
+        <router-outlet></router-outlet>
+        <app-automation [dId]="currentAutomation"></app-automation>
+    </div>
+</div>
