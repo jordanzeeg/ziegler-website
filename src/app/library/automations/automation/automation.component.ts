@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-automation',
@@ -11,6 +11,7 @@ export class AutomationComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  @Input() dId: number = 0;
     //data stores all the automations. 
     data = 
     [

@@ -1,1 +1,17 @@
-<p>completions works!</p>
+<div class= "container"> 
+    <div class= "jumbotron">
+        <h2>Completions</h2>
+    </div>
+</div>
+<div class = "flex">
+    <div class = " sidebar ">
+        <a >
+            <div class = "linkd" routerLink="{{completion.url}}"(click)="updateErste(completion.id)" *ngFor= "let completion of completionList" > <div class = "title">{{completion.title}}</div></div>
+        </a>
+    </div>  
+        
+    <div class = " childWindow">
+        <router-outlet></router-outlet>
+        <app-completion [dId]="currentChallenge"></app-completion>
+    </div>
+</div>

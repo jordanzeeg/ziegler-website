@@ -1,0 +1,51 @@
+.flex {
+    display: flex;
+}
+
+.sidebar {
+    position: relative;
+    
+    flex: 0 0 15vw;
+    bottom: 3vh;
+    width: 15vw;
+    font-size: 1em;
+    padding: 0px;
+}
+.childWindow {
+    position: relative;
+    // left:15vw;
+    flex:0 0 80vw;
+    max-width: 85vw;
+    background-color: darkslategray;
+    opacity: .9;
+    padding-top:2vh;
+    padding-bottom:2vh;
+    padding-left: 2vw;
+    padding-right: 2vw;
+}
+
+.linkd  {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    background-color: darkcyan;
+    display: block;
+    color: white;
+    padding: 8px 16px;
+    text-decoration: none;
+    cursor:pointer;
+}
+
+.linkd:hover {
+    background-color: lightgray;
+    color: black;
+}
+a, a:visited, a:active {
+    color: inherit;
+    text-decoration: none;
+    padding: 8px 16px;
+}
+
+.title {
+    padding-left: 8px;
+}
