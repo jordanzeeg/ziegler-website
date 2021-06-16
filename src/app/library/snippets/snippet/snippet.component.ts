@@ -506,112 +506,115 @@ export class SnippetComponent implements OnInit {
       {
         subTitle: 'Release the Nodes!',
         description: `This function calls the subsequent functions. It starts with a node, generates a display case array, adds nodes to it, and then also keeps track of the old nodes.`,
-        code: `<!-- HTML generated using hilite.me --><div style="background: #272822; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #66d9ef">private</span> <span style="color: #66d9ef">static</span> <span style="color: #66d9ef">void</span> <span style="color: #a6e22e">displayAllNodesFromParentNode</span><span style="color: #f92672">(</span><span style="color: #f8f8f2">Node</span> <span style="color: #f8f8f2">a</span><span style="color: #f92672">)</span> <span style="color: #f92672">{</span>
-          <span style="color: #75715e">// TODO to complete</span>
-          <span style="color: #75715e">//get node a</span>
-          <span style="color: #66d9ef">char</span><span style="color: #f92672">[][]</span> <span style="color: #f8f8f2">displayCase</span> <span style="color: #f92672">=</span> <span style="color: #66d9ef">new</span> <span style="color: #66d9ef">char</span><span style="color: #f92672">[</span><span style="color: #ae81ff">20</span><span style="color: #f92672">][</span><span style="color: #ae81ff">20</span><span style="color: #f92672">];</span>
-          <span style="color: #f8f8f2">Set</span><span style="color: #f92672">&lt;</span><span style="color: #f8f8f2">INode</span><span style="color: #f92672">&gt;</span> <span style="color: #f8f8f2">usedNodes</span> <span style="color: #f92672">=</span> <span style="color: #66d9ef">new</span> <span style="color: #f8f8f2">HashSet</span><span style="color: #f92672">(</span><span style="color: #ae81ff">10</span><span style="color: #f92672">);</span>
-          <span style="color: #f8f8f2">getNextLinkedNode</span><span style="color: #f92672">(</span><span style="color: #f8f8f2">a</span><span style="color: #f92672">,</span> <span style="color: #f8f8f2">displayCase</span><span style="color: #f92672">,</span><span style="color: #f8f8f2">usedNodes</span><span style="color: #f92672">,</span><span style="color: #e6db74">&#39;A&#39;</span><span style="color: #f92672">);</span>
-          <span style="color: #75715e">//if right node for a - put right node  in display case - move to right node </span>
-          <span style="color: #75715e">//else if down node for a - put down node in display case - move to down node</span>
-          <span style="color: #75715e">//else if left node for a - put left node in display case - move to left node</span>
-          <span style="color: #75715e">//else if up node for a - put up node in display case - move to up node</span>
-          <span style="color: #75715e">//else if no nodes to link, display display case</span>
-          <span style="color: #66d9ef">for</span><span style="color: #f92672">(</span><span style="color: #66d9ef">int</span> <span style="color: #f8f8f2">i</span> <span style="color: #f92672">=</span> <span style="color: #ae81ff">0</span><span style="color: #f92672">;</span> <span style="color: #f8f8f2">i</span> <span style="color: #f92672">&lt;</span> <span style="color: #ae81ff">13</span><span style="color: #f92672">;</span> <span style="color: #f8f8f2">i</span><span style="color: #f92672">++</span> <span style="color: #f92672">)</span>
-          <span style="color: #f92672">{</span>
-            <span style="color: #66d9ef">for</span> <span style="color: #f92672">(</span><span style="color: #66d9ef">int</span> <span style="color: #f8f8f2">j</span> <span style="color: #f92672">=</span> <span style="color: #ae81ff">0</span><span style="color: #f92672">;</span> <span style="color: #f8f8f2">j</span> <span style="color: #f92672">&lt;</span> <span style="color: #ae81ff">13</span><span style="color: #f92672">;</span> <span style="color: #f8f8f2">j</span><span style="color: #f92672">++)</span>
-            <span style="color: #f92672">{</span>
-              <span style="color: #66d9ef">if</span><span style="color: #f92672">(</span><span style="color: #f8f8f2">displayCase</span><span style="color: #f92672">[</span><span style="color: #f8f8f2">i</span><span style="color: #f92672">][</span><span style="color: #f8f8f2">j</span><span style="color: #f92672">]</span> <span style="color: #f92672">&gt;=</span> <span style="color: #e6db74">&#39;A&#39;</span><span style="color: #f92672">)</span>
-              <span style="color: #f92672">{</span>
-                <span style="color: #f8f8f2">System</span><span style="color: #f92672">.</span><span style="color: #a6e22e">out</span><span style="color: #f92672">.</span><span style="color: #a6e22e">print</span><span style="color: #f92672">(</span><span style="color: #f8f8f2">displayCase</span><span style="color: #f92672">[</span><span style="color: #f8f8f2">i</span><span style="color: #f92672">][</span><span style="color: #f8f8f2">j</span><span style="color: #f92672">]);</span>
-              <span style="color: #f92672">}</span>
-              <span style="color: #66d9ef">else</span>
-              <span style="color: #f92672">{</span>
-                <span style="color: #f8f8f2">System</span><span style="color: #f92672">.</span><span style="color: #a6e22e">out</span><span style="color: #f92672">.</span><span style="color: #a6e22e">print</span><span style="color: #f92672">(</span><span style="color: #e6db74">&quot; &quot;</span><span style="color: #f92672">);</span>
-              <span style="color: #f92672">}</span>
-            <span style="color: #f92672">}</span>
-            <span style="color: #f8f8f2">System</span><span style="color: #f92672">.</span><span style="color: #a6e22e">out</span><span style="color: #f92672">.</span><span style="color: #a6e22e">println</span><span style="color: #f92672">();</span>
-          <span style="color: #f92672">}</span>
+        code: 
+  `<!-- HTML generated using hilite.me --><div style="background: #272822; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #66d9ef">private</span> <span style="color: #66d9ef">static</span> <span style="color: #66d9ef">void</span> <span style="color: #a6e22e">displayAllNodesFromParentNode</span><span style="color: #f92672">(</span><span style="color: #f8f8f2">Node</span> <span style="color: #f8f8f2">a</span><span style="color: #f92672">)</span> <span style="color: #f92672">{</span>
+    <span style="color: #75715e">// TODO to complete</span>
+    <span style="color: #75715e">//get node a</span>
+    <span style="color: #66d9ef">char</span><span style="color: #f92672">[][]</span> <span style="color: #f8f8f2">displayCase</span> <span style="color: #f92672">=</span> <span style="color: #66d9ef">new</span> <span style="color: #66d9ef">char</span><span style="color: #f92672">[</span><span style="color: #ae81ff">20</span><span style="color: #f92672">][</span><span style="color: #ae81ff">20</span><span style="color: #f92672">];</span>
+    <span style="color: #f8f8f2">Set</span><span style="color: #f92672">&lt;</span><span style="color: #f8f8f2">INode</span><span style="color: #f92672">&gt;</span> <span style="color: #f8f8f2">usedNodes</span> <span style="color: #f92672">=</span> <span style="color: #66d9ef">new</span> <span style="color: #f8f8f2">HashSet</span><span style="color: #f92672">(</span><span style="color: #ae81ff">10</span><span style="color: #f92672">);</span>
+    <span style="color: #f8f8f2">getNextLinkedNode</span><span style="color: #f92672">(</span><span style="color: #f8f8f2">a</span><span style="color: #f92672">,</span> <span style="color: #f8f8f2">displayCase</span><span style="color: #f92672">,</span><span style="color: #f8f8f2">usedNodes</span><span style="color: #f92672">,</span><span style="color: #e6db74">&#39;A&#39;</span><span style="color: #f92672">);</span>
+    <span style="color: #75715e">//if right node for a - put right node  in display case - move to right node </span>
+    <span style="color: #75715e">//else if down node for a - put down node in display case - move to down node</span>
+    <span style="color: #75715e">//else if left node for a - put left node in display case - move to left node</span>
+    <span style="color: #75715e">//else if up node for a - put up node in display case - move to up node</span>
+    <span style="color: #75715e">//else if no nodes to link, display display case</span>
+    <span style="color: #66d9ef">for</span><span style="color: #f92672">(</span><span style="color: #66d9ef">int</span> <span style="color: #f8f8f2">i</span> <span style="color: #f92672">=</span> <span style="color: #ae81ff">0</span><span style="color: #f92672">;</span> <span style="color: #f8f8f2">i</span> <span style="color: #f92672">&lt;</span> <span style="color: #ae81ff">13</span><span style="color: #f92672">;</span> <span style="color: #f8f8f2">i</span><span style="color: #f92672">++</span> <span style="color: #f92672">)</span>
+    <span style="color: #f92672">{</span>
+      <span style="color: #66d9ef">for</span> <span style="color: #f92672">(</span><span style="color: #66d9ef">int</span> <span style="color: #f8f8f2">j</span> <span style="color: #f92672">=</span> <span style="color: #ae81ff">0</span><span style="color: #f92672">;</span> <span style="color: #f8f8f2">j</span> <span style="color: #f92672">&lt;</span> <span style="color: #ae81ff">13</span><span style="color: #f92672">;</span> <span style="color: #f8f8f2">j</span><span style="color: #f92672">++)</span>
+      <span style="color: #f92672">{</span>
+        <span style="color: #66d9ef">if</span><span style="color: #f92672">(</span><span style="color: #f8f8f2">displayCase</span><span style="color: #f92672">[</span><span style="color: #f8f8f2">i</span><span style="color: #f92672">][</span><span style="color: #f8f8f2">j</span><span style="color: #f92672">]</span> <span style="color: #f92672">&gt;=</span> <span style="color: #e6db74">&#39;A&#39;</span><span style="color: #f92672">)</span>
+        <span style="color: #f92672">{</span>
+          <span style="color: #f8f8f2">System</span><span style="color: #f92672">.</span><span style="color: #a6e22e">out</span><span style="color: #f92672">.</span><span style="color: #a6e22e">print</span><span style="color: #f92672">(</span><span style="color: #f8f8f2">displayCase</span><span style="color: #f92672">[</span><span style="color: #f8f8f2">i</span><span style="color: #f92672">][</span><span style="color: #f8f8f2">j</span><span style="color: #f92672">]);</span>
         <span style="color: #f92672">}</span>
-      </pre></div>`
+        <span style="color: #66d9ef">else</span>
+        <span style="color: #f92672">{</span>
+          <span style="color: #f8f8f2">System</span><span style="color: #f92672">.</span><span style="color: #a6e22e">out</span><span style="color: #f92672">.</span><span style="color: #a6e22e">print</span><span style="color: #f92672">(</span><span style="color: #e6db74">&quot; &quot;</span><span style="color: #f92672">);</span>
+        <span style="color: #f92672">}</span>
+      <span style="color: #f92672">}</span>
+      <span style="color: #f8f8f2">System</span><span style="color: #f92672">.</span><span style="color: #a6e22e">out</span><span style="color: #f92672">.</span><span style="color: #a6e22e">println</span><span style="color: #f92672">();</span>
+    <span style="color: #f92672">}</span>
+  <span style="color: #f92672">}</span>
+</pre></div>`
       },
       {
         subTitle: 'Recursively Find them',
         description: `This is the recursive part of the function. This function goes through the links each node has to find the other ones.`,
-        code: `<!-- HTML generated using hilite.me --><div style="background: #272822; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%">	<span style="color: #66d9ef">private</span> <span style="color: #66d9ef">static</span> <span style="color: #66d9ef">void</span> <span style="color: #a6e22e">getNextLinkedNode</span><span style="color: #f92672">(</span><span style="color: #f8f8f2">INode</span> <span style="color: #f8f8f2">a</span><span style="color: #f92672">,</span> <span style="color: #66d9ef">char</span><span style="color: #f92672">[][]</span> <span style="color: #f8f8f2">range</span><span style="color: #f92672">,</span> <span style="color: #f8f8f2">Set</span><span style="color: #f92672">&lt;</span><span style="color: #f8f8f2">INode</span><span style="color: #f92672">&gt;</span> <span style="color: #f8f8f2">usedNodes</span><span style="color: #f92672">,</span><span style="color: #66d9ef">char</span> <span style="color: #f8f8f2">displayValue</span><span style="color: #f92672">)</span>
+        code: 
+  `<!-- HTML generated using hilite.me --><div style="background: #272822; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%">	<span style="color: #66d9ef">private</span> <span style="color: #66d9ef">static</span> <span style="color: #66d9ef">void</span> <span style="color: #a6e22e">getNextLinkedNode</span><span style="color: #f92672">(</span><span style="color: #f8f8f2">INode</span> <span style="color: #f8f8f2">a</span><span style="color: #f92672">,</span> <span style="color: #66d9ef">char</span><span style="color: #f92672">[][]</span> <span style="color: #f8f8f2">range</span><span style="color: #f92672">,</span> <span style="color: #f8f8f2">Set</span><span style="color: #f92672">&lt;</span><span style="color: #f8f8f2">INode</span><span style="color: #f92672">&gt;</span> <span style="color: #f8f8f2">usedNodes</span><span style="color: #f92672">,</span><span style="color: #66d9ef">char</span> <span style="color: #f8f8f2">displayValue</span><span style="color: #f92672">)</span>
+  <span style="color: #f92672">{</span>
+    <span style="color: #f8f8f2">range</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">addNodetoCase</span><span style="color: #f92672">(</span><span style="color: #f8f8f2">a</span><span style="color: #f92672">,</span> <span style="color: #f8f8f2">range</span><span style="color: #f92672">,</span> <span style="color: #f8f8f2">displayValue</span><span style="color: #f92672">);</span>
+    <span style="color: #66d9ef">if</span><span style="color: #f92672">(!</span><span style="color: #f8f8f2">a</span><span style="color: #f92672">.</span><span style="color: #a6e22e">getRightNodes</span><span style="color: #f92672">().</span><span style="color: #a6e22e">isEmpty</span><span style="color: #f92672">())</span>
+    <span style="color: #f92672">{</span>
+      <span style="color: #66d9ef">for</span><span style="color: #f92672">(</span><span style="color: #f8f8f2">INode</span> <span style="color: #f8f8f2">node</span> <span style="color: #f92672">:</span><span style="color: #f8f8f2">a</span><span style="color: #f92672">.</span><span style="color: #a6e22e">getRightNodes</span><span style="color: #f92672">())</span>
+          <span style="color: #f92672">{</span>
+            <span style="color: #66d9ef">if</span><span style="color: #f92672">(!</span><span style="color: #f8f8f2">usedNodes</span><span style="color: #f92672">.</span><span style="color: #a6e22e">contains</span><span style="color: #f92672">(</span><span style="color: #f8f8f2">node</span><span style="color: #f92672">))</span>
+            <span style="color: #f92672">{</span>
+              <span style="color: #f8f8f2">displayValue</span><span style="color: #f92672">++;</span>
+              <span style="color: #f8f8f2">usedNodes</span><span style="color: #f92672">.</span><span style="color: #a6e22e">add</span><span style="color: #f92672">(</span><span style="color: #f8f8f2">node</span><span style="color: #f92672">);</span>
+              <span style="color: #f8f8f2">getNextLinkedNode</span><span style="color: #f92672">(</span><span style="color: #f8f8f2">node</span><span style="color: #f92672">,</span> <span style="color: #f8f8f2">range</span><span style="color: #f92672">,</span> <span style="color: #f8f8f2">usedNodes</span><span style="color: #f92672">,</span> <span style="color: #f8f8f2">displayValue</span><span style="color: #f92672">);</span>
+            <span style="color: #f92672">}</span>
+          <span style="color: #f92672">}</span>
+    <span style="color: #f92672">}</span>
+    <span style="color: #66d9ef">else</span> <span style="color: #a6e22e">if</span><span style="color: #f92672">(!</span><span style="color: #f8f8f2">a</span><span style="color: #f92672">.</span><span style="color: #a6e22e">getDownNodes</span><span style="color: #f92672">().</span><span style="color: #a6e22e">isEmpty</span><span style="color: #f92672">())</span>
+    <span style="color: #f92672">{</span>
+      <span style="color: #66d9ef">for</span><span style="color: #f92672">(</span><span style="color: #f8f8f2">INode</span> <span style="color: #f8f8f2">node</span> <span style="color: #f92672">:</span><span style="color: #f8f8f2">a</span><span style="color: #f92672">.</span><span style="color: #a6e22e">getDownNodes</span><span style="color: #f92672">())</span>
+      <span style="color: #f92672">{</span>
+        <span style="color: #66d9ef">if</span><span style="color: #f92672">(!</span><span style="color: #f8f8f2">usedNodes</span><span style="color: #f92672">.</span><span style="color: #a6e22e">contains</span><span style="color: #f92672">(</span><span style="color: #f8f8f2">node</span><span style="color: #f92672">))</span>
         <span style="color: #f92672">{</span>
-          <span style="color: #f8f8f2">range</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">addNodetoCase</span><span style="color: #f92672">(</span><span style="color: #f8f8f2">a</span><span style="color: #f92672">,</span> <span style="color: #f8f8f2">range</span><span style="color: #f92672">,</span> <span style="color: #f8f8f2">displayValue</span><span style="color: #f92672">);</span>
-          <span style="color: #66d9ef">if</span><span style="color: #f92672">(!</span><span style="color: #f8f8f2">a</span><span style="color: #f92672">.</span><span style="color: #a6e22e">getRightNodes</span><span style="color: #f92672">().</span><span style="color: #a6e22e">isEmpty</span><span style="color: #f92672">())</span>
-          <span style="color: #f92672">{</span>
-            <span style="color: #66d9ef">for</span><span style="color: #f92672">(</span><span style="color: #f8f8f2">INode</span> <span style="color: #f8f8f2">node</span> <span style="color: #f92672">:</span><span style="color: #f8f8f2">a</span><span style="color: #f92672">.</span><span style="color: #a6e22e">getRightNodes</span><span style="color: #f92672">())</span>
-                <span style="color: #f92672">{</span>
-                  <span style="color: #66d9ef">if</span><span style="color: #f92672">(!</span><span style="color: #f8f8f2">usedNodes</span><span style="color: #f92672">.</span><span style="color: #a6e22e">contains</span><span style="color: #f92672">(</span><span style="color: #f8f8f2">node</span><span style="color: #f92672">))</span>
-                  <span style="color: #f92672">{</span>
-                    <span style="color: #f8f8f2">displayValue</span><span style="color: #f92672">++;</span>
-                    <span style="color: #f8f8f2">usedNodes</span><span style="color: #f92672">.</span><span style="color: #a6e22e">add</span><span style="color: #f92672">(</span><span style="color: #f8f8f2">node</span><span style="color: #f92672">);</span>
-                    <span style="color: #f8f8f2">getNextLinkedNode</span><span style="color: #f92672">(</span><span style="color: #f8f8f2">node</span><span style="color: #f92672">,</span> <span style="color: #f8f8f2">range</span><span style="color: #f92672">,</span> <span style="color: #f8f8f2">usedNodes</span><span style="color: #f92672">,</span> <span style="color: #f8f8f2">displayValue</span><span style="color: #f92672">);</span>
-                  <span style="color: #f92672">}</span>
-                <span style="color: #f92672">}</span>
-          <span style="color: #f92672">}</span>
-          <span style="color: #66d9ef">else</span> <span style="color: #a6e22e">if</span><span style="color: #f92672">(!</span><span style="color: #f8f8f2">a</span><span style="color: #f92672">.</span><span style="color: #a6e22e">getDownNodes</span><span style="color: #f92672">().</span><span style="color: #a6e22e">isEmpty</span><span style="color: #f92672">())</span>
-          <span style="color: #f92672">{</span>
-            <span style="color: #66d9ef">for</span><span style="color: #f92672">(</span><span style="color: #f8f8f2">INode</span> <span style="color: #f8f8f2">node</span> <span style="color: #f92672">:</span><span style="color: #f8f8f2">a</span><span style="color: #f92672">.</span><span style="color: #a6e22e">getDownNodes</span><span style="color: #f92672">())</span>
-            <span style="color: #f92672">{</span>
-              <span style="color: #66d9ef">if</span><span style="color: #f92672">(!</span><span style="color: #f8f8f2">usedNodes</span><span style="color: #f92672">.</span><span style="color: #a6e22e">contains</span><span style="color: #f92672">(</span><span style="color: #f8f8f2">node</span><span style="color: #f92672">))</span>
-              <span style="color: #f92672">{</span>
-                <span style="color: #f8f8f2">displayValue</span><span style="color: #f92672">++;</span>
-                <span style="color: #f8f8f2">usedNodes</span><span style="color: #f92672">.</span><span style="color: #a6e22e">add</span><span style="color: #f92672">(</span><span style="color: #f8f8f2">node</span><span style="color: #f92672">);</span>
-                <span style="color: #f8f8f2">getNextLinkedNode</span><span style="color: #f92672">(</span><span style="color: #f8f8f2">node</span><span style="color: #f92672">,</span> <span style="color: #f8f8f2">range</span><span style="color: #f92672">,</span> <span style="color: #f8f8f2">usedNodes</span><span style="color: #f92672">,</span> <span style="color: #f8f8f2">displayValue</span><span style="color: #f92672">);</span>
-              <span style="color: #f92672">}</span>
-            <span style="color: #f92672">}</span>
-          <span style="color: #f92672">}</span>
-          <span style="color: #66d9ef">else</span> <span style="color: #a6e22e">if</span><span style="color: #f92672">(!</span><span style="color: #f8f8f2">a</span><span style="color: #f92672">.</span><span style="color: #a6e22e">getLeftNodes</span><span style="color: #f92672">().</span><span style="color: #a6e22e">isEmpty</span><span style="color: #f92672">())</span>
-          <span style="color: #f92672">{</span>
-            <span style="color: #66d9ef">for</span><span style="color: #f92672">(</span><span style="color: #f8f8f2">INode</span> <span style="color: #f8f8f2">node</span> <span style="color: #f92672">:</span><span style="color: #f8f8f2">a</span><span style="color: #f92672">.</span><span style="color: #a6e22e">getLeftNodes</span><span style="color: #f92672">())</span>
-            <span style="color: #f92672">{</span>
-              <span style="color: #66d9ef">if</span><span style="color: #f92672">(!</span><span style="color: #f8f8f2">usedNodes</span><span style="color: #f92672">.</span><span style="color: #a6e22e">contains</span><span style="color: #f92672">(</span><span style="color: #f8f8f2">node</span><span style="color: #f92672">))</span>
-              <span style="color: #f92672">{</span>
-                <span style="color: #f8f8f2">displayValue</span><span style="color: #f92672">++;</span>
-                <span style="color: #f8f8f2">usedNodes</span><span style="color: #f92672">.</span><span style="color: #a6e22e">add</span><span style="color: #f92672">(</span><span style="color: #f8f8f2">node</span><span style="color: #f92672">);</span>
-                <span style="color: #f8f8f2">getNextLinkedNode</span><span style="color: #f92672">(</span><span style="color: #f8f8f2">node</span><span style="color: #f92672">,</span> <span style="color: #f8f8f2">range</span><span style="color: #f92672">,</span> <span style="color: #f8f8f2">usedNodes</span><span style="color: #f92672">,</span><span style="color: #f8f8f2">displayValue</span><span style="color: #f92672">);</span>
-              <span style="color: #f92672">}</span>
-            <span style="color: #f92672">}</span>
-          <span style="color: #f92672">}</span>
-          <span style="color: #66d9ef">else</span> <span style="color: #a6e22e">if</span><span style="color: #f92672">(!</span><span style="color: #f8f8f2">a</span><span style="color: #f92672">.</span><span style="color: #a6e22e">getUpNodes</span><span style="color: #f92672">().</span><span style="color: #a6e22e">isEmpty</span><span style="color: #f92672">())</span>
-          <span style="color: #f92672">{</span>
-            <span style="color: #66d9ef">for</span><span style="color: #f92672">(</span><span style="color: #f8f8f2">INode</span> <span style="color: #f8f8f2">node</span> <span style="color: #f92672">:</span><span style="color: #f8f8f2">a</span><span style="color: #f92672">.</span><span style="color: #a6e22e">getUpNodes</span><span style="color: #f92672">())</span>
-            <span style="color: #f92672">{</span>
-              <span style="color: #66d9ef">if</span><span style="color: #f92672">(!</span><span style="color: #f8f8f2">usedNodes</span><span style="color: #f92672">.</span><span style="color: #a6e22e">contains</span><span style="color: #f92672">(</span><span style="color: #f8f8f2">node</span><span style="color: #f92672">))</span>
-              <span style="color: #f92672">{</span>
-                <span style="color: #f8f8f2">displayValue</span><span style="color: #f92672">++;</span>
-                <span style="color: #f8f8f2">usedNodes</span><span style="color: #f92672">.</span><span style="color: #a6e22e">add</span><span style="color: #f92672">(</span><span style="color: #f8f8f2">node</span><span style="color: #f92672">);</span>
-                <span style="color: #f8f8f2">getNextLinkedNode</span><span style="color: #f92672">(</span><span style="color: #f8f8f2">node</span><span style="color: #f92672">,</span> <span style="color: #f8f8f2">range</span><span style="color: #f92672">,</span> <span style="color: #f8f8f2">usedNodes</span><span style="color: #f92672">,</span><span style="color: #f8f8f2">displayValue</span><span style="color: #f92672">);</span>
-              <span style="color: #f92672">}</span>
-            <span style="color: #f92672">}</span>
-          <span style="color: #f92672">}</span>
-          <span style="color: #66d9ef">else</span> <span style="color: #66d9ef">return</span><span style="color: #f92672">;</span>
+          <span style="color: #f8f8f2">displayValue</span><span style="color: #f92672">++;</span>
+          <span style="color: #f8f8f2">usedNodes</span><span style="color: #f92672">.</span><span style="color: #a6e22e">add</span><span style="color: #f92672">(</span><span style="color: #f8f8f2">node</span><span style="color: #f92672">);</span>
+          <span style="color: #f8f8f2">getNextLinkedNode</span><span style="color: #f92672">(</span><span style="color: #f8f8f2">node</span><span style="color: #f92672">,</span> <span style="color: #f8f8f2">range</span><span style="color: #f92672">,</span> <span style="color: #f8f8f2">usedNodes</span><span style="color: #f92672">,</span> <span style="color: #f8f8f2">displayValue</span><span style="color: #f92672">);</span>
         <span style="color: #f92672">}</span>
-      </pre></div>
-      `
+      <span style="color: #f92672">}</span>
+    <span style="color: #f92672">}</span>
+    <span style="color: #66d9ef">else</span> <span style="color: #a6e22e">if</span><span style="color: #f92672">(!</span><span style="color: #f8f8f2">a</span><span style="color: #f92672">.</span><span style="color: #a6e22e">getLeftNodes</span><span style="color: #f92672">().</span><span style="color: #a6e22e">isEmpty</span><span style="color: #f92672">())</span>
+    <span style="color: #f92672">{</span>
+      <span style="color: #66d9ef">for</span><span style="color: #f92672">(</span><span style="color: #f8f8f2">INode</span> <span style="color: #f8f8f2">node</span> <span style="color: #f92672">:</span><span style="color: #f8f8f2">a</span><span style="color: #f92672">.</span><span style="color: #a6e22e">getLeftNodes</span><span style="color: #f92672">())</span>
+      <span style="color: #f92672">{</span>
+        <span style="color: #66d9ef">if</span><span style="color: #f92672">(!</span><span style="color: #f8f8f2">usedNodes</span><span style="color: #f92672">.</span><span style="color: #a6e22e">contains</span><span style="color: #f92672">(</span><span style="color: #f8f8f2">node</span><span style="color: #f92672">))</span>
+        <span style="color: #f92672">{</span>
+          <span style="color: #f8f8f2">displayValue</span><span style="color: #f92672">++;</span>
+          <span style="color: #f8f8f2">usedNodes</span><span style="color: #f92672">.</span><span style="color: #a6e22e">add</span><span style="color: #f92672">(</span><span style="color: #f8f8f2">node</span><span style="color: #f92672">);</span>
+          <span style="color: #f8f8f2">getNextLinkedNode</span><span style="color: #f92672">(</span><span style="color: #f8f8f2">node</span><span style="color: #f92672">,</span> <span style="color: #f8f8f2">range</span><span style="color: #f92672">,</span> <span style="color: #f8f8f2">usedNodes</span><span style="color: #f92672">,</span><span style="color: #f8f8f2">displayValue</span><span style="color: #f92672">);</span>
+        <span style="color: #f92672">}</span>
+      <span style="color: #f92672">}</span>
+    <span style="color: #f92672">}</span>
+    <span style="color: #66d9ef">else</span> <span style="color: #a6e22e">if</span><span style="color: #f92672">(!</span><span style="color: #f8f8f2">a</span><span style="color: #f92672">.</span><span style="color: #a6e22e">getUpNodes</span><span style="color: #f92672">().</span><span style="color: #a6e22e">isEmpty</span><span style="color: #f92672">())</span>
+    <span style="color: #f92672">{</span>
+      <span style="color: #66d9ef">for</span><span style="color: #f92672">(</span><span style="color: #f8f8f2">INode</span> <span style="color: #f8f8f2">node</span> <span style="color: #f92672">:</span><span style="color: #f8f8f2">a</span><span style="color: #f92672">.</span><span style="color: #a6e22e">getUpNodes</span><span style="color: #f92672">())</span>
+      <span style="color: #f92672">{</span>
+        <span style="color: #66d9ef">if</span><span style="color: #f92672">(!</span><span style="color: #f8f8f2">usedNodes</span><span style="color: #f92672">.</span><span style="color: #a6e22e">contains</span><span style="color: #f92672">(</span><span style="color: #f8f8f2">node</span><span style="color: #f92672">))</span>
+        <span style="color: #f92672">{</span>
+          <span style="color: #f8f8f2">displayValue</span><span style="color: #f92672">++;</span>
+          <span style="color: #f8f8f2">usedNodes</span><span style="color: #f92672">.</span><span style="color: #a6e22e">add</span><span style="color: #f92672">(</span><span style="color: #f8f8f2">node</span><span style="color: #f92672">);</span>
+          <span style="color: #f8f8f2">getNextLinkedNode</span><span style="color: #f92672">(</span><span style="color: #f8f8f2">node</span><span style="color: #f92672">,</span> <span style="color: #f8f8f2">range</span><span style="color: #f92672">,</span> <span style="color: #f8f8f2">usedNodes</span><span style="color: #f92672">,</span><span style="color: #f8f8f2">displayValue</span><span style="color: #f92672">);</span>
+        <span style="color: #f92672">}</span>
+      <span style="color: #f92672">}</span>
+    <span style="color: #f92672">}</span>
+    <span style="color: #66d9ef">else</span> <span style="color: #66d9ef">return</span><span style="color: #f92672">;</span>
+  <span style="color: #f92672">}</span>
+</pre></div>
+`
       },
       {
         subTitle: 'Keep It Secret, Keep it Safe',
         description: `This function just grabs the node and adds it to the displayCase(called range in this function)`,
-        code: `<!-- HTML generated using hilite.me --><div style="background: #272822; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #66d9ef">private</span> <span style="color: #66d9ef">static</span> <span style="color: #66d9ef">char</span><span style="color: #f92672">[][]</span> <span style="color: #a6e22e">addNodetoCase</span><span style="color: #f92672">(</span><span style="color: #f8f8f2">INode</span> <span style="color: #f8f8f2">node</span><span style="color: #f92672">,</span> <span style="color: #66d9ef">char</span><span style="color: #f92672">[][]</span> <span style="color: #f8f8f2">range</span><span style="color: #f92672">,</span> <span style="color: #66d9ef">char</span> <span style="color: #f8f8f2">displayValue</span><span style="color: #f92672">)</span>
-        <span style="color: #f92672">{</span>
-          <span style="color: #75715e">//TODO add node to range</span>
-          <span style="color: #66d9ef">int</span> <span style="color: #f8f8f2">x</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">node</span><span style="color: #f92672">.</span><span style="color: #a6e22e">getRect</span><span style="color: #f92672">().</span><span style="color: #a6e22e">x</span><span style="color: #f92672">;</span>
-          <span style="color: #66d9ef">int</span> <span style="color: #f8f8f2">y</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">node</span><span style="color: #f92672">.</span><span style="color: #a6e22e">getRect</span><span style="color: #f92672">().</span><span style="color: #a6e22e">y</span><span style="color: #f92672">;</span>
-          <span style="color: #66d9ef">for</span><span style="color: #f92672">(</span><span style="color: #66d9ef">int</span> <span style="color: #f8f8f2">i</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">x</span><span style="color: #f92672">;</span> <span style="color: #f8f8f2">i</span> <span style="color: #f92672">&lt;=</span> <span style="color: #f8f8f2">node</span><span style="color: #f92672">.</span><span style="color: #a6e22e">getRect</span><span style="color: #f92672">().</span><span style="color: #a6e22e">getMaxX</span><span style="color: #f92672">()-</span><span style="color: #ae81ff">1</span><span style="color: #f92672">;</span> <span style="color: #f8f8f2">i</span><span style="color: #f92672">++)</span>
-          <span style="color: #f92672">{</span>
-            <span style="color: #66d9ef">for</span><span style="color: #f92672">(</span><span style="color: #66d9ef">int</span> <span style="color: #f8f8f2">j</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">y</span><span style="color: #f92672">;</span> <span style="color: #f8f8f2">j</span> <span style="color: #f92672">&lt;=</span> <span style="color: #f8f8f2">node</span><span style="color: #f92672">.</span><span style="color: #a6e22e">getRect</span><span style="color: #f92672">().</span><span style="color: #a6e22e">getMaxY</span><span style="color: #f92672">()-</span><span style="color: #ae81ff">1</span><span style="color: #f92672">;</span> <span style="color: #f8f8f2">j</span><span style="color: #f92672">++)</span>
-            <span style="color: #f92672">{</span>
-              <span style="color: #f8f8f2">range</span><span style="color: #f92672">[</span><span style="color: #f8f8f2">j</span><span style="color: #f92672">][</span><span style="color: #f8f8f2">i</span><span style="color: #f92672">]</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">displayValue</span><span style="color: #f92672">;</span>
-            <span style="color: #f92672">}</span>
-          <span style="color: #f92672">}</span>
-          <span style="color: #66d9ef">return</span> <span style="color: #f8f8f2">range</span><span style="color: #f92672">;</span>
-        <span style="color: #f92672">}</span>
-      </pre></div>`
+        code: 
+  `<!-- HTML generated using hilite.me --><div style="background: #272822; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #66d9ef">private</span> <span style="color: #66d9ef">static</span> <span style="color: #66d9ef">char</span><span style="color: #f92672">[][]</span> <span style="color: #a6e22e">addNodetoCase</span><span style="color: #f92672">(</span><span style="color: #f8f8f2">INode</span> <span style="color: #f8f8f2">node</span><span style="color: #f92672">,</span> <span style="color: #66d9ef">char</span><span style="color: #f92672">[][]</span> <span style="color: #f8f8f2">range</span><span style="color: #f92672">,</span> <span style="color: #66d9ef">char</span> <span style="color: #f8f8f2">displayValue</span><span style="color: #f92672">)</span>
+  <span style="color: #f92672">{</span>
+    <span style="color: #75715e">//TODO add node to range</span>
+    <span style="color: #66d9ef">int</span> <span style="color: #f8f8f2">x</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">node</span><span style="color: #f92672">.</span><span style="color: #a6e22e">getRect</span><span style="color: #f92672">().</span><span style="color: #a6e22e">x</span><span style="color: #f92672">;</span>
+    <span style="color: #66d9ef">int</span> <span style="color: #f8f8f2">y</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">node</span><span style="color: #f92672">.</span><span style="color: #a6e22e">getRect</span><span style="color: #f92672">().</span><span style="color: #a6e22e">y</span><span style="color: #f92672">;</span>
+    <span style="color: #66d9ef">for</span><span style="color: #f92672">(</span><span style="color: #66d9ef">int</span> <span style="color: #f8f8f2">i</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">x</span><span style="color: #f92672">;</span> <span style="color: #f8f8f2">i</span> <span style="color: #f92672">&lt;=</span> <span style="color: #f8f8f2">node</span><span style="color: #f92672">.</span><span style="color: #a6e22e">getRect</span><span style="color: #f92672">().</span><span style="color: #a6e22e">getMaxX</span><span style="color: #f92672">()-</span><span style="color: #ae81ff">1</span><span style="color: #f92672">;</span> <span style="color: #f8f8f2">i</span><span style="color: #f92672">++)</span>
+    <span style="color: #f92672">{</span>
+      <span style="color: #66d9ef">for</span><span style="color: #f92672">(</span><span style="color: #66d9ef">int</span> <span style="color: #f8f8f2">j</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">y</span><span style="color: #f92672">;</span> <span style="color: #f8f8f2">j</span> <span style="color: #f92672">&lt;=</span> <span style="color: #f8f8f2">node</span><span style="color: #f92672">.</span><span style="color: #a6e22e">getRect</span><span style="color: #f92672">().</span><span style="color: #a6e22e">getMaxY</span><span style="color: #f92672">()-</span><span style="color: #ae81ff">1</span><span style="color: #f92672">;</span> <span style="color: #f8f8f2">j</span><span style="color: #f92672">++)</span>
+      <span style="color: #f92672">{</span>
+        <span style="color: #f8f8f2">range</span><span style="color: #f92672">[</span><span style="color: #f8f8f2">j</span><span style="color: #f92672">][</span><span style="color: #f8f8f2">i</span><span style="color: #f92672">]</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">displayValue</span><span style="color: #f92672">;</span>
+      <span style="color: #f92672">}</span>
+    <span style="color: #f92672">}</span>
+    <span style="color: #66d9ef">return</span> <span style="color: #f8f8f2">range</span><span style="color: #f92672">;</span>
+  <span style="color: #f92672">}</span>
+</pre></div>`
       }]
 
     }

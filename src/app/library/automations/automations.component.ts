@@ -24,24 +24,6 @@ export class AutomationsComponent implements OnInit {
       title: 'lazygit.py',
       url: 'automation',
       codeLanguage: ''
-    },
-    {
-      id: 2,
-      title: 'logging',
-      url: 'automation',
-      codeLanguage:'python'
-    },
-    {
-      id: 3,
-      title: 'json translations',
-      url: 'automation',
-      codeLanguage:'python',
-    },
-    {
-      id: 4,
-      title: 'Node Traversal',
-      url: 'automation',
-      codeLanguage: 'java'
     }
   ]
 

@@ -3,7 +3,7 @@
 <div class = "white-text" *ngIf = "dId !=0">
     <div >
         <h2 class = "title align-center">{{data[dId].title}}</h2>
-        <p>{{data[dId].subStatement}}</p>
+        <p>{{data[dId].subTitle}}</p>
         
         <div *ngFor = "let info of data[dId].information">
             <div class = "col" >
@@ -16,6 +16,7 @@
             </div>
             <div class = "col"> 
                 <div class = "check" [innerHTML]="info.code | safeHTML">
+                <img src = "info.image">
                 </div> 
                 <div id="test"></div>
                 

@@ -32,6 +32,12 @@ import { PokemonComponent } from './hobbies-page/pokemon/pokemon.component';
 import { SnippetsComponent } from './library/snippets/snippets.component';
 import { SnippetComponent } from './library/snippets/snippet/snippet.component';
 import { SnippetTableComponent } from './library/snippets/snippet-table/snippet-table.component';
+import { CompletionsComponent } from './library/completions/completions.component';
+import { CompletionComponent } from './library/completions/completion/completion.component';
+import { CompletionTableComponent } from './library/completions/completion-table/completion-table.component';
+import { AutomationsComponent } from './library/automations/automations.component';
+import { AutomationComponent } from './library/automations/automation/automation.component';
+import { AutomationTableComponent } from './library/automations/automation-table/automation-table.component';
 
 const routes: Routes = [
 	{
@@ -123,6 +129,40 @@ const routes: Routes = [
 					},
 					{
 						path: '', component: SnippetTableComponent
+					},
+					{
+						path: '**', component: RedirectPageComponent
+					}
+				]
+			},
+			{
+				path: 'completions', component: CompletionsComponent,
+				children: [
+					{
+						path: 'completion', component: CompletionComponent
+					},
+					{
+						path: 'table', component: CompletionTableComponent
+					},
+					{
+						path: '', component: CompletionTableComponent
+					},
+					{
+						path: '**', component: RedirectPageComponent
+					}
+				]
+			},
+			{
+				path: 'automations', component: AutomationsComponent,
+				children: [
+					{
+						path: 'automation', component: AutomationComponent
+					},
+					{
+						path: 'table', component: AutomationTableComponent
+					},
+					{
+						path: '', component: AutomationTableComponent
 					},
 					{
 						path: '**', component: RedirectPageComponent

@@ -14,7 +14,7 @@ export class CompletionsComponent implements OnInit {
   ngOnInit(): void {
   }
   currentCompletion = 0;
-  snippetCompletion = [
+  completionList = [
     {
       id: 0,
       title: 'Table', 
