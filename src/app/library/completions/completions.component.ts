@@ -23,7 +23,7 @@ export class CompletionsComponent implements OnInit {
     },
     {
       id:1,
-      title: 'verification',
+      title: 'Camfel',
       url: 'completion',
       codeLanguage:''
     }

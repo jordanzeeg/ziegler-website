@@ -9,15 +9,15 @@
             <div class = "col" >
                 <br/>
                 <h3> {{info.subTitle}}</h3>
-                <pre class = "check">{{info.description}}</pre>
+                <p >{{info.description}}</p>
                 <div class= "" style="text-align: right;">
-                    <p>Code Language: {{data[dId].codeLanguage}}</p>
                 </div>
             </div>
             <div class = "col"> 
                 <div class = "check" [innerHTML]="info.code | safeHTML">
-                <img src = "info.image">
-                </div> 
+                </div>
+                <img [src] = "info.image" width="100%"alt= "image not found">
+                
                 <div id="test"></div>
                 
             </div>
