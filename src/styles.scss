@@ -34,6 +34,16 @@
 	margin: auto;
 	margin-top: 5vw;
 }
+.theme-style2 {
+	opacity: .8;
+	padding: 2rem 1rem;
+	border-radius:.3rem;
+	box-shadow:  8px 8px 15px 7px rgba(0, 0, 0, 0.61), 0 6px 20px 0 rgba(0, 0, 0, 0.61);
+	color: white;
+	background-color: rgb(100, 175, 175);
+	margin: auto;
+	margin-top: 5vw;
+}
 .align-center {
 	text-align: center;
 }
@@ -46,7 +56,10 @@
 	border-radius: 1.5em;
 	font-size: 1vw;
 }
-
+.spacer {
+	opacity: 0; 
+	height: 5vh;
+}
 .content-table-erste {
     position: relative;
 	top: 1vh;
