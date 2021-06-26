@@ -3,10 +3,11 @@
 <div class = "white-text" *ngIf = "dId !=0">
     <div >
         <h2 class = "title align-center">{{data[dId].title}}</h2>
-        
+        <p>{{data[dId].subStatement}}</p>
         
         <div *ngFor = "let info of data[dId].information">
             <div class = "col" >
+                <br/>
                 <h3> {{info.subTitle}}</h3>
                 <pre class = "check">{{info.description}}</pre>
                 <div class= "" style="text-align: right;">

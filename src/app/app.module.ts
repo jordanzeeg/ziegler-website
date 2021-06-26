@@ -12,14 +12,11 @@ import { NgbModule, NgbCollapseModule } from '@ng-bootstrap/ng-bootstrap';
 import { ContentsTableComponent } from './contents-table/contents-table.component';
 import { CpTableComponent } from './cp-table/cp-table.component';
 import { HobbiesTableComponent } from './hobbies-table/hobbies-table.component';
-import { HobbyTableComponent } from './hobby-table/hobby-table.component';
 import { SoapboxComponent } from './soapbox/soapbox.component';
 import { LibraryHomeComponent } from './library/library-home/library-home.component';
 import { LibraryTableComponent } from './library/library-table/library-table.component';
 import { FutureProgramsComponent } from './library/future-programs/future-programs.component';
 import { FooterComponent } from './footer/footer.component';
-import { AngularFireModule } from '@angular/fire';
-import { environment } from 'src/environments/environment';
 import { FormsModule } from '@angular/forms';
 import { AuthModuleModule } from './authorization/auth-module/auth-module.module';
 import { TictactoeSquareComponent } from './games/tic-tac-toe/tictactoe-square/tictactoe-square.component';
@@ -46,6 +43,8 @@ import { ErsteChallengeComponent } from './library/challenges/erste-challenge/er
 import { RedirectPageComponent } from './redirect-page/redirect-page.component';
 import { PokemonComponent } from './hobbies-page/pokemon/pokemon.component';
 import { SnippetsComponent } from './library/snippets/snippets.component';
+import { SoapboxDatalessComponent } from './soapbox-dataless/soapbox-dataless.component';
+import { SnippetTableComponent } from './library/snippets/snippet-table/snippet-table.component';
 
 
 
@@ -71,7 +70,6 @@ import { SnippetsComponent } from './library/snippets/snippets.component';
     CpTableComponent,
     HobbiesTableComponent,
     LibraryTableComponent,
-    HobbyTableComponent,
     SoapboxComponent,
     LibraryHomeComponent,
     FutureProgramsComponent,
@@ -90,7 +88,9 @@ import { SnippetsComponent } from './library/snippets/snippets.component';
     SafeHTMLPipe,
     ErsteChallengeComponent,
     RedirectPageComponent,
-    SnippetsComponent
+    SnippetsComponent,
+    SoapboxDatalessComponent,
+    SnippetTableComponent
   ],
   imports: [
     AppRoutingModule,
@@ -99,9 +99,7 @@ import { SnippetsComponent } from './library/snippets/snippets.component';
     NgbCollapseModule,
     BrowserModule,
     FormsModule,
-    AuthModuleModule,
-    
-    AngularFireModule.initializeApp(environment.firebase),
+    AuthModuleModule
     
   ],
   providers: [AuthorizeService, FsItemService],

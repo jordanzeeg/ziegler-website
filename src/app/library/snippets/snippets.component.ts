@@ -1,5 +1,4 @@
 import { Component, OnInit, Pipe, PipeTransform  } from '@angular/core';
-import { DomSanitizer } from '@angular/platform-browser';
 import { Router } from '@angular/router';
 import { FsItemService } from 'src/app/service/fs-item.service';
 
@@ -28,6 +27,24 @@ export class SnippetsComponent implements OnInit {
       title: 'api.py',
       url: 'snippet',
       codeLanguage: ''
+    },
+    {
+      id: 2,
+      title: 'logging',
+      url: 'snippet',
+      codeLanguage:'python'
+    },
+    {
+      id: 3,
+      title: 'json translations',
+      url: 'snippet',
+      codeLanguage:'python',
+    },
+    {
+      id: 4,
+      title: 'Node Traversal',
+      url: 'snippet',
+      codeLanguage: 'java'
     }
   ]
   ngOnInit(): void {
