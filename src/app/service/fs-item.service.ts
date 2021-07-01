@@ -20,7 +20,7 @@ export class FsItemService {
     
    }
    getItems() {
-     return this.afs.collection('items').valueChanges();;
+     return this.afs.collection('items').valueChanges();
    }
    getSoapboxes() {
      return this.afs.collection('soapboxes').valueChanges();

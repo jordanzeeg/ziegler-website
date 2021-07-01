@@ -12,7 +12,7 @@ export class ChallengeTableComponent implements OnInit {
   ngOnInit(): void {
     this.canvasDrawing();
   }
-
+  
   canvasDrawing() : void {
     //necessary steps to work with canvas
       const canvas = document.getElementById("canvas1") as HTMLCanvasElement;
@@ -24,9 +24,6 @@ export class ChallengeTableComponent implements OnInit {
     let PROJECTION_CENTER_X = canvas.width / 2; // X center of the canvas HTML
     let PROJECTION_CENTER_Y = canvas.height / 2; // Y center of the canvas HTML
     let PERSPECTIVE = canvas.width * 0.8;
-    var image2 = new Image();
-    image2.src = "../assets/Azir_Render.png";
-    image2.alt = "testgif failed to load";
 
   
     //class contains one image/video to be maneuvered around the screen
@@ -39,14 +36,20 @@ export class ChallengeTableComponent implements OnInit {
       xProjected: number;
       yProjected: number;
       scaleProjected:number;
+      colorR: number;
+      colorG: number;
+      colorB: number;
       
-      constructor() {
+      constructor(newText:string) {
         console.log(canvas.width);
         this.x = (Math.random() - 0.5) * 2 * canvas.width; //currently gives random x position
         this.y = (Math.random() - 0.5) * 2 * canvas.height; //currently gives random y position
-        this.z = (Math.random() - 0.5) * 2 * 10000; //gives random z, notable z is always positive and 
+        this.z = (Math.random() - 0.5) * 2 * 10000; //gives random z, notable z is always positive and
+        this.colorR = (Math.random() *255);
+        this.colorG = (Math.random()*255);
+        this.colorB = (Math.random()*255); 
         this.radius = 250;
-        this.text = "New Text";
+        this.text = newText;
         this.xProjected = 0;
         this.yProjected = 0;
         this.scaleProjected = 0;
@@ -68,7 +71,7 @@ export class ChallengeTableComponent implements OnInit {
       }
       draw() {
         this.project(); //converts x y and z to 2d
-        ctx.fillStyle = 'green';
+        ctx.fillStyle = 'rgb(' + this.colorR + ','+ this.colorG+ ',' + this.colorB+ ')';
         //ctx.fillRect(this.xProjected - this.radius, 
         //             this.yProjected - this.radius, 
         //             this.radius *2 * this.scaleProjected,
@@ -78,9 +81,9 @@ export class ChallengeTableComponent implements OnInit {
         //             this.radius *2 * this.scaleProjected,
         //             this.radius *2 * this.scaleProjected)
         
-        ctx.strokeText(this.text, this.xProjected - this.radius/3, 
+        ctx.fillText(this.text, this.xProjected - this.radius/3, 
                     this.yProjected - this.radius/2, 
-                    this.radius *2 * this.scaleProjected)        
+                    this.radius * this.scaleProjected)        
 
 
       }
@@ -89,7 +92,8 @@ export class ChallengeTableComponent implements OnInit {
     const hobbylist:Hobby[] = [];
     for(var i = 0; i < 80; i++)
     {
-      hobbylist.push(new Hobby()); 
+      const v = i%this.challengeList.length;
+      hobbylist.push(new Hobby(this.challengeList[v].title)); 
       
     };
     
@@ -113,5 +117,125 @@ export class ChallengeTableComponent implements OnInit {
   
   }
 
+  currentChallenge = 1;
+  challengeList = [
+    {
+      id: 1,
+      title: 'FizzBuzz', 
+      url: "erste", 
+      codeLanguage: 'python'
+    },
+    {
+      id: 2, 
+      title: 'Detect Capital', 
+      url: "erste", 
+      codeLanguage: 'java'
+    },
+    {
+      id: 3, title: 'Kids With the Greatest # of Candies', url: "erste"
+    },
+    {
+      id: 4, 
+      title: 'Shuffle the Array', 
+      url: "erste", 
+      codeLanguage: 'java'
+    },
+    {
+      id: 5, 
+      title: 'Number of Good Pairs', 
+      url: "erste", 
+      codeLanguage: 'java'
+    },
+    {
+      id: 6, 
+      title: 'Running Sum of 1d Array', 
+      url: "erste", 
+      codeLanguage: 'java'
+    },
+    {
+      id: 7, 
+      title: 'Group Given Group Size They Belong To',  
+      url: "erste", 
+      codeLanguage: 'java'
+    },
+    {
+      id: 8, 
+      title: 'Find Numbers With Even Number of Digits', 
+      url: "erste", 
+      codeLanguage: 'java'
+    },
+    {
+      id: 9, 
+      title: 'Subtract Product and Sum of Integer', 
+      url: "erste", 
+      codeLanguage: 'java'
+    },
+    {
+      id: 10, 
+      title: '# of Numbers Smaller Than Current', 
+      url: "erste", 
+      codeLanguage: 'java'
+    },
+    {
+      id: 11, 
+      title: 'Jewels and Stones', 
+      url: "erste", 
+      codeLanguage: 'java'
+    },
+    {
+      id: 12, 
+      title: 'XOR Operation in Array', 
+      url: "erste", 
+      codeLanguage: 'java'
+    },
+    {
+      id: 13, 
+      title: 'Corresponding Node of Binary Tree in a Clone Tree', 
+      url: "erste", 
+      codeLanguage: 'java'
+    },
+    {
+      id: 14, 
+      title: 'Number of steps to get to zero', 
+      url: "erste", 
+      codeLanguage: 'java'
+    },
+    {
+      id: 15, 
+      title: 'Count Items Matching a Rule', 
+      url: "erste", 
+      codeLanguage: 'java'
+    },
+    {
+      id: 16, 
+      title: 'Design Parking System', 
+      url: "erste", 
+      codeLanguage: 'java'
+    },
+    {
+      id: 17, 
+      title: 'Richest Customer Wealth', 
+      url: "erste", 
+      codeLanguage: 'java'
+    },
+    {
+      id: 18, 
+      title: 'Three Consecutive Odds', 
+      url: "erste", 
+      codeLanguage: 'java'
+    },
+    {
+      id: 19, 
+      title: 'Create Target Array In Order', 
+      url: "erste", 
+      codeLanguage: 'java'
+    },
+    {
+      id: 20, 
+      title: 'Shuffle String', 
+      url: "erste", 
+      codeLanguage: 'java'
+    },
 
+  ];
 }
