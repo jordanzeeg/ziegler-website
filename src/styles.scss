@@ -26,7 +26,7 @@
 
 .theme-style {
 	opacity: .8;
-	padding: 2rem 1rem;
+	padding: 2rem 3rem;
 	border-radius:.3rem;
 	box-shadow:  8px 8px 15px 7px rgba(0, 0, 0, 0.61), 0 6px 20px 0 rgba(0, 0, 0, 0.61);
 	color: white;
@@ -36,7 +36,7 @@
 }
 .theme-style2 {
 	opacity: .8;
-	padding: 2rem 1rem;
+	padding: 2rem 3rem;
 	border-radius:.3rem;
 	box-shadow:  8px 8px 15px 7px rgba(0, 0, 0, 0.61), 0 6px 20px 0 rgba(0, 0, 0, 0.61);
 	color: white;
@@ -48,6 +48,9 @@
 	text-align: center;
 }
 
+.width-management {
+	width: 75%;
+}
 .content-table-card {
     width: 20vw;
 	box-shadow:  8px 8px 15px 7px rgba(0, 0, 0, 0.61), 0 6px 20px 0 rgba(0, 0, 0, 0.61);
