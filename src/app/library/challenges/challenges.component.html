@@ -8,7 +8,12 @@
 <div class = "flex">
     <div class = " sidebar ">
         <a >
-            <div class = "linkd" routerLink="{{challenge.url}}"(click)="updateErste(challenge.id)" *ngFor= "let challenge of challengeList" > <div class = "title">{{challenge.title}}</div></div>
+            <div class = "linkd" routerLink = "table"><div class="title">Table</div> </div>
+            <div *ngFor= "let challenge of challengeList">
+                <div class = "linkd" routerLink="erste"(click)="updateErste(challenge.id)" *ngIf="challenge.id !=0" > 
+                    <div  class = "title">{{challenge.title}}</div>
+                </div>
+            </div>
         </a>
     </div>  
         
