@@ -1,14 +1,14 @@
 <div style = "padding-top: 5vh;"></div>
 <div class= "container"> 
     <div class= "theme-style">
-        <h2>Challenges Title</h2>
+        <h2>Challenges</h2>
     </div>
     <div style = "padding-top: 5vh;"></div>
 </div>
 <div class = "flex">
     <div class = " sidebar ">
         <a >
-            <div class = "linkd" routerLink = "table"><div class="title">Table</div> </div>
+            <div class = "linkd" routerLink = "table" (click)="updateErste(0)"><div class="title">Table</div> </div>
             <div *ngFor= "let challenge of challengeList">
                 <div class = "linkd" routerLink="erste"(click)="updateErste(challenge.id)" *ngIf="challenge.id !=0" > 
                     <div  class = "title">{{challenge.title}}</div>

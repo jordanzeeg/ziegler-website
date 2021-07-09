@@ -1,6 +1,7 @@
 import { Component, OnInit, Pipe, PipeTransform  } from '@angular/core';
 import { Router } from '@angular/router';
 import { FsItemService } from 'src/app/service/fs-item.service';
+import { DataServiceService } from '../service/data-service.service';
 
 @Component({
   selector: 'app-snippets',
@@ -12,46 +13,17 @@ import { FsItemService } from 'src/app/service/fs-item.service';
 export class SnippetsComponent implements OnInit {
 
   
-  constructor(public itemService: FsItemService, public router:Router) { }
-
-  currentSnippet = 0;
-  snippetList = [
-    {
-      id: 0,
-      title: 'Table', 
-      url: "table", 
-      codeLanguage: ''
-    },
-    {
-      id: 1,
-      title: 'api.py',
-      url: 'snippet',
-      codeLanguage: ''
-    },
-    {
-      id: 2,
-      title: 'logging',
-      url: 'snippet',
-      codeLanguage:'python'
-    },
-    {
-      id: 3,
-      title: 'json translations',
-      url: 'snippet',
-      codeLanguage:'python',
-    },
-    {
-      id: 4,
-      title: 'Node Traversal',
-      url: 'snippet',
-      codeLanguage: 'java'
-    }
-  ]
+  constructor(public itemService: FsItemService, public router:Router, private dataService: DataServiceService) { }
   ngOnInit(): void {
+    this.snippetList = this.dataService.getSnippets();
   }
   updateErste(num:number){
     this.currentSnippet = num;
     console.log("updateErste Called");
   }
+  currentSnippet = 0;
+  snippetList = [{}];
+  
+
 
 }

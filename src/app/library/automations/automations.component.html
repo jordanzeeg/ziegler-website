@@ -12,8 +12,12 @@
 <div class = "flex">
     <div class = " sidebar ">
         <a >
-            <div class = "linkd" routerLink="{{automation.url}}"(click)="updateErste(automation.id)" *ngFor= "let automation of automationList" > 
-                <div class = "title">{{automation.title}}</div></div>
+            <div class = "linkd" routerLink = "table" (click)="updateErste(0)"><div class="title">Table</div> </div>
+            <div *ngFor= "let automation of automationList">
+                <div class = "linkd" routerLink="automation"(click)="updateErste(automation.id)" *ngIf="automation.id !=0" > 
+                    <div  class = "title">{{automation.title}}</div>
+                </div>
+            </div>
         </a>
     </div>  
         

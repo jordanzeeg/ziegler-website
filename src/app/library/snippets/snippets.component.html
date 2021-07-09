@@ -1,15 +1,20 @@
 
-
+<div style = "padding-top: 5vh;"></div>
 <div class= "container"> 
-    <div class= "jumbotron">
-        <h2>Snippets Title</h2>
+    <div class= "theme-style">
+        <h2>Snippets</h2>
     </div>
+    <div style = "padding-top: 5vh;"></div>
 </div>
 <div class = "flex">
     <div class = " sidebar ">
         <a >
-            <div class = "linkd" routerLink="{{snippet.url}}"(click)="updateErste(snippet.id)" *ngFor= "let snippet of snippetList" > 
-                <div class = "title">{{snippet.title}}</div></div>
+            <div class = "linkd" routerLink = "table" (click)="updateErste(0)"><div class="title">Table</div> </div>
+            <div *ngFor= "let snippet of snippetList">
+                <div class = "linkd" routerLink="snippet"(click)="updateErste(snippet.id)" *ngIf="snippet.id !=0" > 
+                    <div  class = "title">{{snippet.title}}</div>
+                </div>
+            </div>
         </a>
     </div>  
         

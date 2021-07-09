@@ -25,7 +25,6 @@ export class ChallengesComponent implements OnInit {
 
   updateErste(num:number){
     this.currentChallenge = num;
-    console.log("updateErste Called");
   }
 
   constructor(public itemService: FsItemService, public router:Router,private dataService: DataServiceService) {

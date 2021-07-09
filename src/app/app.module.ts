@@ -28,7 +28,6 @@ import { RsnComponent } from './rsn/rsn.component';
 import { TsmComponent } from './tsm/tsm.component';
 import { ZweiteTableComponent } from './zweite-table/zweite-table.component';
 import { SnippetComponent } from './library/snippets/snippet/snippet.component';
-import { ChallengeComponent } from './library/challenges/challenge/challenge.component';
 import { AuthorizeService } from './authorization/authorize.service';
 import { FsItemService } from './service/fs-item.service';
 import { ProgramsComponent } from './programs/programs.component';
@@ -83,7 +82,6 @@ import { AutomationComponent } from './library/automations/automation/automation
     TictactoeSquareComponent,
     BoardComponent,
     SnippetComponent,
-    ChallengeComponent,
     ProgramsComponent,
     SoapboxFormComponent,
     ProgramFormComponent,

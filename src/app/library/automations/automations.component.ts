@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { FsItemService } from 'src/app/service/fs-item.service';
+import { DataServiceService } from '../service/data-service.service';
 
 @Component({
   selector: 'app-automations',
@@ -9,28 +10,15 @@ import { FsItemService } from 'src/app/service/fs-item.service';
 })
 export class AutomationsComponent implements OnInit {
 
-  constructor(public itemService: FsItemService, public router:Router) { }
+  constructor(public itemService: FsItemService, public router:Router, private dataService: DataServiceService) { }
 
   currentAutomation = 0;
-  automationList = [
-    {
-      id: 0,
-      title: 'Table', 
-      url: "table", 
-      codeLanguage: ''
-    },
-    {
-      id: 1,
-      title: 'lazygit.py',
-      url: 'automation',
-      codeLanguage: ''
-    }
-  ]
+  automationList:any;
 
   ngOnInit(): void {
+    this.automationList = this.dataService.getAutomations();
   }
   updateErste(num:number){
     this.currentAutomation = num;
-    console.log("updateErste Called");
   }
 }
