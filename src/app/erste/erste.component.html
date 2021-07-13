@@ -1,5 +1,5 @@
  <nav class="navbar navbar-fixed navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand " href="/info">Jordan Ziegler</a>
+    <a class="navbar-brand " routerLink="/info">Jordan Ziegler</a>
     <button class="navbar-toggler d-lg-none" type="button" (click)="isCollapsed = !isCollapsed" [attr.aria-expanded]="!isCollapsed" aria-controls="navbarsExampleDefault" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -13,16 +13,16 @@
           <a class="nav-link" routerLink='/about'>{{about.name}}</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/zweite">{{zweite.name}}</a>
+          <a class="nav-link" routerLink="/zweite">{{zweite.name}}</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/library">{{library.name}}</a>
+          <a class="nav-link" routerLink="/library">{{library.name}}</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/hobbies">{{hobbies.name}}</a>
+          <a class="nav-link" routerLink="/hobbies">{{hobbies.name}}</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/soapbox">{{soapbox.name}}</a>
+          <a class="nav-link" routerLink="/soapbox">{{soapbox.name}}</a>
         </li>
       </ul>
     </div>
