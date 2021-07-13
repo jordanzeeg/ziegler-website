@@ -1,7 +1,7 @@
 
 <div >
 	<nav class="navbar navbar-fixed navbar-expand-lg navbar-dark bg-dark">
-		<a class="navbar-brand" href="#">Jordan Ziegler</a>
+		<a class="navbar-brand" routerLink="#">Jordan Ziegler</a>
 	  <button class="navbar-toggler d-lg-none" type="button" (click)="isCollapsed = !isCollapsed" [attr.aria-expanded]="!isCollapsed" aria-controls="navbarsExampleDefault" aria-label="Toggle navigation">
 		<span class="navbar-toggler-icon"></span>
 		</button>
@@ -9,22 +9,22 @@
 		<div class="collapse navbar-collapse" id="navbarSupportedContent" [ngbCollapse]="isCollapsed">
 		  <ul class="navbar-nav mr-auto">
 		        <li class="nav-item active">
-		          <a class="nav-link" href="/zweite">Home <span class="sr-only">(current)</span></a>
+		          <a class="nav-link" routerLink="/zweite">Home <span class="sr-only">(current)</span></a>
 		        </li>
 		        <li class="nav-item">
 		          <a class="nav-link" routerLink='/zweite/tsm'>Tech Screen Management</a> 
 		        </li>
 		        <li class="nav-item">
-		          <a class="nav-link" href="/zweite/ers">Expense Reimbursement System</a>
+		          <a class="nav-link" routerLink="/zweite/ers">Expense Reimbursement System</a>
 		        </li>
 		        <li class="nav-item">
-		          <a class="nav-link" href="/zweite/msps">Mobile Solar Power Station</a>
+		          <a class="nav-link" routerLink="/zweite/msps">Mobile Solar Power Station</a>
 		        </li>
 				<li class="nav-item">
-					<a class="nav-link" href="/zweite/rsn">Revature Social Network</a>
+					<a class="nav-link" routerLink="/zweite/rsn">Revature Social Network</a>
 				  </li>
 		        <li class = "nav-item">
-		        	<a class = "nav-link" href="/zweite/cdp">Capstone Design Project</a>
+		        	<a class = "nav-link" routerLink="/zweite/cdp">Capstone Design Project</a>
 		        </li>
 		      </ul>
 		    </div>
