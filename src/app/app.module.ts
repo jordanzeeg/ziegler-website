@@ -50,6 +50,7 @@ import { CompletionComponent } from './library/completions/completion/completion
 import { AutomationTableComponent } from './library/automations/automation-table/automation-table.component';
 import { CompletionTableComponent } from './library/completions/completion-table/completion-table.component';
 import { AutomationComponent } from './library/automations/automation/automation.component';
+import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 
 
 
@@ -112,7 +113,8 @@ import { AutomationComponent } from './library/automations/automation/automation
     AuthModuleModule
     
   ],
-  providers: [AuthorizeService, FsItemService],
+  providers: [AuthorizeService, FsItemService, {provide: LocationStrategy, useClass:HashLocationStrategy}],
+
   bootstrap: [AppComponent]
 })
 export class AppModule { }
