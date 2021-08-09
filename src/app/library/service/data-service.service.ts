@@ -747,6 +747,36 @@ answer[i] == i if non of the above conditions are true.`,
 <span style="color: #f92672">}</span>
 </pre></div>
 `
+    },
+    {
+        id: 21,
+        title: 'Two Sum - Inv Pt 1',
+        codeLanguage: 'Java',
+        createdBy: 'Ziggy',
+        question: `Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target.
+        You may assume that each input would have exactly one solution, and you may not use the same element twice.
+        You can return the answer in any order.`,
+        code:
+    `<!-- HTML generated using hilite.me --><div style="background: #272822; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #66d9ef">class</span> <span style="color: #a6e22e">Solution</span> <span style="color: #f8f8f2">{</span>
+        <span style="color: #f8f8f2">public</span> <span style="color: #f8f8f2">int[]</span> <span style="color: #f8f8f2">twoSum(int[]</span> <span style="color: #f8f8f2">nums,</span> <span style="color: #f8f8f2">int</span> <span style="color: #f8f8f2">target)</span> <span style="color: #f8f8f2">{</span> 
+            <span style="color: #f8f8f2">int[]</span> <span style="color: #f8f8f2">answer</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">{</span><span style="color: #f92672">-</span><span style="color: #ae81ff">1</span><span style="color: #f8f8f2">,</span><span style="color: #f92672">-</span><span style="color: #ae81ff">1</span><span style="color: #f8f8f2">};</span>
+            <span style="color: #66d9ef">for</span><span style="color: #f8f8f2">(int</span> <span style="color: #f8f8f2">i</span> <span style="color: #f92672">=</span> <span style="color: #ae81ff">0</span><span style="color: #f8f8f2">;</span> <span style="color: #f8f8f2">i</span><span style="color: #f92672">&lt;</span> <span style="color: #f8f8f2">(nums</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">length</span><span style="color: #f92672">-</span><span style="color: #ae81ff">1</span><span style="color: #f8f8f2">);</span> <span style="color: #f8f8f2">i</span><span style="color: #f92672">++</span><span style="color: #f8f8f2">)</span>
+            <span style="color: #f8f8f2">{</span>
+                <span style="color: #66d9ef">for</span> <span style="color: #f8f8f2">(int</span> <span style="color: #f8f8f2">j</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">i;</span> <span style="color: #f8f8f2">j</span><span style="color: #f92672">&lt;</span><span style="color: #f8f8f2">nums</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">length;</span> <span style="color: #f8f8f2">j</span><span style="color: #f92672">++</span><span style="color: #f8f8f2">)</span>
+                <span style="color: #f8f8f2">{</span>
+                    <span style="color: #66d9ef">if</span><span style="color: #f8f8f2">(nums[i]</span><span style="color: #f92672">+</span><span style="color: #f8f8f2">nums[j]</span> <span style="color: #f92672">==</span> <span style="color: #f8f8f2">target</span> <span style="color: #f92672">&amp;&amp;</span> <span style="color: #f8f8f2">i</span> <span style="color: #f92672">!=</span> <span style="color: #f8f8f2">j)</span>
+                    <span style="color: #f8f8f2">{</span>
+                        <span style="color: #f8f8f2">answer[</span><span style="color: #ae81ff">0</span><span style="color: #f8f8f2">]</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">i;</span>
+                        <span style="color: #f8f8f2">answer[</span><span style="color: #ae81ff">1</span><span style="color: #f8f8f2">]</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">j;</span>
+                        <span style="color: #66d9ef">return</span> <span style="color: #f8f8f2">answer;</span>
+                    <span style="color: #f8f8f2">}</span>
+                <span style="color: #f8f8f2">}</span>
+            <span style="color: #f8f8f2">}</span>
+            <span style="color: #66d9ef">return</span> <span style="color: #f8f8f2">answer;</span>
+        <span style="color: #f8f8f2">}</span>
+    <span style="color: #f8f8f2">}</span>
+    </pre></div>    
+    `
     }
   ];
   snippets = 
