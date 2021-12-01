@@ -23,7 +23,5 @@ export class SnippetsComponent implements OnInit {
   }
   currentSnippet = 0;
   snippetList = [{}];
-  
-
 
 }

@@ -51,6 +51,9 @@ import { AutomationTableComponent } from './library/automations/automation-table
 import { CompletionTableComponent } from './library/completions/completion-table/completion-table.component';
 import { AutomationComponent } from './library/automations/automation/automation.component';
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
+import { DataStructuresComponent } from './library/data-structures/data-structures.component';
+import { LinkedListComponent } from './library/data-structures/linked-list/linked-list.component';
+import { DataStructuresTableComponent } from './library/data-structures/data-structures-table/data-structures-table.component';
 
 
 
@@ -101,7 +104,10 @@ import { HashLocationStrategy, LocationStrategy } from '@angular/common';
     CompletionComponent,
     AutomationTableComponent,
     CompletionTableComponent,
-    AutomationComponent
+    AutomationComponent,
+    DataStructuresComponent,
+    LinkedListComponent,
+    DataStructuresTableComponent
   ],
   imports: [
     AppRoutingModule,

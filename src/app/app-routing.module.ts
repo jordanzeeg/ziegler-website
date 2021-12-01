@@ -38,6 +38,9 @@ import { CompletionTableComponent } from './library/completions/completion-table
 import { AutomationsComponent } from './library/automations/automations.component';
 import { AutomationComponent } from './library/automations/automation/automation.component';
 import { AutomationTableComponent } from './library/automations/automation-table/automation-table.component';
+import { DataStructuresComponent } from './library/data-structures/data-structures.component';
+import { LinkedListComponent } from './library/data-structures/linked-list/linked-list.component';
+import { DataStructuresTableComponent } from './library/data-structures/data-structures-table/data-structures-table.component';
 
 const routes: Routes = [
 	{
@@ -167,6 +170,24 @@ const routes: Routes = [
 					{
 						path: '**', component: RedirectPageComponent
 					}
+				]
+			},
+			{
+				path: 'data', component: DataStructuresComponent,
+				children: [
+					{
+						path: 'linked-list', component: LinkedListComponent
+					},
+					{
+						path: 'table', component: LibraryTableComponent // change this component later since it just loops
+					},
+					{
+						path: '', component: DataStructuresTableComponent
+					},
+					{
+						path: '**', component: RedirectPageComponent
+					}
+
 				]
 			},
 			{

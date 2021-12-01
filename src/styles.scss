@@ -139,3 +139,51 @@
 }
 /* Importing Bootstrap SCSS file. */
 @import '~bootstrap/scss/bootstrap';
+
+
+
+/* data structures css*/
+
+.linkedNode {
+    height: fit-content;
+    width: fit-content;
+	padding: 10px;
+    background-color: darkslategray;
+    color: white;
+	border: solid black;
+	border-radius: 0.5em; 
+	box-shadow:  8px 8px 15px 7px rgba(0, 0, 0, 0.61), 0 6px 20px 0 rgba(0, 0, 0, 0.61);
+	opacity: .8;
+	
+}
+
+.viewing-area {
+	position: relative;
+	width: 85vw;
+	height: 70vh;
+}
+
+.linkedBox {
+	position: absolute;
+    // left:15vw;
+	margin-left: 5vw;
+    flex:0 0 80vw;
+    width: 85vw;
+	height: 70vh;
+    
+    opacity: .9;
+    padding-top:2vh;
+    padding-bottom:2vh;
+    padding-left: 2vw;
+    padding-right: 2vw;
+}
+
+.canvasBox {
+	position: absolute;
+	width:83vw;
+	height: 68vh;
+	margin-left: 7vw;
+	margin-top: 2vh;
+	background-color: rgb(58, 173, 173);
+	
+}

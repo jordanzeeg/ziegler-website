@@ -1,0 +1,33 @@
+<div >
+    <nav class="navbar navbar-fixed navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">Jordan Ziegler</a>
+        <button class="navbar-toggler d-lg-none" type="button" (click)="isCollapsed = !isCollapsed" [attr.aria-expanded]="!isCollapsed" aria-controls="navbarsExampleDefault" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent" [ngbCollapse]="isCollapsed">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" routerLink="/library/data">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" routerLink='/library/data/linked-list'>Linked List</a> 
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" routerLink="/data/hash-table">Hash Table</a>
+            </li>
+            <li>
+                <a class="nav-link" routerLink="/data/binary-tree">Binary Tree</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" routerLink="/data/???">???</a>
+            </li>
+          </ul>
+        </div>
+    </nav>
+</div>
+<div>
+    
+    <router-outlet></router-outlet>
+    
+</div>
