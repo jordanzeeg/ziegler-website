@@ -9,62 +9,10 @@ import { element } from 'protractor';
 })
 export class LinkedListComponent implements OnInit {
 
-//zybooks number of buttons
-  numButtons = 7;
-  resultDec = 0;
   constructor() { }
   testLL = new LinkedList;
-  generateButtonsAndViews(){
-    //create buttons
-    var parentWindow = document.getElementById("parentDiv");
-    console.log(parentWindow);
-    for(let i = this.numButtons; i>=0; i--)
-    {
-      let newButton = document.createElement("div");
-      newButton.classList.add("button");
-      newButton.classList.add("btn");
-      newButton.style.backgroundColor = "blue";
-      newButton.style.color = "white";
-      newButton.id = "node"+ i;
-      newButton.innerHTML = "0";
-      newButton.addEventListener('mousedown', e=>{
-        let nodeE = <HTMLDivElement>e.currentTarget;
-        let nodeid = nodeE.id;
-        let nodeId = nodeid.match(/(\d+)/)?.join();
-        if(nodeId){
-          let nodeStatus = parseInt(nodeE.innerHTML);
-          let nodeNum = parseInt(nodeId);
-          if(nodeStatus == 0){
 
-          this.resultDec+= Math.pow(2,nodeNum);
-          nodeE.innerHTML = "1";
-          }
-          if(nodeStatus ==1){
-            this.resultDec-= Math.pow(2,nodeNum);
-            nodeE.innerHTML = "0";
-          }
-          
-          
-          //assuming nodeNum = iterator
-
-          //result += Math.pow(2,nodeNum)
-          document.getElementById("result").innerHTML = this.resultDec;
-          
-
-        }
-        
-         
-      })
-
-
-      parentWindow?.appendChild(newButton);
-      
-      
-    }
-    
-  }
   ngOnInit(): void {
-    this.generateButtonsAndViews();
     var testLL = this.testLL;
     testLL.appendFront("first add");
     testLL.appendBack("second add");
