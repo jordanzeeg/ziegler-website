@@ -54,6 +54,8 @@ import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 import { DataStructuresComponent } from './library/data-structures/data-structures.component';
 import { LinkedListComponent } from './library/data-structures/linked-list/linked-list.component';
 import { DataStructuresTableComponent } from './library/data-structures/data-structures-table/data-structures-table.component';
+import { ThreejsWorkspaceComponent } from './library/data-structures/threejs-workspace/threejs-workspace.component';
+import { ExtrudePathsComponent } from './library/data-structures/threejs-workspace/extrude-paths/extrude-paths.component';
 
 
 
@@ -107,7 +109,9 @@ import { DataStructuresTableComponent } from './library/data-structures/data-str
     AutomationComponent,
     DataStructuresComponent,
     LinkedListComponent,
-    DataStructuresTableComponent
+    DataStructuresTableComponent,
+    ThreejsWorkspaceComponent,
+    ExtrudePathsComponent
   ],
   imports: [
     AppRoutingModule,

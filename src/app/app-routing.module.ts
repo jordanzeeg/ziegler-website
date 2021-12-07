@@ -41,6 +41,8 @@ import { AutomationTableComponent } from './library/automations/automation-table
 import { DataStructuresComponent } from './library/data-structures/data-structures.component';
 import { LinkedListComponent } from './library/data-structures/linked-list/linked-list.component';
 import { DataStructuresTableComponent } from './library/data-structures/data-structures-table/data-structures-table.component';
+import { ThreejsWorkspaceComponent } from './library/data-structures/threejs-workspace/threejs-workspace.component';
+import { ExtrudePathsComponent } from './library/data-structures/threejs-workspace/extrude-paths/extrude-paths.component';
 
 const routes: Routes = [
 	{
@@ -180,6 +182,12 @@ const routes: Routes = [
 					},
 					{
 						path: 'table', component: LibraryTableComponent // change this component later since it just loops
+					},
+					{
+						path: 'threejs', component: ThreejsWorkspaceComponent
+					},
+					{
+						path: 'extrude', component: ExtrudePathsComponent
 					},
 					{
 						path: '', component: DataStructuresTableComponent
