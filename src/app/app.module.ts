@@ -56,6 +56,8 @@ import { LinkedListComponent } from './library/data-structures/linked-list/linke
 import { DataStructuresTableComponent } from './library/data-structures/data-structures-table/data-structures-table.component';
 import { ThreejsWorkspaceComponent } from './library/data-structures/threejs-workspace/threejs-workspace.component';
 import { ExtrudePathsComponent } from './library/data-structures/threejs-workspace/extrude-paths/extrude-paths.component';
+import { AutomataComponent } from './library/automata/automata.component';
+import { ConwayComponent } from './library/automata/conway/conway.component';
 
 
 
@@ -111,7 +113,9 @@ import { ExtrudePathsComponent } from './library/data-structures/threejs-workspa
     LinkedListComponent,
     DataStructuresTableComponent,
     ThreejsWorkspaceComponent,
-    ExtrudePathsComponent
+    ExtrudePathsComponent,
+    AutomataComponent,
+    ConwayComponent
   ],
   imports: [
     AppRoutingModule,

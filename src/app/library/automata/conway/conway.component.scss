@@ -1,0 +1,17 @@
+*{
+    color: white;
+}
+h2 {
+    padding: 10px;
+    text-align: center;
+}
+#canvasContainer {
+    padding-left: 10vw;
+    padding-right: 10vw;
+    
+}
+#canvas1 {
+    width: 100%;
+    object-fit: contain;
+    background-color: grey;
+}
