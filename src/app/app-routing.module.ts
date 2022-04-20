@@ -45,6 +45,7 @@ import { ThreejsWorkspaceComponent } from './library/data-structures/threejs-wor
 import { ExtrudePathsComponent } from './library/data-structures/threejs-workspace/extrude-paths/extrude-paths.component';
 import { AutomataComponent } from './library/automata/automata.component';
 import { ConwayComponent } from './library/automata/conway/conway.component';
+import { LangtonComponent } from './library/automata/langton/langton.component';
 
 const routes: Routes = [
 	{
@@ -192,7 +193,15 @@ const routes: Routes = [
 						path: 'extrude', component: ExtrudePathsComponent
 					},
 					{
-						path: 'conway', component: ConwayComponent
+						path: 'automata', component: AutomataComponent,
+						children: [
+							{
+								path: 'conway', component: ConwayComponent
+							},
+							{
+								path: 'langton', component: LangtonComponent
+							}
+						]
 					},
 					{
 						path: '', component: DataStructuresTableComponent

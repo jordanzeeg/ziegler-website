@@ -58,6 +58,7 @@ import { ThreejsWorkspaceComponent } from './library/data-structures/threejs-wor
 import { ExtrudePathsComponent } from './library/data-structures/threejs-workspace/extrude-paths/extrude-paths.component';
 import { AutomataComponent } from './library/automata/automata.component';
 import { ConwayComponent } from './library/automata/conway/conway.component';
+import { LangtonComponent } from './library/automata/langton/langton.component';
 
 
 
@@ -115,7 +116,8 @@ import { ConwayComponent } from './library/automata/conway/conway.component';
     ThreejsWorkspaceComponent,
     ExtrudePathsComponent,
     AutomataComponent,
-    ConwayComponent
+    ConwayComponent,
+    LangtonComponent
   ],
   imports: [
     AppRoutingModule,

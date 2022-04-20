@@ -11,8 +11,9 @@ export class ConwayComponent implements OnInit {
   grid:any
   grid2:any
   res = 14
-  height;
-  width;
+  height:number = 10;
+  width:number = 10;
+  intervalId:any;
   ngOnInit(): void {
     //setup 2d grid
     this.setupCanvas();
@@ -20,22 +21,29 @@ export class ConwayComponent implements OnInit {
     
     console.table(this.grid)
     let that = this
-    var h = setInterval(function() {
+    this.intervalId = setInterval(function() {
       that.displayGrid();
     }, 2000)
+  }
+  ngOnDestroy(){
+    if(this.intervalId)
+    {
+      clearInterval(this.intervalId)
+    }
   }
   setupCanvas(){
     const canvas = document.getElementById("canvas1") as HTMLCanvasElement;
   	const ctx = canvas.getContext('2d')!; //get context
+    ctx.clearRect(0,0,canvas.width,canvas.height)
     canvas.width = Math.floor(canvas.offsetWidth);
   	canvas.height = Math.floor(canvas.width/1.5);
   	
     this.height = Math.floor(canvas.height/this.res)
     this.width = Math.floor(canvas.width/this.res)
-    console.log(this.height, this.width, canvas.height, canvas.width, canvas.offsetHeight, canvas.offsetWidth)
+    //console.log(this.height, this.width, canvas.height, canvas.width, canvas.offsetHeight, canvas.offsetWidth)
   }
   //setup 2d Grid of random 1s and 0s
-  setupGrid(cols,rows)
+  setupGrid(cols:number,rows:number)
   {
     
     let arr = new Array(rows)

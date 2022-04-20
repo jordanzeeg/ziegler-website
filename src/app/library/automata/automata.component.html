@@ -1,2 +1,35 @@
 <div class = "spacer"></div>
-<h2>Automata</h2>
+<div >
+    <nav class="navbar navbar-fixed navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">Jordan Ziegler</a>
+        <button class="navbar-toggler d-lg-none" type="button" (click)="isCollapsed = !isCollapsed" [attr.aria-expanded]="!isCollapsed" aria-controls="navbarsExampleDefault" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent" [ngbCollapse]="isCollapsed">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" routerLink="/library">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" routerLink='/library/completions'>Game of Life</a> 
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" routerLink="/library/snippets">Langton's Ant</a>
+            </li>
+            <li>
+                <a class="nav-link" routerLink="/library/automations">Automation</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" routerLink="/library/challenges">Programming Challenges</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" routerLink="/library/data">Data Structures</a>
+              </li>
+          </ul>
+        </div>
+    </nav>
+</div>
+<div>
+    
+    <router-outlet></router-outlet>
