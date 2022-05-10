@@ -23,7 +23,7 @@ export class ConwayComponent implements OnInit {
     let that = this
     this.intervalId = setInterval(function() {
       that.displayGrid();
-    }, 2000)
+    }, 200)
   }
   ngOnDestroy(){
     if(this.intervalId)
@@ -52,13 +52,24 @@ export class ConwayComponent implements OnInit {
       arr[i] = new Array(cols);
       for(let j = 0; j <arr[i].length; j++)
       {
-        arr[i][j] = Math.floor(Math.random() * 2 *.54)
+        arr[i][j] = Math.floor(Math.random() * 2 *.6)
       }
     }
     this.grid = arr
-    this.grid2 = arr
-    
-
+    this.grid2 = this.setupEmptyGrid(cols,rows)
+  }
+  setupEmptyGrid(cols:number,rows:number)
+  {
+    let arr = new Array(rows)
+    for(let i = 0; i < arr.length; i++)
+    {
+      arr[i] = new Array(cols);
+      for(let j = 0; j < arr[i].length; j++)
+      {
+        arr[i][j] = 0
+      }
+    }
+    return arr;
   }
   displayGrid(){
     const canvas = document.getElementById("canvas1") as HTMLCanvasElement;
@@ -78,7 +89,13 @@ export class ConwayComponent implements OnInit {
           ctx.fillStyle = 'green';
           ctx.fillRect(x,y,this.res-1,this.res-1)
         }
+      }
+    }
 
+    this.grid2 = this.setupEmptyGrid(this.width, this.height)
+    for(let i = 0; i < this.grid.length; i++ ){
+      
+      for(let j = 0; j < this.grid[0].length; j++){
         //count neighbors for next step
         let sum = 0
         for(let k = -1; k < 2; k++ ){
@@ -88,29 +105,24 @@ export class ConwayComponent implements OnInit {
             sum += this.grid[testX][testY]
           }
         }
+        
         sum -= this.grid[i][j]
         let state = this.grid[i][j]
-        if(state===0 && sum === 3)
-        {
-          this.grid2[i][j] = 1
-        }
-        else if (state ===1 && (sum < 2 || sum >3))
-        {
-          this.grid2[i][j] = 0
-        }
-        else if(state === 1 &&(sum ===2 || sum ===3))
-        {
-          this.grid2[i][j] = 1
-        }
-        else
-        {
-          this.grid2[i][j] = 0
+        if (state == 0 && sum == 3) {
+          this.grid2[i][j] = 1;
+          
+        } else if (state == 1 && (sum < 2 || sum > 3)) {
+          
+          this.grid2[i][j] = 0;
+        } else {
+          
+          this.grid2[i][j] = state;
         }
         sum = 0
-        this.grid = this.grid2
-        
+        state = 0
       }
     }
+    this.grid = this.grid2;
   }
 
 }

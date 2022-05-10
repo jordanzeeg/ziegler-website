@@ -1,3 +1,4 @@
+import { NONE_TYPE } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
 import { isJSDocThisTag } from 'typescript';
 
@@ -10,10 +11,10 @@ export class LangtonComponent implements OnInit {
 
   constructor() { }
   intervalId:any;
-  grid: any[][];
+  grid: any;
   height:number = 400;
   width: number = 400;
-  res: number = 10;
+  res: number = 20;
   state:number = 0;
   locationx:number = 0;
   locationy:number = 0;
@@ -30,7 +31,7 @@ export class LangtonComponent implements OnInit {
       that.moveAnt(that.grid)
       
       
-    },50)
+    },10)
   }
   ngOnDestroy(){
     if(this.intervalId)
@@ -41,7 +42,7 @@ export class LangtonComponent implements OnInit {
   setupCanvas(){
     const canvas = document.getElementById("canvas1") as HTMLCanvasElement
     const ctx = canvas.getContext('2d')
-    ctx.clearRect(0,0,canvas.width,canvas.height)
+    ctx?.clearRect(0,0,canvas.width,canvas.height)
     //dynamic sizing of canvas.width
     canvas.width = Math.floor(canvas.offsetWidth);
   	canvas.height = Math.floor(canvas.width/1.5);
@@ -66,23 +67,25 @@ export class LangtonComponent implements OnInit {
   {
     const canvas = document.getElementById("canvas1") as HTMLCanvasElement
     const ctx = canvas.getContext('2d')
-    let grid = this.grid
-    for(let i = 0; i < this.height; i++)
-    {
-      let y = i * this.res
-      for (let j = 0; j < this.width; j++)
+    if(ctx){
+      let grid = this.grid
+      for(let i = 0; i < this.height; i++)
       {
-        let x = j * this.res
-        
-        if(grid[i][j] == 1)
+        let y = i * this.res
+        for (let j = 0; j < this.width; j++)
         {
-          ctx.fillStyle = 'green'
+          let x = j * this.res
+          
+          if(grid[i][j] == 1)
+          {
+            ctx.fillStyle = 'green'
+          }
+          else
+          {
+            ctx.fillStyle = 'blue'
+          }
+          ctx.fillRect(x, y, this.res-1,this.res-1)
         }
-        else
-        {
-          ctx.fillStyle = 'blue'
-        }
-        ctx.fillRect(x, y, this.res-1,this.res-1)
       }
     }
   }
@@ -94,6 +97,7 @@ export class LangtonComponent implements OnInit {
   }
   moveAnt(grid:any)
   {
+    this.moveForward(grid,this.locationx, this.locationy, this.direction)
     let state = this.state
     //state change for state of current color and set direction
     if(state == 0)
@@ -120,25 +124,30 @@ export class LangtonComponent implements OnInit {
       }
       grid[this.locationy][this.locationx] = 0
     }
-    this.moveForward(grid,this.locationx, this.locationy, this.direction)
+    this.state = grid[this.locationy][this.locationx]
+    
     //update display of grid
     const canvas = document.getElementById("canvas1") as HTMLCanvasElement
-    const ctx = canvas.getContext('2d')
-    ctx.clearRect(this.locationx*this.res,this.locationy*this.res, this.res-1, this.res-1);
-    if(grid[this.locationy][this.locationx] ==1)
+    const ctx = canvas.getContext('2d');
+    if(ctx)
     {
-      ctx.fillStyle = 'green'
+      
+      ctx.clearRect(this.locationx*this.res,this.locationy*this.res, this.res-1, this.res-1);
+      if(grid[this.locationy][this.locationx] ==1)
+      {
+        ctx.fillStyle = 'green'
+      }
+      else
+      {
+        ctx.fillStyle = 'blue'
+      }
+      ctx.fillRect(this.locationx*this.res,this.locationy*this.res, this.res-1, this.res-1);
     }
-    else
-    {
-      ctx.fillStyle = 'blue'
-    }
-    ctx.fillRect(this.locationx*this.res,this.locationy*this.res, this.res-1, this.res-1);
-    
   }
-  moveForward(grid:any, locationx, locationy, direction)
+  moveForward(grid:any, locationx:number, locationy:number, direction:number)
   {
     //check direction and move in that direction 1
+    
     if(direction == 0) //move up
     {
       if(locationy > 0){

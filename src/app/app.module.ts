@@ -59,6 +59,8 @@ import { ExtrudePathsComponent } from './library/data-structures/threejs-workspa
 import { AutomataComponent } from './library/automata/automata.component';
 import { ConwayComponent } from './library/automata/conway/conway.component';
 import { LangtonComponent } from './library/automata/langton/langton.component';
+import { MaurerComponent } from './library/automata/maurer/maurer.component';
+import { SalesComponent } from './library/automata/sales/sales.component';
 
 
 
@@ -117,7 +119,9 @@ import { LangtonComponent } from './library/automata/langton/langton.component';
     ExtrudePathsComponent,
     AutomataComponent,
     ConwayComponent,
-    LangtonComponent
+    LangtonComponent,
+    MaurerComponent,
+    SalesComponent
   ],
   imports: [
     AppRoutingModule,

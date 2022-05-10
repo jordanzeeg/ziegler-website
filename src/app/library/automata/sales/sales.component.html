@@ -1,0 +1,31 @@
+<div class = "spacer"></div>
+<h2>Traveling Salesman</h2>
+<p>
+    Traveling Salesman is a classic problem involving routing and finding the most efficient path between points
+</p>
+<p>lexicographicOrder gets all the stuff {{order}}</p>
+<div>
+    <button class = "btn btn-primary"(click)="rerun()">Rerun</button>
+</div>
+<div>
+    <button class = "btn btn-primary"(click)="lexicographicOrder(this.order)">lexical</button>
+</div>
+<p>
+    this first one is a brute force approach that just checks options randomly to see if it's better
+</p>
+<div class = "row">
+    <div id = "canvasContainer">
+        <canvas id= "canvas1"  ></canvas>
+    </div>
+    <div id = "canvasContainer">
+        <canvas id= "canvas2"  ></canvas>
+    </div>
+</div>
+<div class = "row">
+    <div id = "canvasContainer">
+        <canvas id= "canvas3"  ></canvas>
+    </div>
+    <div id = "canvasContainer">
+        <canvas id= "canvas4"  ></canvas>
+    </div>
+</div>

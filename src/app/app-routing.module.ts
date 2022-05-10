@@ -46,6 +46,7 @@ import { ExtrudePathsComponent } from './library/data-structures/threejs-workspa
 import { AutomataComponent } from './library/automata/automata.component';
 import { ConwayComponent } from './library/automata/conway/conway.component';
 import { LangtonComponent } from './library/automata/langton/langton.component';
+import { SalesComponent } from './library/automata/sales/sales.component';
 
 const routes: Routes = [
 	{
@@ -200,6 +201,12 @@ const routes: Routes = [
 							},
 							{
 								path: 'langton', component: LangtonComponent
+							},
+							{
+								path: 'sales', component: SalesComponent
+							},
+							{
+								path: '**', component: RedirectPageComponent
 							}
 						]
 					},
