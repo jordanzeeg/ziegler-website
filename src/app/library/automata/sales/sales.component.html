@@ -11,13 +11,17 @@
     <button class = "btn btn-primary"(click)="lexicographicOrder(this.order)">lexical</button>
 </div>
 <p>
-    this first one is a brute force approach that just checks options randomly to see if it's better
+    this first one is a brute force approach that just checks options randomly to see if it's better. recorded distance = {{recordDistance}}
+</p>
+<p> 
+                                                                                                    c3distance = {{c3RecordDistance}}
 </p>
 <div class = "row">
     <div id = "canvasContainer">
         <canvas id= "canvas1"  ></canvas>
     </div>
-    <div id = "canvasContainer">
+    <div id = "canvasContainer"> 
+        <div>the percentage checked: {{percentage}}%</div>
         <canvas id= "canvas2"  ></canvas>
     </div>
 </div>

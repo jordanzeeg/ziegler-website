@@ -13,17 +13,32 @@ export class SalesComponent implements OnInit {
   height: number = 400;
   width: number = 400;
   res: number = 1 ;
-  NumPoints: number = 5;
+  frameDuration = 200;
+  NumPoints: number = 8;
   cities:any; //used for brute force approach
   citiesConstant:any; //used for every other approach
   intervalId:any;
   lexicalId:any;
   recordDistance = 0;
   c2RecordDistance = 0;
-  c3RecordDistance = 0;
+  c3RecordDistance = Infinity;
   order:any = [];
+  staticOrder:any;
   bestOrder:any;
+
   lexicalBool= false; //tracks if lexicalgraphicorder is finished
+  //calculate totalPermutations using factorial
+  totalPermutations: number = 0;
+  count = 0;
+  percentage:any;
+
+  //variables for genetic algorithm
+  population:any;
+  genAlgBool = false;
+  genAlgId:any;
+  c3bestOrder:any;
+  c3currentBest:any;
+  fitness:any;
   ngOnInit(): void {
     //this function generatesCities. it uses the Num
     this.cities = this.generateCities(this.NumPoints)
@@ -31,6 +46,7 @@ export class SalesComponent implements OnInit {
     this.citiesConstant = [...this.cities];
     this.order = this.generateOrder(this.NumPoints)
     this.recordDistance= this.calcDistance(this.cities)
+    this.totalPermutations = this.factorial(this.NumPoints)
 
     //setup canvas1, also sets up the cities, and recordDistance
     //initial draw displays spawn order
@@ -43,6 +59,8 @@ export class SalesComponent implements OnInit {
     this.setupCanvas2()
     this.drawCanvas2()
 
+    this.setupCanvas3()
+    this.drawCanvas3()
 
     var that = this;
     
@@ -51,24 +69,35 @@ export class SalesComponent implements OnInit {
     //setinterval function to draw at intervals. 
     this.intervalId = setInterval(function() {
       that.drawCanvas1()
+      timesRun++;
       if(timesRun === 1000)
       {
         clearInterval(that.intervalId)
       }
-    },100)
-
+    },this.frameDuration)
 
     //lexicographical order section
     //this.lexicographicOrder(this.vals)
+    //draws updates for canvas2 
     this.lexicalId = setInterval(function() {
       that.order = that.lexicographicOrder(that.order);
       that.drawCanvas2()
+      that.count++;
+      that.percentage = (100* that.count/that.totalPermutations)
+      that.percentage = that.percentage.toFixed(2)
       if(that.lexicalBool)
       {
         clearInterval(that.lexicalId);
       }
-    },300)
-    
+    },this.frameDuration)
+    this.genAlgId = setInterval(function() {
+      that.drawCanvas3()
+      if(that.lexicalBool)    //that.genAlgBool)
+      {
+        clearInterval(that.genAlgId)
+      }
+    },this.frameDuration)
+
   }
   ngOnDestroy(){
     if(this.intervalId)
@@ -107,6 +136,15 @@ export class SalesComponent implements OnInit {
     }
     return array;
   }
+  factorial(n:number) :number{
+    if(n==1){
+      return 1;
+    }
+    else {
+      return n* this.factorial(n-1);
+    }
+  }
+  
   //-------------------------------------------------------------------------------------------------canvas 1 brute force approach--------------------------------//
   setupCanvas1(): void {
     const canvas = document.getElementById("canvas1") as HTMLCanvasElement
@@ -147,15 +185,18 @@ export class SalesComponent implements OnInit {
           ctx.moveTo(this.cities[i].x,this.cities[i].y)
           ctx.lineTo(this.cities[i+1].x,this.cities[i+1].y)
           ctx.closePath();
+          ctx.strokeStyle = "purple"
+          ctx.lineWidth = 3
           ctx.stroke();
+          ctx.lineWidth = 1
         }
         //end drawing of lines between cities
       }
 
     }
     //business logic (comes after draw the stuff so that it applies on next draw)
-    var a = Math.floor(Math.random() * this.NumPoints)
-    var b = Math.floor(Math.random() * this.NumPoints)
+    var a = Math.floor(Math.random() * this.cities.length)
+    var b = Math.floor(Math.random() * this.cities.length)
     this.cities = this.swap( this.cities,a, b)
     var d = this.calcDistance(this.cities);
     if( d < this.recordDistance) {
@@ -167,7 +208,8 @@ export class SalesComponent implements OnInit {
     }
   }
   //swap two elements in an array
-  swap(arr:any,i:number,j:number) {
+  swap(array:any,i:number,j:number) {
+    var arr = array.slice()
     if(i < arr.length || j < arr.length)
     {
       var temp = arr[i];
@@ -177,6 +219,22 @@ export class SalesComponent implements OnInit {
     }
     else{
       console.log("swap failed")
+    }
+    return arr;
+  }
+  shuffle(array:any, num:any){
+    var arr = array.slice();
+    for (var i = 0; i < num; i++)
+    {
+      var indexA = Math.floor(Math.random() * (arr.length));
+      var indexB = Math.floor(Math.random() * (arr.length));
+      if(indexA < arr.length && indexB < arr.length)
+      {
+        arr = this.swap(arr,indexA,indexB)
+      }
+      else{
+        console.log( "out of bounds error caught")
+      }
     }
     return arr;
   }
@@ -233,7 +291,7 @@ export class SalesComponent implements OnInit {
     }
     
     //step three: swap the two found spots
-    this.swap(array,largestI,largestJ);
+    array = this.swap(array,largestI,largestJ);
 
     //step four: reverse from largestI+1 to end (which after the swap is actually the element that was largest j)
     var endArray = array.splice(largestI+1);
@@ -353,6 +411,204 @@ export class SalesComponent implements OnInit {
     }
     return sum;
   }
+  //----------------------------------end canvas2 functionality-------------------------------------//
+
+  //----------------------------------begin canvas3 functionality ----------------------------------//
+  //canvas3 is set up for the genetic algorithm
+  setupCanvas3(){
+    //setup the canvas2
+    const canvas = document.getElementById('canvas3') as HTMLCanvasElement
+    const ctx = canvas.getContext('2d');
+    canvas.width = Math.floor(canvas.offsetWidth); //set width
+  	canvas.height = Math.floor(canvas.width/1.5); //set height dynamically based on width
+    ctx?.clearRect(0,0,canvas.width,canvas.height)
+    //instead of rewriting, we assume functions called earlier than this one in nginit ran successfully
+    //values used: this.citiesConstant
+    // if(this.citiesConstant)
+    // {
+    //   var d = this.calcDistance(this.citiesConstant);
+    //   this.c2RecordDistance = d;
+    //   this.bestOrder = [...this.order]
+    // }
+    //the idea is we have a population of different orders to evaluate fitness thereof
+    this.staticOrder = this.generateOrder(this.NumPoints)
+    this.population = new Array();
+    for(var i = 0; i< 10; i++)
+    {
+      var temp = this.staticOrder.slice();
+      temp = this.shuffle(temp,temp.length)
+      this.population.push( temp);
+    }
+    this.fitness = new Array(this.population.length)
+  }
+
+  //Lexicographical order drawing
+  //use this.order[]
+  drawCanvas3() {
+    const canvas = document.getElementById('canvas3') as HTMLCanvasElement
+    const ctx = canvas.getContext('2d')
+    if(ctx)
+    {
+      ctx.clearRect(0,0,canvas.width,canvas.height)
+      for( var i = 0; i < this.staticOrder.length; i++)
+      {
+        var n = this.staticOrder[i]
+        if(i<this.staticOrder.length-1)
+        {
+          var n2 = this.staticOrder[i+1]
+        }
+        
+      //draw the stuff
+        
+        
+        //draws cities as circles filled
+        ctx.beginPath()
+        ctx.arc(this.citiesConstant[n].x, this.citiesConstant[n].y,10,0,2*Math.PI)
+        ctx.fillStyle = 'green';
+        ctx.fill()
+        ctx.closePath()
+        //end drawing of city circle
+        //draw lines between cities in order
+        if(i<this.staticOrder.length-1)
+        {
+          ctx.beginPath()
+          ctx.moveTo(this.citiesConstant[n].x,this.citiesConstant[n].y)
+          ctx.lineTo(this.citiesConstant[n2].x,this.citiesConstant[n2].y)
+          ctx.closePath();
+          ctx.strokeStyle = 'black'
+          ctx.stroke();
+        }
+        //end drawing of lines between cities
+         
+      }
+      //business logic after drawing (probably includes drawing the best option so far)
+      this.calculateFitness();
+      this.normalizeFitness();
+      this.nextGeneration();
+      
+      var d = this.calcDistanceOrder(this.citiesConstant, this.staticOrder)
+      if(d < this.c2RecordDistance)
+      {
+        this.c2RecordDistance = d;
+        this.c3bestOrder = [...this.staticOrder] //shallow copy 
+      }
+      for(var i = 0; i < this.c3bestOrder.length; i++)
+      {
+        var n = this.c3bestOrder[i]
+        if(i < this.c3bestOrder.length-1)
+        {
+          var n2 = this.c3bestOrder[i+1]
+          ctx.beginPath()
+          ctx.moveTo(this.citiesConstant[n].x, this.citiesConstant[n].y)
+          ctx.lineTo(this.citiesConstant[n2].x,this.citiesConstant[n2].y)
+          ctx.closePath();
+          ctx.strokeStyle = 'purple';
+          ctx.lineWidth = 3
+          ctx.stroke();
+          ctx.lineWidth = 1
+          
+        }
+      }
+    }
+  }
+
+
+  //-----------------------------end canvas3 functionality-----------------------------------------------------//
+
+  //--------------------------genetic algorithm begins------------------------------------------------------//
+  calculateFitness() {
+    var currentRecord = Infinity;
+    for(var i = 0; i< this.population.length; i++)
+    {
+      var d = this.calcDistanceOrder(this.citiesConstant,this.population[i]);
+      if (d < this.c3RecordDistance)
+      {
+        this.c3RecordDistance = d;
+        this.c3bestOrder = this.population[i].slice() //copy
+      }
+      if(d <currentRecord)
+      {
+        currentRecord = d
+        this.c3currentBest = this.population[i].slice()
+      }
+      this.fitness[i] = 1/(Math.pow(d,8) + 1)
+    }
+    
+    
+  }
+  normalizeFitness() {
+    var sum = 0;
+    //make sure fitness gets initialized
+    for(var i = 0; i < this.fitness.length; i++)
+    {
+      sum += this.fitness[i]
+    }
+    for(var i = 0; i < this.fitness.length; i++)
+    {
+      this.fitness[i] = this.fitness[i]/sum;
+    }
+  }
+
+  nextGeneration() {
+    var newPopulation = new Array();
+    for(var i = 0; i < this.population.length; i++)
+    {
+      var orderA = this.pickOne(this.population,this.fitness)
+      var orderB = this.pickOne(this.population,this.fitness)
+      var order = this.crossOver(orderA,orderB)
+      
+      order = this.mutate(order,0.01);
+      
+      newPopulation[i] = order;
+    }
+    this.population = newPopulation;
+  }
+
+  pickOne(list:any,prob:any)
+  {
+    var index = 0;
+    var r = Math.random();
+    while (r> 0)
+    {
+      r = r-prob[index]
+      index++;
+    }
+    index--;
+    return list[index].slice()
+  }
+
+  crossOver(orderA:any,orderB:any)
+  {
+    var start = Math.floor(Math.random() * orderA.length)
+    var end = Math.floor(Math.random() * (orderA.length - start+1))
+    var newOrder = orderA.slice(start,end);
+    for(var i = 0; i < orderB.length; i++)
+    {
+      var city = orderB[i];
+      if(!newOrder.includes(city))
+      {
+        newOrder.push(city)
+      }
+    }
+    return newOrder;
+
+  }
+  mutate(order:any,mutationRate:any)
+  {
+    for(var i = 0; i<order.length; i++)
+    {
+      if(Math.random()<mutationRate)
+      {
+        var indexA = Math.floor(Math.random() * order.length)
+        var indexB = (indexA + 1) %order.length;
+          order = this.swap(order,indexA,indexB);
+        
+        
+      }
+    }
+    return order;
+  }
+
 }
 
 
