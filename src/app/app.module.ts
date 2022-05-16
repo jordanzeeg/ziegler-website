@@ -61,6 +61,7 @@ import { ConwayComponent } from './library/automata/conway/conway.component';
 import { LangtonComponent } from './library/automata/langton/langton.component';
 import { MaurerComponent } from './library/automata/maurer/maurer.component';
 import { SalesComponent } from './library/automata/sales/sales.component';
+import { FlockingComponent } from './library/automata/flocking/flocking.component';
 
 
 
@@ -121,7 +122,8 @@ import { SalesComponent } from './library/automata/sales/sales.component';
     ConwayComponent,
     LangtonComponent,
     MaurerComponent,
-    SalesComponent
+    SalesComponent,
+    FlockingComponent
   ],
   imports: [
     AppRoutingModule,

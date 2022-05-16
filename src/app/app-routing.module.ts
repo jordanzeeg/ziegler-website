@@ -47,6 +47,7 @@ import { AutomataComponent } from './library/automata/automata.component';
 import { ConwayComponent } from './library/automata/conway/conway.component';
 import { LangtonComponent } from './library/automata/langton/langton.component';
 import { SalesComponent } from './library/automata/sales/sales.component';
+import { FlockingComponent } from './library/automata/flocking/flocking.component';
 
 const routes: Routes = [
 	{
@@ -204,6 +205,9 @@ const routes: Routes = [
 							},
 							{
 								path: 'sales', component: SalesComponent
+							},
+							{
+								path: 'flock', component: FlockingComponent
 							},
 							{
 								path: '**', component: RedirectPageComponent
