@@ -194,26 +194,7 @@ const routes: Routes = [
 					{
 						path: 'extrude', component: ExtrudePathsComponent
 					},
-					{
-						path: 'automata', component: AutomataComponent,
-						children: [
-							{
-								path: 'conway', component: ConwayComponent
-							},
-							{
-								path: 'langton', component: LangtonComponent
-							},
-							{
-								path: 'sales', component: SalesComponent
-							},
-							{
-								path: 'flock', component: FlockingComponent
-							},
-							{
-								path: '**', component: RedirectPageComponent
-							}
-						]
-					},
+					
 					{
 						path: '', component: DataStructuresTableComponent
 					},
@@ -221,6 +202,26 @@ const routes: Routes = [
 						path: '**', component: RedirectPageComponent
 					}
 
+				]
+			},
+			{
+				path: 'automata', component: AutomataComponent,
+				children: [
+					{
+						path: 'conway', component: ConwayComponent
+					},
+					{
+						path: 'langton', component: LangtonComponent
+					},
+					{
+						path: 'sales', component: SalesComponent
+					},
+					{
+						path: 'flock', component: FlockingComponent
+					},
+					{
+						path: '**', component: RedirectPageComponent
+					}
 				]
 			},
 			{

@@ -15,3 +15,8 @@ h2 {
     object-fit: contain;
     background-color: grey;
 }
+.navbar-fixed {
+	position: fixed;
+	width: 100vw;
+	z-index: 1;
+}

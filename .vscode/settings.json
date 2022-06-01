@@ -1,0 +1,9 @@
+{
+    "atlascode.bitbucket.contextMenus.enabled": false,
+    "atlascode.bitbucket.enabled": false,
+    "atlascode.bitbucket.explorer.enabled": false,
+    "atlascode.bitbucket.explorer.nestFilesEnabled": false,
+    "atlascode.bitbucket.explorer.notifications.pullRequestCreated": false,
+    "python.linting.pylintEnabled": true,
+    "python.linting.enabled": true
+}

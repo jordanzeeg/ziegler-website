@@ -1,15 +1,20 @@
 #canvas1 {
     width: 100%;
     object-fit: contain;
-    background-color: grey;
+    background-color: silver;
 }
 
 #canvasContainer {
     position:relative;
 
     padding-left: 10vw;
-    padding-right: 10vw;
+    margin-top: 3vh;
     width: 80vw;
     padding-bottom: 1vh;
     
+}
+
+.box {
+    margin-left: 5vw;
+    margin-right:5vw;
 }

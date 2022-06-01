@@ -14,13 +14,19 @@ import gsap from 'gsap';
 export class ThreejsWorkspaceComponent implements OnInit {
 
   
-
+  gui:any;
   constructor() { }
 
   
   ngOnInit(): void {
-    //this.secondTutorial();
-    this.testTextRender();
+    this.secondTutorial();
+    //this.testTextRender();
+  }
+  ngOnDestroy(): void {
+    if(this.gui){
+      this.gui.destroy()
+    }
+    
   }
 
   canvasDrawing() {
@@ -105,7 +111,7 @@ export class ThreejsWorkspaceComponent implements OnInit {
   //second tutorial is changes made at 40 minutes. here we start deleting some of the things from firstTutorial
   //create the mesh changes to verticies
   //implement dat.gui for fast editing of values
-  /* secondTutorial(){
+  secondTutorial(){
 
     //if you knew what raycasters are, you'd know what this does
     const raycaster = new THREE.Raycaster()
@@ -120,7 +126,8 @@ export class ThreejsWorkspaceComponent implements OnInit {
       1000);
     
     //this is to edit values in browser
-      const gui = new dat.GUI();
+      this.gui = new dat.GUI();
+      const gui = this.gui;
       gui.domElement.style.marginTop = '150px';
       //world is data object for things we want edited
       const world = {
@@ -341,9 +348,9 @@ export class ThreejsWorkspaceComponent implements OnInit {
       //event.clientX gives a number from 0 -> window.innerWidth
       //event.clientY gives a number from 0 ->window.innerHeight
       mouse.x = (event.clientX /innerWidth) * 2 - 1;
-      mouse.y = -(event.clientY / innerHeight) * 2 + 1;
+      mouse.y = -(event.clientY / innerHeight) * 2 + 1.2;
     });
-  } */
+  } 
 
   //testing rendering of text and figuring out how to change the string displayed
   testTextRender() {
@@ -381,7 +388,6 @@ export class ThreejsWorkspaceComponent implements OnInit {
         tester = new THREE.Mesh(textGeo, [textMaterial,textMaterial2]);
 
         tester.geometry.center();
-        console.log(tester);
         scene.add(tester);
       } );
       
