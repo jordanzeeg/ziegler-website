@@ -80,12 +80,13 @@ export class FlockingComponent implements OnInit {
   updateBoids(flock:Array<Boid>) {
     for( let boid of flock)
     {
-      boid.edges();
+      
       let aligVec = boid.align(flock);
       let coheVec = boid.cohesion(flock);
       let sepVec = boid.separation(flock); //goes to boid.xacc and boid.yacc
       boid.sumVectors(aligVec,coheVec,sepVec);
       boid.keepErMovin();
+      boid.edges();
       boid.update();
       
     }
@@ -146,7 +147,7 @@ class Boid {
   yvel:number;
   xacc:number;
   yacc:number;
-  inertia:number= .05;
+  inertia:number= .04;
   colorR = Math.random() * 125
   colorG = Math.random() *125
   colorB = Math.random() *125
@@ -327,8 +328,8 @@ class Boid {
   sumVectors(vec1:vector, vec2:vector,vec3:vector){
     //ghetto vector math
     let result = new vector();
-    result.x +=vec1.x + vec2.x + vec3.x;
-    result.y +=vec1.y + vec2.y + vec3.y;
+    result.x +=vec1.x + vec2.x + 3* vec3.x;
+    result.y +=vec1.y + vec2.y + 3* vec3.y;
     this.xacc = result.x;
     this.yacc = result.y;
   }

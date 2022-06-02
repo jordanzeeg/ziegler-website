@@ -79,7 +79,7 @@
     position: relative;
 	top: 1vh;
 	left:2vw;
-	animation: globalErsteKey 4s infinite;
+	animation: globalErsteKey 8s infinite;
 	animation-direction: alternate;
 }
 
@@ -87,7 +87,7 @@
     position: relative;
 	top: 5vh;
 	left: 25vw;
-	animation: globalZweiteKey 1.5s infinite;
+	animation: globalZweiteKey 3s infinite;
 	animation-direction: alternate-reverse;
 }
 
@@ -95,7 +95,7 @@
     position: relative;
 	top: -25vh;
 	left: 47vw;
-	animation: globalZweiteKey 3s infinite;
+	animation: globalZweiteKey 6s infinite;
 	animation-direction: alternate-reverse;
 }
 
@@ -103,7 +103,7 @@
     position: relative;
 	top:-50vh;
 	left:35vw;
-	animation: globalVierteKey 4s infinite;
+	animation: globalVierteKey 8s infinite;
 	animation-direction: alternate-reverse;
 }
 
@@ -111,7 +111,7 @@
     position: relative;
 	top:-80vh;
 	left:0vw;
-	animation: globalZweiteKey 4s infinite;
+	animation: globalZweiteKey 8s infinite;
 	animation-direction: alternate-reverse;
 }
 
@@ -188,5 +188,5 @@
 	
 }
 .topdiv {
-	height: 3.5rem;
+	height: 3.2rem;
 }
