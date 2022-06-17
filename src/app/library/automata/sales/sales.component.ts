@@ -14,7 +14,7 @@ export class SalesComponent implements OnInit {
   width: number = 400;
   res: number = 1 ;
   frameDuration = 200;
-  NumPoints: number = 8;
+  NumPoints: number = 15;
   cities:any; //used for brute force approach
   citiesConstant:any; //used for every other approach
   intervalId:any;
@@ -39,8 +39,13 @@ export class SalesComponent implements OnInit {
   c3bestOrder:any;
   c3currentBest:any;
   fitness:any;
+
+  //variables for ant colony
+  antPop:any;
+  
   ngOnInit(): void {
     //this function generatesCities. it uses the Num
+    this.setupCanvas1()
     this.cities = this.generateCities(this.NumPoints)
     //how to copy array. shallow copies the elements, but because it's not nested arrays it's fine
     this.citiesConstant = [...this.cities];
@@ -51,7 +56,7 @@ export class SalesComponent implements OnInit {
     //setup canvas1, also sets up the cities, and recordDistance
     //initial draw displays spawn order
     
-    this.setupCanvas1()
+    
     this.drawCanvas1()
     
     //setup canvas2, uses the cities from canvas1, and sets c2RecordDistance
@@ -61,6 +66,9 @@ export class SalesComponent implements OnInit {
 
     this.setupCanvas3()
     this.drawCanvas3()
+
+    this.setupCanvas4()
+    this.drawCanvas4()
 
     var that = this;
     
@@ -120,6 +128,7 @@ export class SalesComponent implements OnInit {
     for (var i = 0; i < Num; i++)
     {
       var test = new vector(Math.floor(Math.random() * this.width), Math.floor(Math.random() * (this.height-5)));
+      console.log("width " + this.width)
       arr.push(test)
       //console.log(this.width, this.height)
       //console.log(arr)
@@ -468,18 +477,6 @@ export class SalesComponent implements OnInit {
         ctx.fill()
         ctx.closePath()
         //end drawing of city circle
-        //draw lines between cities in order
-        if(i<this.staticOrder.length-1)
-        {
-          ctx.beginPath()
-          ctx.moveTo(this.citiesConstant[n].x,this.citiesConstant[n].y)
-          ctx.lineTo(this.citiesConstant[n2].x,this.citiesConstant[n2].y)
-          ctx.closePath();
-          ctx.strokeStyle = 'black'
-          ctx.stroke();
-        }
-        //end drawing of lines between cities
-         
       }
       //business logic after drawing (probably includes drawing the best option so far)
       this.calculateFitness();
@@ -608,6 +605,57 @@ export class SalesComponent implements OnInit {
     }
     return order;
   }
+  //--------------------------------------begin canvas4, ant colony optimization-------------------------------//
+  setupCanvas4(){
+    //setup the canvas2
+    const canvas = document.getElementById('canvas4') as HTMLCanvasElement
+    const ctx = canvas.getContext('2d');
+    canvas.width = Math.floor(canvas.offsetWidth); //set width
+  	canvas.height = Math.floor(canvas.width/1.5); //set height dynamically based on width
+    ctx?.clearRect(0,0,canvas.width,canvas.height)
+    //instead of rewriting, we assume functions called earlier than this one in nginit ran successfully
+    //values used: this.citiesConstant
+    // if(this.citiesConstant)
+    // {
+    //   var d = this.calcDistance(this.citiesConstant);
+    //   this.c2RecordDistance = d;
+    //   this.bestOrder = [...this.order]
+    // }
+    //the idea is we have a population of different orders to evaluate fitness thereof
+    //this.staticOrder = this.generateOrder(this.NumPoints)
+    //this.population = new Array();
+  }
+  drawCanvas4(){
+    const canvas = document.getElementById('canvas4') as HTMLCanvasElement
+    const ctx = canvas.getContext('2d')
+    if(ctx)
+    {
+      ctx.clearRect(0,0,canvas.width,canvas.height)
+      for( var i = 0; i < this.staticOrder.length; i++)
+      {
+        var n = this.staticOrder[i]
+        if(i<this.staticOrder.length-1)
+        {
+          var n2 = this.staticOrder[i+1]
+        }
+        
+      //draw the stuff
+        //draws cities as circles filled
+        ctx.beginPath()
+        ctx.arc(this.citiesConstant[n].x, this.citiesConstant[n].y,10,0,2*Math.PI)
+        ctx.fillStyle = 'green';
+        ctx.fill()
+        ctx.closePath()
+      }
+      //assume 10 ants
+
+
+
+
+    }
+  }
+
+
 
 }
 

@@ -1,14 +1,18 @@
 <div class = "spacer"></div>
-<h2>Traveling Salesman</h2>
-<p>
-    Traveling Salesman is a classic problem involving routing and finding the most efficient path between points
-</p>
-<p>lexicographicOrder gets all the stuff {{order}}</p>
+<div class = "theme-style">
+    <h2 class = "align-center">Traveling Salesman</h2>
+    <p>
+        The traveling salesman problem is an interesting one I came across multiple times before finally deciding to code on it. 
+        I was again partly inspired by seeing that The Coding Train did a video on it, 
+        but also I love the concept of this because a major solution to this problem involved information gathered from observing ant colonies. 
+        One of the things that's always fascinating to me is when we can learn complex systems and solutions from nature and the creatures around us. 
+        I learned in school that this ant colony optimization was integral in the development of cellular phones which is pretty fascinating. 
+        In this particular page I showcase multiple different solutions to the problem.  
+    </p>
+</div>
+<div class = "spacer"></div>
 <div>
     <button class = "btn btn-primary"(click)="rerun()">Rerun</button>
-</div>
-<div>
-    <button class = "btn btn-primary"(click)="lexicographicOrder(this.order)">lexical</button>
 </div>
 <p>
     this first one is a brute force approach that just checks options randomly to see if it's better. recorded distance = {{recordDistance}}
@@ -16,6 +20,7 @@
 <p> 
                                                                                                     c3distance = {{c3RecordDistance}}
 </p>
+<!-- in here we need a current time since started, 1,2,3,4 best distance 1,2,3,4 best distance found at(time). also allow for numPoints input (capped at 100)-->
 <div class = "row">
     <div id = "canvasContainer">
         <canvas id= "canvas1"  ></canvas>

@@ -19,7 +19,7 @@ export class ThreejsWorkspaceComponent implements OnInit {
 
   
   ngOnInit(): void {
-    this.secondTutorial();
+    //this.secondTutorial();
     //this.testTextRender();
   }
   ngOnDestroy(): void {
@@ -111,8 +111,8 @@ export class ThreejsWorkspaceComponent implements OnInit {
   //second tutorial is changes made at 40 minutes. here we start deleting some of the things from firstTutorial
   //create the mesh changes to verticies
   //implement dat.gui for fast editing of values
-  secondTutorial(){
-
+  /* secondTutorial(){
+    var originalPosition:any;
     //if you knew what raycasters are, you'd know what this does
     const raycaster = new THREE.Raycaster()
 
@@ -202,10 +202,13 @@ export class ThreejsWorkspaceComponent implements OnInit {
           randomValues.push(Math.random()-0.5);
         }
 
+
         //throws an error but works (autocreates originalPosition which previously didn't exist)
         //probably could also be called bad coding
-        planeMesh.geometry.attributes.position.originalPosition = planeMesh.geometry.attributes.position.array;
-        planeMesh.geometry.attributes.position.randomValue = randomValues;
+          originalPosition = planeMesh.geometry.attributes.position.array;
+          planeMesh.geometry.attributes.position.randomValue = randomValues;
+
+        
 
       }
 
@@ -277,8 +280,8 @@ export class ThreejsWorkspaceComponent implements OnInit {
 
       
       raycaster.setFromCamera(mouse, camera);
-      const {array, originalPosition} = planeMesh.geometry.attributes.position;
-      for(let i = 0; i <array.length; i+=3)
+      var array = planeMesh.geometry.attributes.position;
+      for(let i = 0; i <array.count; i+=3)
       {
         array[i] = originalPosition[i] + Math.cos(frame+ randomValues[i]) *0.003;
         array[i+1] = originalPosition[i+1] + Math.sin(frame+ randomValues[i+1]) *0.003;
@@ -350,7 +353,7 @@ export class ThreejsWorkspaceComponent implements OnInit {
       mouse.x = (event.clientX /innerWidth) * 2 - 1;
       mouse.y = -(event.clientY / innerHeight) * 2 + 1.2;
     });
-  } 
+  }  */
 
   //testing rendering of text and figuring out how to change the string displayed
   testTextRender() {

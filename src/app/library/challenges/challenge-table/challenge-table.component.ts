@@ -47,7 +47,6 @@ export class ChallengeTableComponent implements OnInit {
       colorB: number;
       
       constructor(newText:string) {
-        console.log(canvas.width);
         this.x = (Math.random() - 0.5) * 2 * canvas.width; //currently gives random x position
         this.y = (Math.random() - 0.5) * 2 * canvas.height; //currently gives random y position
         this.z = (Math.random() - 0.5) * 2 * 10000; //gives random z, notable z is always positive and

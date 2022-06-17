@@ -23,7 +23,7 @@ export class ConwayComponent implements OnInit {
     let that = this
     this.intervalId = setInterval(function() {
       that.displayGrid();
-    }, 200)
+    }, 100)
   }
   ngOnDestroy(){
     if(this.intervalId)
