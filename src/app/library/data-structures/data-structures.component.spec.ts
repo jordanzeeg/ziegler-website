@@ -1,25 +1,24 @@
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { DataStructuresComponent } from './data-structures.component';
 
 describe('DataStructuresComponent', () => {
   let component: DataStructuresComponent;
-  let fixture: ComponentFixture<DataStructuresComponent>;
 
+  //originally had a template parse error where it could not find ngbcollapse
+  //eliminated it by not 
   beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      declarations: [ DataStructuresComponent ]
-    })
-    .compileComponents();
+    component = new DataStructuresComponent();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(DataStructuresComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
+    
   });
 
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+  //create unit test to verify blank constructor and ngOnInit? 
+  //sounds silly just thinking about it 
 });

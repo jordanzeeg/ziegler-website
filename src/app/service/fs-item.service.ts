@@ -1,6 +1,6 @@
 import { stringify } from '@angular/compiler/src/util';
 import { Injectable } from '@angular/core';
-import { AngularFirestore, AngularFirestoreCollection, fromDocRef } from '@angular/fire/firestore';
+import { AngularFirestore, AngularFirestoreCollection} from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
 import { Item } from '../models/item';
 import { Soapbox } from '../models/soapbox';

@@ -6,7 +6,7 @@ import { AngularFireAuth } from '@angular/fire/auth';
 })
 export class FirebaseService {
 
-	isLoggedIn = false
+/* 	isLoggedIn = false
   constructor(public firebaseAuth : AngularFireAuth) { }
   async signin(email: string, password : string){
   	await this.firebaseAuth.SignInWithEmailAndPassword(email,password)
@@ -18,6 +18,6 @@ export class FirebaseService {
   logout (){
   	this.firebaseAuth.signOut()
   	localStorage.removeItem('user')
-  }
+  } */
 }
 
