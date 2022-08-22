@@ -62,6 +62,7 @@ import { LangtonComponent } from './library/automata/langton/langton.component';
 import { MaurerComponent } from './library/automata/maurer/maurer.component';
 import { SalesComponent } from './library/automata/sales/sales.component';
 import { FlockingComponent } from './library/automata/flocking/flocking.component';
+import { WaveFunctionCollapseComponent } from './library/automata/wave-function-collapse/wave-function-collapse.component';
 
 
 
@@ -123,7 +124,8 @@ import { FlockingComponent } from './library/automata/flocking/flocking.componen
     LangtonComponent,
     MaurerComponent,
     SalesComponent,
-    FlockingComponent
+    FlockingComponent,
+    WaveFunctionCollapseComponent
   ],
   imports: [
     AppRoutingModule,

@@ -6,25 +6,39 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./flocking.component.scss']
 })
 export class FlockingComponent implements OnInit {
-
+//this is the flocking component
+//this needs comments to be in text on the main page too
   constructor() { }
+
+  //hold all the Boids in the flock as an iterable array
   flock:Array<Boid> = new Array();
-    
+  
+  //size of the space
   width:number = 400;
   height: number = 400;
+
+  //keep track of if updates constantly run, so they can be stopped on destroy
   interval:any;
+
+  //initializer, calls all the initialize functions developed by me
+  //sets up the updates functionality
   ngOnInit(): void {
     
     this.setupCanvas()
     this.flock = this.setupBoids()
     this.draw()
+    //probably a better way but this/that works
     const that = this;
+
+    //set interval to be an identifier of the function setInterval
     this.interval = setInterval(function(){
       that.draw()
       that.flock = that.updateBoids(that.flock);
     },50)
   }
 
+  //checks if this.interval exists and destroys if it does
+  //also clears the canvas since a lot of other components use the same canvas name
   ngOnDestroy():void {
     if(this.interval)
     {
