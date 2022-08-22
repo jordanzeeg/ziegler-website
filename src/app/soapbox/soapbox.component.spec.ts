@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { FsItemService } from '../service/fs-item.service';
 
 import { SoapboxComponent } from './soapbox.component';
 
@@ -7,19 +8,17 @@ describe('SoapboxComponent', () => {
   let fixture: ComponentFixture<SoapboxComponent>;
 
   beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      declarations: [ SoapboxComponent ]
-    })
-    .compileComponents();
+
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(SoapboxComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
+    const itemServiceSpy = jasmine.createSpyObj<FsItemService>(['getSoapboxes'])
+    component = new SoapboxComponent(itemServiceSpy)
+    
   });
 
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+  //ngOnInit
 });

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { FsItemService } from 'src/app/service/fs-item.service';
+import { FsItemService } from '../../service/fs-item.service';
 import { DataServiceService } from '../service/data-service.service';
 
 @Component({

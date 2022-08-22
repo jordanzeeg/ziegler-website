@@ -7,19 +7,19 @@ describe('BoardComponent', () => {
   let fixture: ComponentFixture<BoardComponent>;
 
   beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      declarations: [ BoardComponent ]
-    })
-    .compileComponents();
+    component = new BoardComponent();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(BoardComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
+
   });
 
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+  //ngOnInit()
+  //newGame()
+  //makeMove()
+  //calculateWinnier()
+  
 });

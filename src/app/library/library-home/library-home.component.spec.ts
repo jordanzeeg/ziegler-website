@@ -6,20 +6,13 @@ describe('LibraryHomeComponent', () => {
   let component: LibraryHomeComponent;
   let fixture: ComponentFixture<LibraryHomeComponent>;
 
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      declarations: [ LibraryHomeComponent ]
-    })
-    .compileComponents();
-  });
-
   beforeEach(() => {
-    fixture = TestBed.createComponent(LibraryHomeComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
+    component = new LibraryHomeComponent();
   });
 
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  //ngOnInit()
 });

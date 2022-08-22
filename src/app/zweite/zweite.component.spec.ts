@@ -7,16 +7,11 @@ describe('ZweiteComponent', () => {
   let fixture: ComponentFixture<ZweiteComponent>;
 
   beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      declarations: [ ZweiteComponent ]
-    })
-    .compileComponents();
+
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ZweiteComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
+    component = new ZweiteComponent();
   });
 
   it('should create', () => {

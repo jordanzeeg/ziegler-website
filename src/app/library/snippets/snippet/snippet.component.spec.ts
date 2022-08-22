@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { DataServiceService } from '../../service/data-service.service';
 
 import { SnippetComponent } from './snippet.component';
 
@@ -7,16 +8,14 @@ describe('SnippetComponent', () => {
   let fixture: ComponentFixture<SnippetComponent>;
 
   beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      declarations: [ SnippetComponent ]
-    })
-    .compileComponents();
+
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(SnippetComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
+    const dataServiceSpy = jasmine.createSpyObj<DataServiceService>(['getAutomations']);
+    dataServiceSpy.getAutomations.and.returnValue((new DataServiceService().automations)); //works because automations is stored as object inside dataServiceService
+
+    component = new SnippetComponent(dataServiceSpy);
   });
 
   it('should create', () => {

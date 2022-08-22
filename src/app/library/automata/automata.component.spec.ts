@@ -7,16 +7,10 @@ describe('AutomataComponent', () => {
   let fixture: ComponentFixture<AutomataComponent>;
 
   beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      declarations: [ AutomataComponent ]
-    })
-    .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(AutomataComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
+    component = new AutomataComponent()
   });
 
   it('should create', () => {

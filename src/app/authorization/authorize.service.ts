@@ -16,7 +16,6 @@ export class AuthorizeService {
 
   constructor(
     private afAuth: AngularFireAuth,
-    private db: AngularFirestore,
     private router: Router) {
       this.afAuth.authState.subscribe((auth => {
         this.authState =auth;

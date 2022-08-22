@@ -5,11 +5,12 @@ import { CompletionComponent } from './completion.component';
 
 describe('CompletionComponent', () => {
   let component: CompletionComponent;
-  const dataServiceSpy = jasmine.createSpyObj<DataServiceService>(['getAutomations']);
-  dataServiceSpy.getCompletions.and.returnValue((new DataServiceService().completions)); //works because automations is stored as object inside dataServiceService
-
+  
 
   beforeEach(async () => {
+    const dataServiceSpy = jasmine.createSpyObj<DataServiceService>(['getCompletions']);
+    dataServiceSpy.getCompletions.and.returnValue((new DataServiceService().getCompletions())); //works because automations is stored as object inside dataServiceService
+
     component = new CompletionComponent(dataServiceSpy);
     component.ngOnInit();
   });

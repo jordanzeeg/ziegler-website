@@ -7,16 +7,11 @@ describe('ProjectsPageComponent', () => {
   let fixture: ComponentFixture<ProjectsPageComponent>;
 
   beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      declarations: [ ProjectsPageComponent ]
-    })
-    .compileComponents();
+
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ProjectsPageComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
+    component = new ProjectsPageComponent();
   });
 
   it('should create', () => {

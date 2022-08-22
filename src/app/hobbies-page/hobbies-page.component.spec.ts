@@ -7,19 +7,18 @@ describe('HobbiesPageComponent', () => {
   let fixture: ComponentFixture<HobbiesPageComponent>;
 
   beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      declarations: [ HobbiesPageComponent ]
-    })
-    .compileComponents();
+
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(HobbiesPageComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
+    component = new HobbiesPageComponent();
   });
 
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  //ngOnInit
+  //canvasDrawing()
+  //possibly reformat hobbies-page so that hobby isn't subclassed to a function
 });

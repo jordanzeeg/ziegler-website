@@ -1,4 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { Router } from '@angular/router';
+import { FsItemService } from '../../service/fs-item.service';
+import { DataServiceService } from '../service/data-service.service';
 
 import { ChallengesComponent } from './challenges.component';
 
@@ -7,19 +10,18 @@ describe('ChallengesComponent', () => {
   let fixture: ComponentFixture<ChallengesComponent>;
 
   beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      declarations: [ ChallengesComponent ]
-    })
-    .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ChallengesComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
+    const itemServiceSpy = jasmine.createSpyObj<FsItemService>(['getChallenges'])
+    const routerSpy = jasmine.createSpyObj<Router>(['config'])
+    const dataServiceSpy= jasmine.createSpyObj<DataServiceService>(['getChallenges'])
+    component = new ChallengesComponent(itemServiceSpy,routerSpy,dataServiceSpy);
   });
 
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+  //ngOnInit()
+  //updateErste
 });

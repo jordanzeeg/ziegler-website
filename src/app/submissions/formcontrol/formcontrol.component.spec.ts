@@ -7,16 +7,11 @@ describe('FormcontrolComponent', () => {
   let fixture: ComponentFixture<FormcontrolComponent>;
 
   beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      declarations: [ FormcontrolComponent ]
-    })
-    .compileComponents();
+
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(FormcontrolComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
+    component = new FormcontrolComponent();
   });
 
   it('should create', () => {

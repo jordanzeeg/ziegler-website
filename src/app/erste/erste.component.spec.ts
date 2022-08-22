@@ -1,3 +1,4 @@
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ErsteComponent } from './erste.component';
@@ -7,16 +8,10 @@ describe('ErsteComponent', () => {
   let fixture: ComponentFixture<ErsteComponent>;
 
   beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      declarations: [ ErsteComponent ]
-    })
-    .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ErsteComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
+    component = new ErsteComponent();
   });
 
   it('should create', () => {
