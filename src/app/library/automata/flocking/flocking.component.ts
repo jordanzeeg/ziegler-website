@@ -43,10 +43,10 @@ export class FlockingComponent implements OnInit {
     if(this.interval)
     {
       clearInterval(this.interval)
-      const canvas = document.getElementById("canvas1") as HTMLCanvasElement
-      const ctx = canvas?.getContext('2d')
-      ctx?.clearRect(0,0,canvas.width,canvas.height)
     }
+    const canvas = document.getElementById("canvas1") as HTMLCanvasElement
+    const ctx = canvas?.getContext('2d')
+    ctx?.clearRect(0,0,canvas.width,canvas.height)
   }
 
   setupCanvas(){
