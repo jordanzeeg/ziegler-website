@@ -48,6 +48,7 @@ import { ConwayComponent } from './library/automata/conway/conway.component';
 import { LangtonComponent } from './library/automata/langton/langton.component';
 import { SalesComponent } from './library/automata/sales/sales.component';
 import { FlockingComponent } from './library/automata/flocking/flocking.component';
+import { WaveFunctionCollapseComponent } from './library/automata/wave-function-collapse/wave-function-collapse.component';
 
 const routes: Routes = [
 	{
@@ -218,6 +219,9 @@ const routes: Routes = [
 					},
 					{
 						path: 'flock', component: FlockingComponent
+					},
+					{
+						path: 'wave', component: WaveFunctionCollapseComponent
 					},
 					{
 						path: '**', component: RedirectPageComponent
