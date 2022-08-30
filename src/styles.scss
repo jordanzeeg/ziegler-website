@@ -126,9 +126,9 @@
 
 /* has it move in a a line above initial position */
 @keyframes globalZweiteKey {
-	0% {transform: translate(0vw,0vh);}
+	0% {transform: translate(0,0);}
 	50% { transform: translate(0,-30vh); }
-	100% {transform: translate(0vw,0vh);}
+	100% {transform: translate(0,0);}
 }
 
 /* has it move in a line to the right of initial position */
