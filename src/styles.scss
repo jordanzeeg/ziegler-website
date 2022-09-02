@@ -109,7 +109,7 @@
 
 .content-table-funfte {
     position: relative;
-	top:-80vh;
+	top:-70vh;
 	left:0vw;
 	animation: globalZweiteKey 8s infinite;
 	animation-direction: alternate-reverse;
@@ -126,9 +126,9 @@
 
 /* has it move in a a line above initial position */
 @keyframes globalZweiteKey {
-	0% {transform: translate(0,0);}
-	50% { transform: translate(0,-30vh); }
-	100% {transform: translate(0,0);}
+	0% {transform: translate(0,30vh);}
+	50% { transform: translate(0,0vh); }
+	100% {transform: translate(0,30vh);}
 }
 
 /* has it move in a line to the right of initial position */
