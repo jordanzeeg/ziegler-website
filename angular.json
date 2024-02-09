@@ -127,5 +127,8 @@
       }
     }
   },
-  "defaultProject": "ziegler-website"
+  "defaultProject": "ziegler-website",
+  "cli": {
+    "analytics": false
+  }
 }
